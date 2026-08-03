@@ -1,0 +1,18 @@
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "sfia-scraper",
+  "main": "src/index.ts",
+  "compatibility_date": "2026-08-01",
+  "compatibility_flags": ["nodejs_compat"],
+  // Browser Rendering binding used to crawl sfia-online.org pages.
+  "browser": {
+    "binding": "BROWSER"
+  },
+  // Scraped dataset is written here as a single JSON object.
+  "r2_buckets": [
+    {
+      "binding": "DATASET",
+      "bucket_name": "sfia-dataset"
+    }
+  ]
+}
