@@ -1,0 +1,99 @@
+{
+  "source": "https://sfia-online.org",
+  "version": "sfia-9",
+  "note": "Placeholder dataset shaped like the scraper output. Replace with real scraped content once scraper/ runs.",
+  "skills": [
+    {
+      "code": "PROG",
+      "name": "Programming/software development",
+      "category": "Development and implementation",
+      "description": "Developing software components to deliver value to stakeholders. Designing, coding, verifying, testing, documenting, amending and refactoring programs and scripts.",
+      "levels": {
+        "2": "Designs, codes, verifies, tests and documents simple programs or scripts under direction.",
+        "3": "Designs, codes, verifies, tests, documents, amends and refactors moderately complex programs and scripts.",
+        "4": "Designs, codes, verifies, tests, documents, amends and refactors complex programs and scripts. Applies agreed standards and tools.",
+        "5": "Takes technical responsibility across all stages and iterations of software development. Plans and drives software construction activities."
+      }
+    },
+    {
+      "code": "DTAN",
+      "name": "Data modelling and design",
+      "category": "Data and analytics",
+      "description": "Developing models and diagrams to represent and communicate data requirements and data assets.",
+      "levels": {
+        "3": "Applies data analysis and data modelling techniques, based on documented business needs, to establish and maintain data models.",
+        "4": "Investigates enterprise data requirements and specifies data structures based on standards and guidelines.",
+        "5": "Sets standards for data modelling and design tools and techniques and advises on their application."
+      }
+    },
+    {
+      "code": "MLNG",
+      "name": "Machine learning",
+      "category": "Data and analytics",
+      "description": "Developing systems that learn through experience and by the use of data.",
+      "levels": {
+        "3": "Assists in the development of machine learning solutions under supervision. Prepares data sets and runs defined experiments.",
+        "4": "Designs and builds machine learning solutions for defined problems. Selects appropriate algorithms and validates models.",
+        "5": "Leads the development of machine learning approaches. Sets direction for model selection, evaluation and deployment.",
+        "6": "Directs the organisation's adoption of machine learning. Establishes policy and governance for responsible use."
+      }
+    },
+    {
+      "code": "DBAD",
+      "name": "Database administration",
+      "category": "Delivery and operation",
+      "description": "Installing, configuring, monitoring, maintaining and improving the performance of databases and data stores.",
+      "levels": {
+        "2": "Assists in database support activities under routine supervision.",
+        "3": "Performs standard database maintenance and administration tasks. Uses database management system software and tools to collect performance statistics.",
+        "4": "Develops and configures tools to enable automation of database administration tasks. Monitors performance statistics and identifies improvements."
+      }
+    },
+    {
+      "code": "SCTY",
+      "name": "Information security",
+      "category": "Strategy and architecture",
+      "description": "Defining and operating a framework of security controls and security management strategies.",
+      "levels": {
+        "3": "Applies and maintains specific security controls as required by organisational policy.",
+        "4": "Provides guidance on the application and operation of elementary physical, procedural and technical security controls.",
+        "5": "Provides advice and guidance on security strategies to manage identified risks and ensure adoption of security standards.",
+        "6": "Develops and communicates corporate information security policy, standards and guidelines."
+      }
+    },
+    {
+      "code": "TEST",
+      "name": "Testing",
+      "category": "Development and implementation",
+      "description": "Investigating products, systems and services to assess behaviour and whether this meets specified or unspecified requirements and characteristics.",
+      "levels": {
+        "1": "Executes given test scripts under supervision. Records results and reports issues.",
+        "2": "Defines test conditions for given requirements. Designs test cases and creates test scripts and supporting data.",
+        "3": "Reviews requirements and specifications and defines test conditions. Analyses and reports test activities and results.",
+        "4": "Accepts responsibility for creation of test cases using own in-depth technical analysis of both functional and non-functional specifications."
+      }
+    },
+    {
+      "code": "ARCH",
+      "name": "Solution architecture",
+      "category": "Strategy and architecture",
+      "description": "Developing and communicating a multi-dimensional solution architecture to deliver agreed business outcomes.",
+      "levels": {
+        "4": "Contributes to the development of solution architectures in specific business, infrastructure or functional areas.",
+        "5": "Leads the development of solution architectures in specific business, infrastructure or functional areas.",
+        "6": "Leads the development of architectures for complex solutions, ensuring consistency with specified requirements agreed with both external and internal customers."
+      }
+    },
+    {
+      "code": "PEMT",
+      "name": "People management",
+      "category": "People and skills",
+      "description": "Managing people day to day and over their organisational life cycle.",
+      "levels": {
+        "4": "Supervises individuals and teams. Allocates routine tasks or project work. Provides direction, support and guidance.",
+        "5": "Provides coherent direction to individuals and teams on performance and development.",
+        "6": "Develops and communicates people management strategies aligned with organisational goals."
+      }
+    }
+  ]
+}
