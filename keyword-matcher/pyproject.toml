@@ -1,0 +1,6 @@
+[project]
+name = "keyword-matcher"
+version = "0.1.0"
+description = "Keyword/lexical baseline for SFIA skill matching (not implemented yet)"
+requires-python = ">=3.12"
+dependencies = []
