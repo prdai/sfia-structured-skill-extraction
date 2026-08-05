@@ -1,0 +1,17 @@
+[project]
+name = "embedding-matcher"
+version = "0.1.0"
+description = "Embedding search over the SFIA dataset in Qdrant"
+requires-python = ">=3.12"
+dependencies = [
+    "qdrant-client>=1.12",
+    "sentence-transformers>=3.0",
+]
+
+[project.scripts]
+ingest = "embedding_matcher.ingest:main"
+search = "embedding_matcher.search:main"
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
