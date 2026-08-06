@@ -1,0 +1,15 @@
+[project]
+name = "llm-matcher"
+version = "0.1.0"
+description = "Pure LLM SFIA skill matching via a local llama.cpp model, no retrieval"
+requires-python = ">=3.12"
+dependencies = [
+    "llama-cpp-python>=0.3",
+]
+
+[project.scripts]
+match = "llm_matcher.match:main"
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
