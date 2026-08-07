@@ -1,0 +1,10 @@
+[project]
+name = "llm-rag-matcher"
+version = "0.1.0"
+description = "LLM + RAG pipeline for SFIA skill matching"
+requires-python = ">=3.12"
+dependencies = [
+    "qdrant-client>=1.12",
+    "sentence-transformers>=3.0",
+    "llama-cpp-python>=0.3",
+]
