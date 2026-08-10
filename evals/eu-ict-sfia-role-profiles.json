@@ -1,0 +1,453 @@
+{
+  "source": {
+    "standard": "CWA 16458-1:2018 E (c) 2018 CEN - European ICT professionals role profiles",
+    "publisher": "SFIA Foundation",
+    "grid_pdf": "https://sfia-online.org/en/tools-and-resources/standard-industry-skills-profiles/european-union/eu-ict-sfia-skills-profiles/grid-mapping-of-sfia-skills-to-eu-ict-profiles.pdf",
+    "role_listing_page": "https://sfia-online.org/en/tools-and-resources/standard-industry-skills-profiles/european-union/eu-ict-sfia-skills-profiles",
+    "extracted_on": "2026-08-09",
+    "extraction_method": "Claude Code (claude-sonnet-5) fetched each of the 30 individual 'EU ICT <role> role (N).pdf' illustrative skills profile documents directly (not the grid PDF, whose text extraction loses column alignment across 30 roles) and transcribed the SFIA Generic Responsibility Levels and SFIA Professional Skills tables verbatim.",
+    "note_on_grid_pdf": "The grid PDF maps all 30 roles x all SFIA skills in one table. Its text extraction does not preserve column alignment reliably, so it was NOT used as the data source for this file. It remains useful only as a human-readable cross-check.",
+    "sfia_version": "SFIA 7 (102 professional skills, 7 generic responsibility levels)"
+  },
+  "generic_responsibility_levels_reference": {
+    "1": "Follow",
+    "2": "Assist",
+    "3": "Apply",
+    "4": "Enable",
+    "5": "Ensure, advise",
+    "6": "Initiate, influence",
+    "7": "Set strategy, inspire, mobilise"
+  },
+  "roles": [
+    {
+      "id": 1,
+      "title": "Account Manager",
+      "summary_statement": "Senior focal point for client sales and customer satisfaction.",
+      "generic_responsibility_level": 5,
+      "skills": [
+        { "name": "Selling", "level": 5, "type": "core" },
+        { "name": "Relationship management", "level": 5, "type": "core" }
+      ]
+    },
+    {
+      "id": 2,
+      "title": "Business Analyst",
+      "summary_statement": "Analyses the business domain and optimises business performance through technology application.",
+      "generic_responsibility_level": 4,
+      "multi_level_role": true,
+      "skills": [
+        { "name": "Business analysis", "level": 4, "type": "core" },
+        { "name": "Business modelling", "level": 4, "type": "optional" },
+        { "name": "Requirements definition and management", "level": 4, "type": "core" },
+        { "name": "Data modelling and design", "level": 4, "type": "core" }
+      ]
+    },
+    {
+      "id": 3,
+      "title": "Business Information Manager",
+      "summary_statement": "Proposes, plans and manages functional development of the Information System (IS) focusing upon the needs of users.",
+      "generic_responsibility_level": 5,
+      "multi_level_role": true,
+      "skills": [
+        { "name": "Strategic planning", "level": 5, "type": "core" },
+        { "name": "Consultancy", "level": 5, "type": "core" },
+        { "name": "Demand management", "level": 5, "type": "core" },
+        { "name": "Business analysis", "level": 5, "type": "core" },
+        { "name": "Requirements definition and management", "level": 5, "type": "core" },
+        { "name": "Change implementation planning and management", "level": 5, "type": "core" },
+        { "name": "Relationship management", "level": 5, "type": "core" },
+        { "name": "Emerging technology monitoring", "level": 5, "type": "core" }
+      ]
+    },
+    {
+      "id": 4,
+      "title": "Chief Information Officer",
+      "summary_statement": "Develops and maintains Information Systems to generate value for the business and meet the organisation's needs.",
+      "generic_responsibility_level": 7,
+      "skills": [
+        { "name": "Strategic planning", "level": 7, "type": "core" },
+        { "name": "Enterprise IT governance", "level": 7, "type": "core" },
+        { "name": "Service level management", "level": 7, "type": "core" },
+        { "name": "IT management", "level": 7, "type": "core" },
+        { "name": "Portfolio management", "level": 7, "type": "core" },
+        { "name": "Systems development management", "level": 7, "type": "core" },
+        { "name": "Relationship management", "level": 7, "type": "core" },
+        { "name": "Sourcing", "level": 7, "type": "core" },
+        { "name": "Supplier management", "level": 7, "type": "core" }
+      ]
+    },
+    {
+      "id": 5,
+      "title": "Data Administrator",
+      "summary_statement": "Designs, implements or monitors and maintains data sets, structured (databases) and unstructured (big data).",
+      "generic_responsibility_level": 4,
+      "skills": [
+        { "name": "Data management", "level": 4, "type": "core" },
+        { "name": "Database administration", "level": 4, "type": "core" },
+        { "name": "Problem management", "level": 4, "type": "core" },
+        { "name": "Incident management", "level": 4, "type": "core" }
+      ]
+    },
+    {
+      "id": 6,
+      "title": "Developer",
+      "summary_statement": "Designs and/or codes components to meet solution specifications.",
+      "generic_responsibility_level": 4,
+      "multi_level_role": true,
+      "skills": [
+        { "name": "Software design", "level": 3, "type": "core" },
+        { "name": "Programming/software development", "level": 4, "type": "core" },
+        { "name": "Testing", "level": 3, "type": "core" },
+        { "name": "Problem management", "level": 3, "type": "core" },
+        { "name": "Systems integration and build", "level": 2, "type": "optional" },
+        { "name": "Data modelling and design", "level": 2, "type": "optional" }
+      ]
+    },
+    {
+      "id": 7,
+      "title": "Digital Media Specialist",
+      "summary_statement": "Integrates digital technology components for internal and external communication purposes.",
+      "generic_responsibility_level": 3,
+      "skills": [
+        { "name": "User experience design", "level": 3, "type": "core" },
+        { "name": "Programming/software development", "level": 2, "type": "core" },
+        { "name": "Testing", "level": 2, "type": "core" },
+        { "name": "User experience evaluation", "level": 3, "type": "core" },
+        { "name": "Information content publishing", "level": 3, "type": "core" }
+      ]
+    },
+    {
+      "id": 8,
+      "title": "Enterprise Architect",
+      "summary_statement": "Designs and maintains the holistic architecture of business processes and information systems.",
+      "generic_responsibility_level": 6,
+      "multi_level_role": true,
+      "skills": [
+        { "name": "Enterprise and business architecture", "level": 6, "type": "core" },
+        { "name": "Strategic planning", "level": 5, "type": "core" },
+        { "name": "Consultancy", "level": 5, "type": "core" },
+        { "name": "Relationship management", "level": 5, "type": "core" },
+        { "name": "Emerging technology monitoring", "level": 5, "type": "core" },
+        { "name": "Business process improvement", "level": 5, "type": "core" },
+        { "name": "Information governance", "level": 6, "type": "core" },
+        { "name": "Specialist advice", "level": 5, "type": "core" }
+      ]
+    },
+    {
+      "id": 9,
+      "title": "Digital Consultant",
+      "summary_statement": "Supports understanding of how digital technologies add value to a business.",
+      "generic_responsibility_level": 5,
+      "skills": [
+        { "name": "Emerging technology monitoring", "level": 5, "type": "core" },
+        { "name": "Innovation", "level": 5, "type": "core" },
+        { "name": "Consultancy", "level": 5, "type": "core" },
+        { "name": "Business analysis", "level": 5, "type": "core" },
+        { "name": "Business process improvement", "level": 5, "type": "core" },
+        { "name": "Solution architecture", "level": 5, "type": "core" }
+      ]
+    },
+    {
+      "id": 10,
+      "title": "Operations Manager",
+      "summary_statement": "Manages operations, people and overall ICT resources.",
+      "generic_responsibility_level": 5,
+      "skills": [
+        { "name": "IT management", "level": 5, "type": "core" },
+        { "name": "Systems development management", "level": 5, "type": "core" },
+        { "name": "Service level management", "level": 5, "type": "core" },
+        { "name": "Resourcing", "level": 5, "type": "core" },
+        { "name": "Security administration", "level": 5, "type": "core" },
+        { "name": "Performance management", "level": 5, "type": "core" },
+        { "name": "Relationship management", "level": 5, "type": "core" }
+      ]
+    },
+    {
+      "id": 11,
+      "title": "Information Security Manager",
+      "summary_statement": "Leads and manages the organisation information security policy.",
+      "generic_responsibility_level": 6,
+      "multi_level_role": true,
+      "skills": [
+        { "name": "Information security", "level": 6, "type": "core" },
+        { "name": "Information assurance", "level": 6, "type": "core" },
+        { "name": "Enterprise IT governance", "level": 5, "type": "core" },
+        { "name": "Security administration", "level": 6, "type": "core" },
+        { "name": "Relationship management", "level": 6, "type": "core" },
+        { "name": "Business risk management", "level": 6, "type": "optional" },
+        { "name": "Conformance review", "level": 6, "type": "optional" }
+      ]
+    },
+    {
+      "id": 12,
+      "title": "Information Security Specialist",
+      "summary_statement": "Ensures the implementation of the organisation's information security policy by the secure and appropriate use of ICT resources.",
+      "generic_responsibility_level": 5,
+      "multi_level_role": true,
+      "skills": [
+        { "name": "Information security", "level": 5, "type": "core" },
+        { "name": "Information assurance", "level": 5, "type": "core" },
+        { "name": "Relationship management", "level": 5, "type": "core" },
+        { "name": "Learning delivery", "level": 4, "type": "core" },
+        { "name": "Security administration", "level": 5, "type": "optional" },
+        { "name": "Conformance review", "level": 4, "type": "optional" },
+        { "name": "Continuity management", "level": 4, "type": "optional" },
+        { "name": "Business risk management", "level": 4, "type": "optional" },
+        { "name": "Learning design and development", "level": 4, "type": "optional" }
+      ]
+    },
+    {
+      "id": 13,
+      "title": "Digital Educator",
+      "summary_statement": "Educates and trains professionals to reach optimal digital competence to support business performance.",
+      "generic_responsibility_level": 4,
+      "multi_level_role": true,
+      "skills": [
+        { "name": "Learning design and development", "level": 4, "type": "core" },
+        { "name": "Competency assessment", "level": 4, "type": "core" },
+        { "name": "Learning delivery", "level": 4, "type": "core" },
+        { "name": "Professional development", "level": 4, "type": "core" }
+      ]
+    },
+    {
+      "id": 14,
+      "title": "Network Specialist",
+      "summary_statement": "Ensures the alignment of the network, including telecommunication and/or computer infrastructure to meet the organisation's communication needs.",
+      "generic_responsibility_level": 5,
+      "skills": [
+        { "name": "Network planning", "level": 5, "type": "core" },
+        { "name": "Network design", "level": 5, "type": "core" },
+        { "name": "Network support", "level": 5, "type": "core" },
+        { "name": "Specialist advice", "level": 4, "type": "core" },
+        { "name": "Problem management", "level": 4, "type": "core" }
+      ]
+    },
+    {
+      "id": 15,
+      "title": "Project Manager",
+      "summary_statement": "Manages projects to achieve optimal performance and results.",
+      "generic_responsibility_level": 5,
+      "multi_level_role": true,
+      "skills": [
+        { "name": "Project management", "level": 5, "type": "core" },
+        { "name": "Relationship management", "level": 5, "type": "core" },
+        { "name": "Change implementation planning and management", "level": 5, "type": "core" },
+        { "name": "Benefits management", "level": 5, "type": "core" }
+      ]
+    },
+    {
+      "id": 16,
+      "title": "Quality Assurance Manager",
+      "summary_statement": "Ensures that processes and organisations implementing Information Systems comply to quality policies.",
+      "generic_responsibility_level": 6,
+      "skills": [
+        { "name": "Quality management", "level": 6, "type": "core" },
+        { "name": "Quality assurance", "level": 6, "type": "core" },
+        { "name": "Conformance review", "level": 6, "type": "core" },
+        { "name": "Organisational capability development", "level": 6, "type": "core" }
+      ]
+    },
+    {
+      "id": 17,
+      "title": "Service Support",
+      "summary_statement": "Provides remote or onsite diagnosis or guidance to internal or external clients with technical issues.",
+      "generic_responsibility_level": 3,
+      "multi_level_role": true,
+      "skills": [
+        { "name": "Incident management", "level": 3, "type": "core" },
+        { "name": "Problem management", "level": 3, "type": "core" },
+        { "name": "Application support", "level": 3, "type": "optional" },
+        { "name": "Security administration", "level": 3, "type": "optional" },
+        { "name": "Systems installation/decommissioning", "level": 3, "type": "optional" },
+        { "name": "Network support", "level": 3, "type": "optional" }
+      ]
+    },
+    {
+      "id": 18,
+      "title": "Service Manager",
+      "summary_statement": "Plans, implements and manages solution provision.",
+      "generic_responsibility_level": 5,
+      "multi_level_role": true,
+      "skills": [
+        { "name": "Service level management", "level": 5, "type": "core" },
+        { "name": "Contract management", "level": 5, "type": "core" },
+        { "name": "IT management", "level": 5, "type": "core" },
+        { "name": "Problem management", "level": 5, "type": "core" },
+        { "name": "Financial management", "level": 5, "type": "core" },
+        { "name": "Incident management", "level": 5, "type": "optional" }
+      ]
+    },
+    {
+      "id": 19,
+      "title": "Systems Administrator",
+      "summary_statement": "Administers ICT System components to meet service requirements.",
+      "generic_responsibility_level": 3,
+      "skills": [
+        { "name": "IT infrastructure", "level": 3, "type": "core" },
+        { "name": "Configuration management", "level": 3, "type": "core" },
+        { "name": "Change management", "level": 3, "type": "core" },
+        { "name": "Problem management", "level": 3, "type": "core" },
+        { "name": "Release and deployment", "level": 3, "type": "core" },
+        { "name": "Systems integration and build", "level": 3, "type": "core" }
+      ]
+    },
+    {
+      "id": 20,
+      "title": "Systems Analyst",
+      "summary_statement": "Analyses organisation requirements and specifies software and system requirements for new IT solutions.",
+      "generic_responsibility_level": 5,
+      "multi_level_role": true,
+      "skills": [
+        { "name": "Solution architecture", "level": 5, "type": "core" },
+        { "name": "Systems design", "level": 5, "type": "core" },
+        { "name": "Requirements definition and management", "level": 5, "type": "core" },
+        { "name": "Software design", "level": 5, "type": "optional" },
+        { "name": "Hardware design", "level": 5, "type": "optional" },
+        { "name": "Network design", "level": 5, "type": "optional" }
+      ]
+    },
+    {
+      "id": 21,
+      "title": "Systems Architect",
+      "summary_statement": "Plans, designs and integrates ICT system components including hardware, software and services.",
+      "generic_responsibility_level": 5,
+      "skills": [
+        { "name": "Systems design", "level": 5, "type": "core" },
+        { "name": "Requirements definition and management", "level": 5, "type": "core" },
+        { "name": "Systems integration and build", "level": 5, "type": "core" },
+        { "name": "Emerging technology monitoring", "level": 5, "type": "core" },
+        { "name": "Hardware design", "level": 5, "type": "optional" },
+        { "name": "Software design", "level": 5, "type": "optional" },
+        { "name": "Network design", "level": 5, "type": "optional" }
+      ]
+    },
+    {
+      "id": 22,
+      "title": "Technical Specialist",
+      "summary_statement": "Maintains and repairs hardware, software and service applications.",
+      "generic_responsibility_level": 3,
+      "skills": [
+        { "name": "Problem management", "level": 3, "type": "core" },
+        { "name": "Application support", "level": 3, "type": "core" },
+        { "name": "Change management", "level": 3, "type": "core" },
+        { "name": "System software", "level": 3, "type": "core" },
+        { "name": "Systems installation/decommissioning", "level": 3, "type": "core" },
+        { "name": "Network support", "level": 3, "type": "core" }
+      ]
+    },
+    {
+      "id": 23,
+      "title": "Test Specialist",
+      "summary_statement": "Designs and performs testing plans.",
+      "generic_responsibility_level": 4,
+      "multi_level_role": true,
+      "skills": [
+        { "name": "Testing", "level": 4, "type": "core" },
+        { "name": "Methods and tools", "level": 4, "type": "core" }
+      ]
+    },
+    {
+      "id": 24,
+      "title": "Solution Designer",
+      "summary_statement": "Provides the translation of business requirements into end-to-end IT solutions.",
+      "generic_responsibility_level": 5,
+      "multi_level_role": true,
+      "skills": [
+        { "name": "Solution architecture", "level": 5, "type": "core" },
+        { "name": "Business analysis", "level": 5, "type": "core" },
+        { "name": "Requirements definition and management", "level": 5, "type": "core" },
+        { "name": "Emerging technology monitoring", "level": 5, "type": "core" },
+        { "name": "Innovation", "level": 5, "type": "core" },
+        { "name": "User experience design", "level": 5, "type": "core" }
+      ]
+    },
+    {
+      "id": 25,
+      "title": "Digital Transformation Leader",
+      "summary_statement": "Provides leadership for the implementation of the digital transformation strategy of the organisation.",
+      "generic_responsibility_level": 7,
+      "skills": [
+        { "name": "Innovation", "level": 7, "type": "core" },
+        { "name": "Organisation design and implementation", "level": 7, "type": "core" },
+        { "name": "Business process improvement", "level": 7, "type": "core" },
+        { "name": "Analytics", "level": 7, "type": "core" },
+        { "name": "Relationship management", "level": 7, "type": "core" },
+        { "name": "Strategic planning", "level": 7, "type": "core" }
+      ]
+    },
+    {
+      "id": 26,
+      "title": "DevOps Expert",
+      "summary_statement": "Implements processes and tools to successfully deploy DevOps techniques across the entire solution development lifecycle.",
+      "generic_responsibility_level": 5,
+      "skills": [
+        { "name": "Methods and tools", "level": 5, "type": "core" },
+        { "name": "Programming/software development", "level": 5, "type": "core" },
+        { "name": "Configuration management", "level": 5, "type": "core" },
+        { "name": "Systems integration and build", "level": 5, "type": "core" },
+        { "name": "Testing", "level": 5, "type": "core" },
+        { "name": "Release and deployment", "level": 5, "type": "core" },
+        { "name": "Database administration", "level": 5, "type": "core" },
+        { "name": "IT management", "level": 5, "type": "core" }
+      ]
+    },
+    {
+      "id": 27,
+      "title": "Data Scientist",
+      "summary_statement": "Leads the process of applying data analytics. Delivers insights from data by optimising the analytics process and presenting visual data representations.",
+      "generic_responsibility_level": 5,
+      "skills": [
+        { "name": "Analytics", "level": 5, "type": "core" },
+        { "name": "Data visualisation", "level": 5, "type": "core" },
+        { "name": "Programming/software development", "level": 4, "type": "core" },
+        { "name": "Research", "level": 4, "type": "core" },
+        { "name": "Data management", "level": 5, "type": "core" },
+        { "name": "Data modelling and design", "level": 4, "type": "core" },
+        { "name": "Specialist advice", "level": 4, "type": "core" },
+        { "name": "Business modelling", "level": 4, "type": "optional" },
+        { "name": "Emerging technology monitoring", "level": 5, "type": "optional" }
+      ]
+    },
+    {
+      "id": 28,
+      "title": "Data Specialist",
+      "summary_statement": "Ensures the implementation of the organisations data management policy.",
+      "generic_responsibility_level": 4,
+      "skills": [
+        { "name": "Data modelling and design", "level": 4, "type": "core" },
+        { "name": "Data management", "level": 4, "type": "core" },
+        { "name": "Requirements definition and management", "level": 4, "type": "core" },
+        { "name": "Methods and tools", "level": 4, "type": "core" }
+      ]
+    },
+    {
+      "id": 29,
+      "title": "Scrum Master",
+      "summary_statement": "Leads and coaches an agile team.",
+      "generic_responsibility_level": 5,
+      "skills": [
+        { "name": "Methods and tools", "level": 5, "type": "core" },
+        { "name": "Relationship management", "level": 5, "type": "core" },
+        { "name": "Knowledge management", "level": 4, "type": "core" },
+        { "name": "Professional development", "level": 4, "type": "core" },
+        { "name": "Organisational capability development", "level": 5, "type": "core" },
+        { "name": "Measurement", "level": 4, "type": "core" }
+      ]
+    },
+    {
+      "id": 30,
+      "title": "Product Owner",
+      "summary_statement": "Represents the needs of the stakeholder community, the voice of the customer, to the agile team.",
+      "generic_responsibility_level": 5,
+      "multi_level_role": true,
+      "skills": [
+        { "name": "Product management", "level": 5, "type": "core" },
+        { "name": "Relationship management", "level": 5, "type": "core" },
+        { "name": "Requirements definition and management", "level": 5, "type": "core" },
+        { "name": "Methods and tools", "level": 5, "type": "core" },
+        { "name": "Innovation", "level": 5, "type": "core" },
+        { "name": "Project management", "level": 4, "type": "core" }
+      ]
+    }
+  ]
+}
