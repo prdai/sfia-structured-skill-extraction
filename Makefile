@@ -1,4 +1,4 @@
-.PHONY: help vector-db vector-db-down ingest search llm-model llm-match scraper-dev
+.PHONY: help vector-db vector-db-down ingest search llm-model llm-match crawler-dev
 
 help:
 	@echo "Targets:"
@@ -8,7 +8,7 @@ help:
 	@echo "  search TEXT=..  top-3 embedding search"
 	@echo "  llm-model       download the local GGUF model (llm-matcher/)"
 	@echo "  llm-match TEXT=..  pure LLM matching, structured output"
-	@echo "  scraper-dev     run the scraper Worker locally (wrangler dev)"
+	@echo "  crawler-dev     run the crawler Worker locally (wrangler dev)"
 
 vector-db:
 	cd embedding-matcher && docker compose up -d
@@ -28,5 +28,5 @@ llm-model:
 llm-match:
 	cd llm-matcher && uv run match "$(TEXT)"
 
-scraper-dev:
-	cd scraper && npm run dev
+crawler-dev:
+	cd crawler && npm run dev

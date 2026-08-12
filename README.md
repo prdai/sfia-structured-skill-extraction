@@ -6,10 +6,11 @@ they can be compared on the same dataset.
 
 ## Layout
 
-- `data/` — SFIA dataset (scraped skill and level descriptions). Currently a
-  placeholder JSON shaped like the scraper output.
-- `scraper/` — Cloudflare Worker that crawls sfia-online.org and produces the
-  dataset. Code only, not deployed yet.
+- `data/` — SFIA dataset (crawled skill and level descriptions). Currently a
+  placeholder JSON shaped like the crawler output.
+- `crawler/` — Cloudflare Worker that crawls sfia-online.org (Browser
+  Rendering `/crawl` REST endpoint) and produces the dataset. Code only, not
+  deployed yet.
 - `keyword-matcher/` — keyword/lexical matching baseline. Not implemented yet.
 - `embedding-matcher/` — embeds the dataset into Qdrant (local, docker
   compose), searches input text, returns top-3 skills with levels.
@@ -19,7 +20,7 @@ they can be compared on the same dataset.
 
 ## Usage
 
-Each implementation dir is a uv-managed Python project (except `scraper/`,
+Each implementation dir is a uv-managed Python project (except `crawler/`,
 which is a Worker). The root `Makefile` orchestrates them:
 
 ```
