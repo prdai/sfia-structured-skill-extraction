@@ -16,5 +16,14 @@
     "mean_level_accuracy_exact": 0.1746031746031746,
     "mean_level_accuracy_within_1": 0.46984126984126984,
     "mean_seconds_per_record": 1.1329688442669672
+  },
+  "llm-workers-ai": {
+    "mean_precision": 0.305,
+    "mean_recall": 0.13887566137566137,
+    "mean_f1": 0.1728908128908129,
+    "mean_level_mae": 1.6944444444444444,
+    "mean_level_accuracy_exact": 0.12962962962962965,
+    "mean_level_accuracy_within_1": 0.5092592592592592,
+    "mean_seconds_per_record": 0.2676668353669811
   }
 }

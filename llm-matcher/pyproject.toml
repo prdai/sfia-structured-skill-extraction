@@ -1,10 +1,13 @@
 [project]
 name = "llm-matcher"
 version = "0.1.0"
-description = "Pure LLM SFIA skill matching via a local llama.cpp model, no retrieval"
+description = "Pure LLM SFIA skill matching via Workers AI, no retrieval"
 requires-python = ">=3.12"
 dependencies = [
-    "llama-cpp-python>=0.3",
+    "pydantic>=2.0",
+    "python-dotenv>=1.0",
+    "requests>=2.32",
+    "tenacity>=9.0",
 ]
 
 [project.scripts]
