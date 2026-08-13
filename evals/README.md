@@ -6,11 +6,86 @@ and levels. Matchers (keyword, embedding, LLM, LLM+RAG) can be scored against
 this by feeding each role's summary/mission text as input and checking
 whether the predicted skills/levels match `roles[].skills`.
 
+## Standard matcher interface
+
+`sfia_evals.base.SkillMatcher` is the abstract class every matcher
+implements to be evaluated by the shared harness:
+
+```python
+class SkillMatcher(ABC):
+    @abstractmethod
+    def match(self, text: str) -> list[tuple[str, int]]:
+        """Return (skill, level) pairs predicted for the given input text."""
+```
+
+One query per role (the role's `summary_statement`), expecting the matcher
+to surface all the skills it thinks apply — mirrors real usage (a job/course
+description in, multiple skills out), not one query per individual skill.
+
+Each matcher directory implements this by adapter, e.g.
+`sfia_evals.adapters.keyword.KeywordMatcherAdapter` wraps
+`keyword_matcher.matcher.KeywordMatcher`.
+
+## Metrics (`sfia_evals.harness`)
+
+Two different things are being measured, scored separately per the relevant
+literature rather than folded into one number:
+
+**Skill identification** — precision/recall/F1 on skill *names* only
+(ignoring level), the standard Exact-Match-and-F1 pairing from:
+
+> Rajpurkar, P., Zhang, J., Lopyrev, K., Liang, P. (2016). "SQuAD:
+> 100,000+ Questions for Machine Comprehension of Text." EMNLP 2016.
+> https://doi.org/10.18653/v1/D16-1264
+
+**Level accuracy** — computed only on skills the matcher got right by name
+(scoring level correctness on a skill that wasn't even identified doesn't
+mean anything). SFIA levels are ordinal (1-7, not independent categories),
+so a level-2-vs-3 miss is not as wrong as a level-2-vs-7 miss — mean
+absolute error and accuracy-within-k capture that where plain accuracy
+wouldn't:
+
+> Baccianella, S., Esuli, A., Sebastiani, F. (2009). "Evaluation Measures
+> for Ordinal Regression." ISDA 2009, 283-287.
+> https://doi.org/10.1109/ISDA.2009.230
+
+`level_accuracy_exact` is k=0 (level must match exactly);
+`level_accuracy_within_1` is k=1 ("off by at most one level"), matching
+that paper's accuracy-within-k concept — report both, since exact-match
+alone is a strict standard and within-1 alone hides how often a matcher
+gets the level exactly right.
+
+**Speed** — `mean_seconds_per_record`, wall-clock time per `match()` call
+averaged across the 30 roles. Not from a paper, just a practical number for
+comparing matchers that may differ by orders of magnitude (BM25 vs. an LLM
+call per query).
+
+## Running
+
+```
+uv venv && uv pip install -e .
+eval-keyword
+```
+
 ## Files
 
 - `eu-ict-sfia-role-profiles.json` — the 30 roles, each with title, summary
   statement, generic SFIA responsibility level, and its list of SFIA skills
   with level and core/optional flag.
+- `src/sfia_evals/base.py` — the `SkillMatcher` interface.
+- `src/sfia_evals/harness.py` — `run_eval(matcher, roles_path)`, scoring
+  logic above.
+- `src/sfia_evals/adapters/` — one adapter module per matcher directory.
+
+## Known baseline result (keyword-matcher, BM25)
+
+Mean precision 0.198, recall 0.072, F1 0.100 across all 30 roles; mean level
+MAE 0.818, exact-level accuracy 0.364, accuracy-within-1 0.818, on the
+skills it did identify correctly. Mean time per record: 0.8ms. Low
+recall/precision is expected for a lexical baseline against
+short, abstract `summary_statement` text (see `keyword-matcher/README.md`
+for the reasoning) — the intended comparison point against the
+embedding/LLM matchers, not a bug in this harness.
 
 ## How this was extracted (current process)
 

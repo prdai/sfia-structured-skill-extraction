@@ -1,0 +1,11 @@
+{
+  "keyword-bm25": {
+    "mean_precision": 0.13825230325230325,
+    "mean_recall": 0.13310846560846562,
+    "mean_f1": 0.12739665563194977,
+    "mean_level_mae": 0.9375,
+    "mean_level_accuracy_exact": 0.2604166666666667,
+    "mean_level_accuracy_within_1": 0.875,
+    "mean_seconds_per_record": 0.0007608521334380688
+  }
+}

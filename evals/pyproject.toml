@@ -1,0 +1,20 @@
+[project]
+name = "sfia-evals"
+version = "0.1.0"
+description = "Shared SkillMatcher interface and evaluation harness for the SFIA matchers"
+requires-python = ">=3.12"
+dependencies = [
+    "keyword-matcher",
+    "pydantic>=2.0",
+]
+
+[project.scripts]
+eval-keyword = "sfia_evals.run_keyword:main"
+eval-compare = "sfia_evals.compare:main"
+
+[tool.uv.sources]
+keyword-matcher = { path = "../keyword-matcher" }
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
