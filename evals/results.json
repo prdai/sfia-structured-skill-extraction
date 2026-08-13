@@ -25,5 +25,23 @@
     "mean_level_accuracy_exact": 0.12962962962962965,
     "mean_level_accuracy_within_1": 0.5092592592592592,
     "mean_seconds_per_record": 0.2676668353669811
+  },
+  "agentic-rag-crewai": {
+    "mean_precision": 0.462,
+    "mean_recall": 0.179,
+    "mean_f1": 0.230,
+    "mean_level_mae": 0.76,
+    "mean_level_accuracy_exact": 0.341,
+    "mean_level_accuracy_within_1": 0.898,
+    "mean_seconds_per_record": 9.08
+  },
+  "multi-agent-rag-crewai": {
+    "mean_precision": 0.506,
+    "mean_recall": 0.133,
+    "mean_f1": 0.198,
+    "mean_level_mae": 0.56,
+    "mean_level_accuracy_exact": 0.528,
+    "mean_level_accuracy_within_1": 0.917,
+    "mean_seconds_per_record": 372.6
   }
 }
