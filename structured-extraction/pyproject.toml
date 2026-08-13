@@ -1,0 +1,18 @@
+[project]
+name = "structured-extraction"
+version = "0.1.0"
+description = "Agentic extraction of {skill, level, text} records from crawled SFIA skill pages"
+requires-python = ">=3.12"
+dependencies = [
+    "crewai>=0.80",
+    "requests>=2.32",
+    "python-dotenv>=1.0",
+    "tenacity>=9.0",
+]
+
+[project.scripts]
+extract = "structured_extraction.run:main"
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"

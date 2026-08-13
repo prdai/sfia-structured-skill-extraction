@@ -4,3 +4,4 @@ uv.lock
 node_modules/
 .wrangler/
 llm-matcher/models/
+.env
