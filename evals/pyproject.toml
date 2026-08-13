@@ -5,15 +5,19 @@ description = "Shared SkillMatcher interface and evaluation harness for the SFIA
 requires-python = ">=3.12"
 dependencies = [
     "keyword-matcher",
+    "embedding-matcher",
     "pydantic>=2.0",
 ]
 
 [project.scripts]
 eval-keyword = "sfia_evals.run_keyword:main"
+eval-embedding = "sfia_evals.run_embedding:main"
+sweep-embedding = "sfia_evals.experiments.sweep_embedding:main"
 eval-compare = "sfia_evals.compare:main"
 
 [tool.uv.sources]
 keyword-matcher = { path = "../keyword-matcher" }
+embedding-matcher = { path = "../embedding-matcher", editable = true }
 
 [build-system]
 requires = ["hatchling"]

@@ -1,0 +1,146 @@
+[
+  {
+    "implementation": "embedding-qwen3-llm-rerank",
+    "config": {
+      "embedding_model": "@cf/qwen/qwen3-embedding-0.6b",
+      "reranker_model": "@cf/meta/llama-3.3-70b-instruct-fp8-fast",
+      "retrieval_k": 20,
+      "rerank_threshold": 0.95
+    },
+    "metrics": {
+      "mean_precision": 0.0,
+      "mean_recall": 0.0,
+      "mean_f1": 0.0,
+      "mean_level_mae": null,
+      "mean_level_accuracy_exact": null,
+      "mean_level_accuracy_within_1": null,
+      "mean_seconds_per_record": 1.1329688442669672
+    }
+  },
+  {
+    "implementation": "embedding-qwen3-llm-rerank",
+    "config": {
+      "embedding_model": "@cf/qwen/qwen3-embedding-0.6b",
+      "reranker_model": "@cf/meta/llama-3.3-70b-instruct-fp8-fast",
+      "retrieval_k": 20,
+      "rerank_threshold": 0.9
+    },
+    "metrics": {
+      "mean_precision": 0.16666666666666666,
+      "mean_recall": 0.05018518518518519,
+      "mean_f1": 0.07545454545454545,
+      "mean_level_mae": 0.6666666666666666,
+      "mean_level_accuracy_exact": 0.5,
+      "mean_level_accuracy_within_1": 0.8333333333333334,
+      "mean_seconds_per_record": 1.1329688442669672
+    }
+  },
+  {
+    "implementation": "embedding-qwen3-llm-rerank",
+    "config": {
+      "embedding_model": "@cf/qwen/qwen3-embedding-0.6b",
+      "reranker_model": "@cf/meta/llama-3.3-70b-instruct-fp8-fast",
+      "retrieval_k": 20,
+      "rerank_threshold": 0.8
+    },
+    "metrics": {
+      "mean_precision": 0.18666666666666665,
+      "mean_recall": 0.10605820105820105,
+      "mean_f1": 0.12466089466089467,
+      "mean_level_mae": 1.1363636363636365,
+      "mean_level_accuracy_exact": 0.36363636363636365,
+      "mean_level_accuracy_within_1": 0.6818181818181818,
+      "mean_seconds_per_record": 1.1329688442669672
+    }
+  },
+  {
+    "implementation": "embedding-qwen3-llm-rerank",
+    "config": {
+      "embedding_model": "@cf/qwen/qwen3-embedding-0.6b",
+      "reranker_model": "@cf/meta/llama-3.3-70b-instruct-fp8-fast",
+      "retrieval_k": 20,
+      "rerank_threshold": 0.7
+    },
+    "metrics": {
+      "mean_precision": 0.20666666666666667,
+      "mean_recall": 0.15460317460317458,
+      "mean_f1": 0.15747197247197248,
+      "mean_level_mae": 1.5888888888888888,
+      "mean_level_accuracy_exact": 0.24444444444444444,
+      "mean_level_accuracy_within_1": 0.5333333333333333,
+      "mean_seconds_per_record": 1.1329688442669672
+    }
+  },
+  {
+    "implementation": "embedding-qwen3-llm-rerank",
+    "config": {
+      "embedding_model": "@cf/qwen/qwen3-embedding-0.6b",
+      "reranker_model": "@cf/meta/llama-3.3-70b-instruct-fp8-fast",
+      "retrieval_k": 20,
+      "rerank_threshold": 0.6
+    },
+    "metrics": {
+      "mean_precision": 0.24206349206349206,
+      "mean_recall": 0.22166666666666668,
+      "mean_f1": 0.21037668471878998,
+      "mean_level_mae": 1.6841269841269841,
+      "mean_level_accuracy_exact": 0.1746031746031746,
+      "mean_level_accuracy_within_1": 0.46984126984126984,
+      "mean_seconds_per_record": 1.1329688442669672
+    }
+  },
+  {
+    "implementation": "embedding-qwen3-llm-rerank",
+    "config": {
+      "embedding_model": "@cf/qwen/qwen3-embedding-0.6b",
+      "reranker_model": "@cf/meta/llama-3.3-70b-instruct-fp8-fast",
+      "retrieval_k": 20,
+      "rerank_threshold": 0.5
+    },
+    "metrics": {
+      "mean_precision": 0.24206349206349206,
+      "mean_recall": 0.22166666666666668,
+      "mean_f1": 0.21037668471878998,
+      "mean_level_mae": 1.6841269841269841,
+      "mean_level_accuracy_exact": 0.1746031746031746,
+      "mean_level_accuracy_within_1": 0.46984126984126984,
+      "mean_seconds_per_record": 1.1329688442669672
+    }
+  },
+  {
+    "implementation": "embedding-qwen3-llm-rerank",
+    "config": {
+      "embedding_model": "@cf/qwen/qwen3-embedding-0.6b",
+      "reranker_model": "@cf/meta/llama-3.3-70b-instruct-fp8-fast",
+      "retrieval_k": 20,
+      "rerank_threshold": 0.4
+    },
+    "metrics": {
+      "mean_precision": 0.22492424242424244,
+      "mean_recall": 0.2417063492063492,
+      "mean_f1": 0.21436135587838376,
+      "mean_level_mae": 1.8202898550724638,
+      "mean_level_accuracy_exact": 0.11594202898550723,
+      "mean_level_accuracy_within_1": 0.4072463768115942,
+      "mean_seconds_per_record": 1.1329688442669672
+    }
+  },
+  {
+    "implementation": "embedding-qwen3-llm-rerank",
+    "config": {
+      "embedding_model": "@cf/qwen/qwen3-embedding-0.6b",
+      "reranker_model": "@cf/meta/llama-3.3-70b-instruct-fp8-fast",
+      "retrieval_k": 20,
+      "rerank_threshold": 0.3
+    },
+    "metrics": {
+      "mean_precision": 0.22492424242424244,
+      "mean_recall": 0.2417063492063492,
+      "mean_f1": 0.21436135587838376,
+      "mean_level_mae": 1.8202898550724638,
+      "mean_level_accuracy_exact": 0.11594202898550723,
+      "mean_level_accuracy_within_1": 0.4072463768115942,
+      "mean_seconds_per_record": 1.1329688442669672
+    }
+  }
+]

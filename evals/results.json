@@ -7,5 +7,14 @@
     "mean_level_accuracy_exact": 0.2604166666666667,
     "mean_level_accuracy_within_1": 0.875,
     "mean_seconds_per_record": 0.0007608521334380688
+  },
+  "embedding-qwen3-llm-rerank": {
+    "mean_precision": 0.24206349206349206,
+    "mean_recall": 0.22166666666666668,
+    "mean_f1": 0.21037668471878998,
+    "mean_level_mae": 1.6841269841269841,
+    "mean_level_accuracy_exact": 0.1746031746031746,
+    "mean_level_accuracy_within_1": 0.46984126984126984,
+    "mean_seconds_per_record": 1.1329688442669672
   }
 }
