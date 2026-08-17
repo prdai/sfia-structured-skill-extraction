@@ -22,5 +22,7 @@ object in R2.
 ## Not yet done
 
 - Not deployed, not run against the live site yet.
-- `records[].markdown` is raw per-page markdown, not parsed into a
-  skills/levels structure — separate downstream step.
+- `records[].markdown` and `records[].html` are raw per-page content,
+  not parsed into a skills/levels structure — separate downstream step
+  (`structured-extraction/`). The `html` field only exists in crawls
+  made after the formats change to `["markdown", "html"]`.

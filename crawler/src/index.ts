@@ -28,7 +28,7 @@ async function startCrawl(env: Env): Promise<Response> {
       url: SFIA_ROOT,
       limit: 100000,
       depth: 100000,
-      formats: ["markdown"],
+      formats: ["markdown", "html"],
       source: "all",
       options: {
         includePatterns: [`${SFIA_ROOT}/**`],

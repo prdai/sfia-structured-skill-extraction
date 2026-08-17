@@ -1,0 +1,1560 @@
+{
+  "source": "SFIA 9 Summary Chart, SFIA Foundation (sfia-online.org)",
+  "note": "Transcribed by hand from the official SFIA 9 summary chart image; every row cross-checked against the per-page 'Levels of responsibility for this skill' tables in data/sfia-dataset.json (147/147 agree).",
+  "skills": [
+    {
+      "code": "ITSP",
+      "name": "Strategic planning",
+      "levels": [
+        4,
+        5,
+        6,
+        7
+      ]
+    },
+    {
+      "code": "ISCO",
+      "name": "Information systems coordination",
+      "levels": [
+        6,
+        7
+      ]
+    },
+    {
+      "code": "IRMG",
+      "name": "Information management",
+      "levels": [
+        3,
+        4,
+        5,
+        6,
+        7
+      ]
+    },
+    {
+      "code": "STPL",
+      "name": "Enterprise and business architecture",
+      "levels": [
+        5,
+        6,
+        7
+      ]
+    },
+    {
+      "code": "ARCH",
+      "name": "Solution architecture",
+      "levels": [
+        4,
+        5,
+        6
+      ]
+    },
+    {
+      "code": "INOV",
+      "name": "Innovation management",
+      "levels": [
+        5,
+        6,
+        7
+      ]
+    },
+    {
+      "code": "EMRG",
+      "name": "Emerging technology monitoring",
+      "levels": [
+        4,
+        5,
+        6
+      ]
+    },
+    {
+      "code": "RSCH",
+      "name": "Formal research",
+      "levels": [
+        2,
+        3,
+        4,
+        5,
+        6
+      ]
+    },
+    {
+      "code": "SUST",
+      "name": "Sustainability",
+      "levels": [
+        4,
+        5,
+        6
+      ]
+    },
+    {
+      "code": "FMIT",
+      "name": "Financial management",
+      "levels": [
+        4,
+        5,
+        6
+      ]
+    },
+    {
+      "code": "INVA",
+      "name": "Investment appraisal",
+      "levels": [
+        4,
+        5,
+        6
+      ]
+    },
+    {
+      "code": "BENM",
+      "name": "Benefits management",
+      "levels": [
+        3,
+        4,
+        5,
+        6
+      ]
+    },
+    {
+      "code": "BUDF",
+      "name": "Budgeting and forecasting",
+      "levels": [
+        2,
+        3,
+        4,
+        5,
+        6
+      ]
+    },
+    {
+      "code": "FIAN",
+      "name": "Financial analysis",
+      "levels": [
+        2,
+        3,
+        4,
+        5,
+        6
+      ]
+    },
+    {
+      "code": "COMG",
+      "name": "Cost management",
+      "levels": [
+        2,
+        3,
+        4,
+        5,
+        6
+      ]
+    },
+    {
+      "code": "DEMM",
+      "name": "Demand management",
+      "levels": [
+        4,
+        5,
+        6
+      ]
+    },
+    {
+      "code": "MEAS",
+      "name": "Measurement",
+      "levels": [
+        2,
+        3,
+        4,
+        5,
+        6
+      ]
+    },
+    {
+      "code": "SCTY",
+      "name": "Information security",
+      "levels": [
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ]
+    },
+    {
+      "code": "INAS",
+      "name": "Information assurance",
+      "levels": [
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ]
+    },
+    {
+      "code": "PEDP",
+      "name": "Information and data compliance",
+      "levels": [
+        4,
+        5,
+        6
+      ]
+    },
+    {
+      "code": "VURE",
+      "name": "Vulnerability research",
+      "levels": [
+        2,
+        3,
+        4,
+        5,
+        6
+      ]
+    },
+    {
+      "code": "THIN",
+      "name": "Threat intelligence",
+      "levels": [
+        2,
+        3,
+        4,
+        5,
+        6
+      ]
+    },
+    {
+      "code": "GOVN",
+      "name": "Governance",
+      "levels": [
+        6,
+        7
+      ]
+    },
+    {
+      "code": "BURM",
+      "name": "Risk management",
+      "levels": [
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ]
+    },
+    {
+      "code": "AIDE",
+      "name": "Artificial intelligence (AI) and data ethics",
+      "levels": [
+        3,
+        4,
+        5,
+        6
+      ]
+    },
+    {
+      "code": "AUDT",
+      "name": "Audit",
+      "levels": [
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ]
+    },
+    {
+      "code": "QUMG",
+      "name": "Quality management",
+      "levels": [
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ]
+    },
+    {
+      "code": "QUAS",
+      "name": "Quality assurance",
+      "levels": [
+        2,
+        3,
+        4,
+        5,
+        6
+      ]
+    },
+    {
+      "code": "CNSL",
+      "name": "Consultancy",
+      "levels": [
+        4,
+        5,
+        6,
+        7
+      ]
+    },
+    {
+      "code": "TECH",
+      "name": "Specialist advice",
+      "levels": [
+        4,
+        5,
+        6
+      ]
+    },
+    {
+      "code": "METL",
+      "name": "Methods and tools",
+      "levels": [
+        2,
+        3,
+        4,
+        5,
+        6
+      ]
+    },
+    {
+      "code": "POMG",
+      "name": "Portfolio management",
+      "levels": [
+        5,
+        6,
+        7
+      ]
+    },
+    {
+      "code": "PGMG",
+      "name": "Programme management",
+      "levels": [
+        6,
+        7
+      ]
+    },
+    {
+      "code": "PRMG",
+      "name": "Project management",
+      "levels": [
+        4,
+        5,
+        6,
+        7
+      ]
+    },
+    {
+      "code": "PROF",
+      "name": "Portfolio, programme and project support",
+      "levels": [
+        2,
+        3,
+        4,
+        5,
+        6
+      ]
+    },
+    {
+      "code": "DEMG",
+      "name": "Delivery management",
+      "levels": [
+        3,
+        4,
+        5,
+        6
+      ]
+    },
+    {
+      "code": "BUSA",
+      "name": "Business situation analysis",
+      "levels": [
+        2,
+        3,
+        4,
+        5,
+        6
+      ]
+    },
+    {
+      "code": "FEAS",
+      "name": "Feasibility assessment",
+      "levels": [
+        2,
+        3,
+        4,
+        5,
+        6
+      ]
+    },
+    {
+      "code": "REQM",
+      "name": "Requirements definition and management",
+      "levels": [
+        2,
+        3,
+        4,
+        5,
+        6
+      ]
+    },
+    {
+      "code": "BSMO",
+      "name": "Business modelling",
+      "levels": [
+        2,
+        3,
+        4,
+        5,
+        6
+      ]
+    },
+    {
+      "code": "BPTS",
+      "name": "User acceptance testing",
+      "levels": [
+        2,
+        3,
+        4,
+        5,
+        6
+      ]
+    },
+    {
+      "code": "BPRE",
+      "name": "Business process improvement",
+      "levels": [
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ]
+    },
+    {
+      "code": "OCDV",
+      "name": "Organisational capability development",
+      "levels": [
+        5,
+        6,
+        7
+      ]
+    },
+    {
+      "code": "JADN",
+      "name": "Job analysis and design",
+      "levels": [
+        3,
+        4,
+        5
+      ]
+    },
+    {
+      "code": "ORDI",
+      "name": "Organisation design and implementation",
+      "levels": [
+        3,
+        4,
+        5,
+        6,
+        7
+      ]
+    },
+    {
+      "code": "CIPM",
+      "name": "Organisational change management",
+      "levels": [
+        2,
+        3,
+        4,
+        5,
+        6
+      ]
+    },
+    {
+      "code": "OCEN",
+      "name": "Organisational change enablement",
+      "levels": [
+        4,
+        5,
+        6
+      ]
+    },
+    {
+      "code": "PROD",
+      "name": "Product management",
+      "levels": [
+        2,
+        3,
+        4,
+        5,
+        6
+      ]
+    },
+    {
+      "code": "DLMG",
+      "name": "Systems development management",
+      "levels": [
+        4,
+        5,
+        6,
+        7
+      ]
+    },
+    {
+      "code": "SLEN",
+      "name": "Systems and software lifecycle engineering",
+      "levels": [
+        3,
+        4,
+        5,
+        6,
+        7
+      ]
+    },
+    {
+      "code": "DESN",
+      "name": "Systems design",
+      "levels": [
+        2,
+        3,
+        4,
+        5,
+        6
+      ]
+    },
+    {
+      "code": "SWDN",
+      "name": "Software design",
+      "levels": [
+        2,
+        3,
+        4,
+        5,
+        6
+      ]
+    },
+    {
+      "code": "NTDS",
+      "name": "Network design",
+      "levels": [
+        2,
+        3,
+        4,
+        5,
+        6
+      ]
+    },
+    {
+      "code": "IFDN",
+      "name": "Infrastructure design",
+      "levels": [
+        2,
+        3,
+        4,
+        5,
+        6
+      ]
+    },
+    {
+      "code": "HWDE",
+      "name": "Hardware design",
+      "levels": [
+        2,
+        3,
+        4,
+        5,
+        6
+      ]
+    },
+    {
+      "code": "PROG",
+      "name": "Programming/software development",
+      "levels": [
+        2,
+        3,
+        4,
+        5,
+        6
+      ]
+    },
+    {
+      "code": "SINT",
+      "name": "Systems integration and build",
+      "levels": [
+        2,
+        3,
+        4,
+        5,
+        6
+      ]
+    },
+    {
+      "code": "TEST",
+      "name": "Functional testing",
+      "levels": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6
+      ]
+    },
+    {
+      "code": "NFTS",
+      "name": "Non-functional testing",
+      "levels": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6
+      ]
+    },
+    {
+      "code": "PRTS",
+      "name": "Process testing",
+      "levels": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6
+      ]
+    },
+    {
+      "code": "PORT",
+      "name": "Software configuration",
+      "levels": [
+        2,
+        3,
+        4,
+        5,
+        6
+      ]
+    },
+    {
+      "code": "RESD",
+      "name": "Real-time/embedded systems development",
+      "levels": [
+        2,
+        3,
+        4,
+        5,
+        6
+      ]
+    },
+    {
+      "code": "SFEN",
+      "name": "Safety engineering",
+      "levels": [
+        2,
+        3,
+        4,
+        5,
+        6
+      ]
+    },
+    {
+      "code": "SFAS",
+      "name": "Safety assessment",
+      "levels": [
+        4,
+        5,
+        6
+      ]
+    },
+    {
+      "code": "RFEN",
+      "name": "Radio frequency engineering",
+      "levels": [
+        2,
+        3,
+        4,
+        5,
+        6
+      ]
+    },
+    {
+      "code": "ADEV",
+      "name": "Animation development",
+      "levels": [
+        2,
+        3,
+        4,
+        5,
+        6
+      ]
+    },
+    {
+      "code": "DATM",
+      "name": "Data management",
+      "levels": [
+        2,
+        3,
+        4,
+        5,
+        6
+      ]
+    },
+    {
+      "code": "DTAN",
+      "name": "Data modelling and design",
+      "levels": [
+        2,
+        3,
+        4,
+        5
+      ]
+    },
+    {
+      "code": "DBDS",
+      "name": "Database design",
+      "levels": [
+        2,
+        3,
+        4,
+        5
+      ]
+    },
+    {
+      "code": "DAAN",
+      "name": "Data analytics",
+      "levels": [
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ]
+    },
+    {
+      "code": "DATS",
+      "name": "Data science",
+      "levels": [
+        2,
+        3,
+        4,
+        5,
+        6
+      ]
+    },
+    {
+      "code": "MLNG",
+      "name": "Machine learning",
+      "levels": [
+        2,
+        3,
+        4,
+        5,
+        6
+      ]
+    },
+    {
+      "code": "BINT",
+      "name": "Business intelligence",
+      "levels": [
+        2,
+        3,
+        4,
+        5
+      ]
+    },
+    {
+      "code": "DENG",
+      "name": "Data engineering",
+      "levels": [
+        2,
+        3,
+        4,
+        5,
+        6
+      ]
+    },
+    {
+      "code": "VISL",
+      "name": "Data visualisation",
+      "levels": [
+        2,
+        3,
+        4,
+        5
+      ]
+    },
+    {
+      "code": "URCH",
+      "name": "User research",
+      "levels": [
+        2,
+        3,
+        4,
+        5,
+        6
+      ]
+    },
+    {
+      "code": "CEXP",
+      "name": "Customer experience",
+      "levels": [
+        2,
+        3,
+        4,
+        5,
+        6
+      ]
+    },
+    {
+      "code": "ACIN",
+      "name": "Accessibility and inclusion",
+      "levels": [
+        2,
+        3,
+        4,
+        5,
+        6
+      ]
+    },
+    {
+      "code": "UNAN",
+      "name": "User experience analysis",
+      "levels": [
+        2,
+        3,
+        4,
+        5
+      ]
+    },
+    {
+      "code": "HCEV",
+      "name": "User experience design",
+      "levels": [
+        2,
+        3,
+        4,
+        5,
+        6
+      ]
+    },
+    {
+      "code": "USEV",
+      "name": "User experience evaluation",
+      "levels": [
+        2,
+        3,
+        4,
+        5,
+        6
+      ]
+    },
+    {
+      "code": "INCA",
+      "name": "Content design and authoring",
+      "levels": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6
+      ]
+    },
+    {
+      "code": "ICPM",
+      "name": "Content publishing",
+      "levels": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6
+      ]
+    },
+    {
+      "code": "KNOW",
+      "name": "Knowledge management",
+      "levels": [
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ]
+    },
+    {
+      "code": "GRDN",
+      "name": "Graphic design",
+      "levels": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ]
+    },
+    {
+      "code": "SCMO",
+      "name": "Scientific modelling",
+      "levels": [
+        4,
+        5,
+        6,
+        7
+      ]
+    },
+    {
+      "code": "NUAN",
+      "name": "Numerical analysis",
+      "levels": [
+        4,
+        5,
+        6,
+        7
+      ]
+    },
+    {
+      "code": "HPCC",
+      "name": "High-performance computing",
+      "levels": [
+        4,
+        5,
+        6,
+        7
+      ]
+    },
+    {
+      "code": "ITMG",
+      "name": "Technology service management",
+      "levels": [
+        5,
+        6,
+        7
+      ]
+    },
+    {
+      "code": "ASUP",
+      "name": "Application support",
+      "levels": [
+        2,
+        3,
+        4,
+        5
+      ]
+    },
+    {
+      "code": "ITOP",
+      "name": "Infrastructure operations",
+      "levels": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ]
+    },
+    {
+      "code": "SYSP",
+      "name": "System software administration",
+      "levels": [
+        2,
+        3,
+        4,
+        5
+      ]
+    },
+    {
+      "code": "NTAS",
+      "name": "Network support",
+      "levels": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ]
+    },
+    {
+      "code": "HSIN",
+      "name": "Systems installation and removal",
+      "levels": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ]
+    },
+    {
+      "code": "CFMG",
+      "name": "Configuration management",
+      "levels": [
+        2,
+        3,
+        4,
+        5,
+        6
+      ]
+    },
+    {
+      "code": "RELM",
+      "name": "Release management",
+      "levels": [
+        2,
+        3,
+        4,
+        5,
+        6
+      ]
+    },
+    {
+      "code": "DEPL",
+      "name": "Deployment",
+      "levels": [
+        2,
+        3,
+        4,
+        5,
+        6
+      ]
+    },
+    {
+      "code": "STMG",
+      "name": "Storage management",
+      "levels": [
+        2,
+        3,
+        4,
+        5,
+        6
+      ]
+    },
+    {
+      "code": "DCMA",
+      "name": "Facilities management",
+      "levels": [
+        2,
+        3,
+        4,
+        5,
+        6
+      ]
+    },
+    {
+      "code": "SLMO",
+      "name": "Service level management",
+      "levels": [
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ]
+    },
+    {
+      "code": "SCMG",
+      "name": "Service catalogue management",
+      "levels": [
+        2,
+        3,
+        4,
+        5
+      ]
+    },
+    {
+      "code": "AVMT",
+      "name": "Availability management",
+      "levels": [
+        3,
+        4,
+        5,
+        6
+      ]
+    },
+    {
+      "code": "COPL",
+      "name": "Continuity management",
+      "levels": [
+        2,
+        3,
+        4,
+        5,
+        6
+      ]
+    },
+    {
+      "code": "CPMG",
+      "name": "Capacity management",
+      "levels": [
+        2,
+        3,
+        4,
+        5,
+        6
+      ]
+    },
+    {
+      "code": "USUP",
+      "name": "Incident management",
+      "levels": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6
+      ]
+    },
+    {
+      "code": "PBMG",
+      "name": "Problem management",
+      "levels": [
+        2,
+        3,
+        4,
+        5
+      ]
+    },
+    {
+      "code": "CHMG",
+      "name": "Change control",
+      "levels": [
+        2,
+        3,
+        4,
+        5,
+        6
+      ]
+    },
+    {
+      "code": "ASMG",
+      "name": "Asset management",
+      "levels": [
+        2,
+        3,
+        4,
+        5,
+        6
+      ]
+    },
+    {
+      "code": "SEAC",
+      "name": "Service acceptance",
+      "levels": [
+        3,
+        4,
+        5,
+        6
+      ]
+    },
+    {
+      "code": "SCAD",
+      "name": "Security operations",
+      "levels": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6
+      ]
+    },
+    {
+      "code": "IAMT",
+      "name": "Identity and access management",
+      "levels": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6
+      ]
+    },
+    {
+      "code": "VUAS",
+      "name": "Vulnerability assessment",
+      "levels": [
+        2,
+        3,
+        4,
+        5
+      ]
+    },
+    {
+      "code": "DGFS",
+      "name": "Digital forensics",
+      "levels": [
+        2,
+        3,
+        4,
+        5,
+        6
+      ]
+    },
+    {
+      "code": "CRIM",
+      "name": "Cybercrime investigation",
+      "levels": [
+        2,
+        3,
+        4,
+        5,
+        6
+      ]
+    },
+    {
+      "code": "OCOP",
+      "name": "Offensive cyber operations",
+      "levels": [
+        2,
+        3,
+        4,
+        5,
+        6
+      ]
+    },
+    {
+      "code": "PENT",
+      "name": "Penetration testing",
+      "levels": [
+        2,
+        3,
+        4,
+        5,
+        6
+      ]
+    },
+    {
+      "code": "RMGT",
+      "name": "Records management",
+      "levels": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ]
+    },
+    {
+      "code": "ANCC",
+      "name": "Analytical classification and coding",
+      "levels": [
+        2,
+        3,
+        4,
+        5,
+        6
+      ]
+    },
+    {
+      "code": "DBAD",
+      "name": "Database administration",
+      "levels": [
+        2,
+        3,
+        4,
+        5
+      ]
+    },
+    {
+      "code": "PEMT",
+      "name": "Performance management",
+      "levels": [
+        4,
+        5,
+        6
+      ]
+    },
+    {
+      "code": "EEXP",
+      "name": "Employee experience",
+      "levels": [
+        4,
+        5,
+        6
+      ]
+    },
+    {
+      "code": "OFCL",
+      "name": "Organisational facilitation",
+      "levels": [
+        4,
+        5,
+        6
+      ]
+    },
+    {
+      "code": "PDSV",
+      "name": "Professional development",
+      "levels": [
+        4,
+        5,
+        6
+      ]
+    },
+    {
+      "code": "WFPL",
+      "name": "Workforce planning",
+      "levels": [
+        4,
+        5,
+        6
+      ]
+    },
+    {
+      "code": "RESC",
+      "name": "Resourcing",
+      "levels": [
+        2,
+        3,
+        4,
+        5,
+        6
+      ]
+    },
+    {
+      "code": "ETMG",
+      "name": "Learning and development management",
+      "levels": [
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ]
+    },
+    {
+      "code": "TMCR",
+      "name": "Learning design and development",
+      "levels": [
+        2,
+        3,
+        4,
+        5
+      ]
+    },
+    {
+      "code": "ETDL",
+      "name": "Learning delivery",
+      "levels": [
+        2,
+        3,
+        4,
+        5
+      ]
+    },
+    {
+      "code": "LEDA",
+      "name": "Competency assessment",
+      "levels": [
+        2,
+        3,
+        4,
+        5,
+        6
+      ]
+    },
+    {
+      "code": "CSOP",
+      "name": "Certification scheme operation",
+      "levels": [
+        2,
+        3,
+        4,
+        5,
+        6
+      ]
+    },
+    {
+      "code": "TEAC",
+      "name": "Teaching",
+      "levels": [
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ]
+    },
+    {
+      "code": "SUBF",
+      "name": "Subject formation",
+      "levels": [
+        4,
+        5,
+        6,
+        7
+      ]
+    },
+    {
+      "code": "SORC",
+      "name": "Sourcing",
+      "levels": [
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ]
+    },
+    {
+      "code": "SUPP",
+      "name": "Supplier management",
+      "levels": [
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ]
+    },
+    {
+      "code": "ITCM",
+      "name": "Contract management",
+      "levels": [
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ]
+    },
+    {
+      "code": "RLMT",
+      "name": "Stakeholder relationship management",
+      "levels": [
+        4,
+        5,
+        6,
+        7
+      ]
+    },
+    {
+      "code": "CSMG",
+      "name": "Customer service support",
+      "levels": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6
+      ]
+    },
+    {
+      "code": "ADMN",
+      "name": "Business administration",
+      "levels": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6
+      ]
+    },
+    {
+      "code": "BIDM",
+      "name": "Bid/proposal management",
+      "levels": [
+        3,
+        4,
+        5,
+        6
+      ]
+    },
+    {
+      "code": "SALE",
+      "name": "Selling",
+      "levels": [
+        3,
+        4,
+        5,
+        6
+      ]
+    },
+    {
+      "code": "SSUP",
+      "name": "Sales support",
+      "levels": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6
+      ]
+    },
+    {
+      "code": "MKTG",
+      "name": "Marketing management",
+      "levels": [
+        4,
+        5,
+        6,
+        7
+      ]
+    },
+    {
+      "code": "MRCH",
+      "name": "Market research",
+      "levels": [
+        3,
+        4,
+        5,
+        6
+      ]
+    },
+    {
+      "code": "BRMG",
+      "name": "Brand management",
+      "levels": [
+        4,
+        5,
+        6
+      ]
+    },
+    {
+      "code": "CELO",
+      "name": "Customer engagement and loyalty",
+      "levels": [
+        3,
+        4,
+        5,
+        6
+      ]
+    },
+    {
+      "code": "MKCM",
+      "name": "Marketing campaign management",
+      "levels": [
+        3,
+        4,
+        5
+      ]
+    },
+    {
+      "code": "DIGM",
+      "name": "Digital marketing",
+      "levels": [
+        2,
+        3,
+        4,
+        5
+      ]
+    }
+  ]
+}
