@@ -1,47 +1,47 @@
 {
   "keyword-bm25": {
-    "mean_precision": 0.13825230325230325,
+    "mean_precision": 0.14093628593628596,
     "mean_recall": 0.13310846560846562,
-    "mean_f1": 0.12739665563194977,
+    "mean_f1": 0.12815623918565094,
     "mean_level_mae": 0.9375,
     "mean_level_accuracy_exact": 0.2604166666666667,
     "mean_level_accuracy_within_1": 0.875,
-    "mean_seconds_per_record": 0.0007608521334380688
+    "mean_seconds_per_record": 0.0008298641333264338
   },
   "embedding-qwen3-llm-rerank": {
-    "mean_precision": 0.24206349206349206,
-    "mean_recall": 0.22166666666666668,
-    "mean_f1": 0.21037668471878998,
-    "mean_level_mae": 1.6841269841269841,
-    "mean_level_accuracy_exact": 0.1746031746031746,
-    "mean_level_accuracy_within_1": 0.46984126984126984,
-    "mean_seconds_per_record": 1.1329688442669672
+    "mean_precision": 0.26560966810966813,
+    "mean_recall": 0.2430952380952381,
+    "mean_f1": 0.23227969198557433,
+    "mean_level_mae": 1.6043478260869564,
+    "mean_level_accuracy_exact": 0.18115942028985507,
+    "mean_level_accuracy_within_1": 0.43623188405797103,
+    "mean_seconds_per_record": 6.174052354399949
   },
   "llm-workers-ai": {
-    "mean_precision": 0.305,
-    "mean_recall": 0.13887566137566137,
-    "mean_f1": 0.1728908128908129,
-    "mean_level_mae": 1.6944444444444444,
-    "mean_level_accuracy_exact": 0.12962962962962965,
-    "mean_level_accuracy_within_1": 0.5092592592592592,
-    "mean_seconds_per_record": 0.2676668353669811
+    "mean_precision": 0.4361111111111111,
+    "mean_recall": 0.11724867724867724,
+    "mean_f1": 0.1757984607984608,
+    "mean_level_mae": 0.7368421052631579,
+    "mean_level_accuracy_exact": 0.3684210526315789,
+    "mean_level_accuracy_within_1": 0.8947368421052632,
+    "mean_seconds_per_record": 0.053962508233325934
   },
   "agentic-rag-crewai": {
-    "mean_precision": 0.462,
-    "mean_recall": 0.179,
-    "mean_f1": 0.230,
-    "mean_level_mae": 0.76,
-    "mean_level_accuracy_exact": 0.341,
-    "mean_level_accuracy_within_1": 0.898,
-    "mean_seconds_per_record": 9.08
+    "mean_precision": 0.3011111111111111,
+    "mean_recall": 0.1222089947089947,
+    "mean_f1": 0.16154401154401155,
+    "mean_level_mae": 0.8666666666666667,
+    "mean_level_accuracy_exact": 0.3333333333333333,
+    "mean_level_accuracy_within_1": 0.8333333333333334,
+    "mean_seconds_per_record": 147.28472287619996
   },
   "multi-agent-rag-crewai": {
-    "mean_precision": 0.506,
-    "mean_recall": 0.133,
-    "mean_f1": 0.198,
-    "mean_level_mae": 0.56,
-    "mean_level_accuracy_exact": 0.528,
-    "mean_level_accuracy_within_1": 0.917,
-    "mean_seconds_per_record": 372.6
+    "mean_precision": 0.45555555555555555,
+    "mean_recall": 0.11771164021164021,
+    "mean_f1": 0.17375661375661375,
+    "mean_level_mae": 0.6764705882352942,
+    "mean_level_accuracy_exact": 0.4411764705882353,
+    "mean_level_accuracy_within_1": 0.8823529411764706,
+    "mean_seconds_per_record": 138.49212141973337
   }
 }

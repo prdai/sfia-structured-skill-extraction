@@ -63,7 +63,12 @@ class LLMMatcher:
             "max_tokens": 8192,
             "response_format": {"type": "json_schema", "json_schema": self.schema},
         })
-        response = result["response"]
+        # Older models return {"response": ...}; newer ones return an
+        # OpenAI-style chat.completion with the JSON in message.content.
+        if "response" in result:
+            response = result["response"]
+        else:
+            response = result["choices"][0]["message"]["content"]
         if isinstance(response, str):
             response = json.loads(response)
         matches = [Match(**m) for m in response.get("matches", [])]

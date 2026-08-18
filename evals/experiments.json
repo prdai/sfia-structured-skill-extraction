@@ -494,5 +494,165 @@
       "mean_seconds_per_record": 26.82,
       "failed_roles": 20
     }
+  },
+  {
+    "implementation": "llm-workers-ai",
+    "config": {
+      "model": "@cf/meta/llama-3.1-8b-instruct-fast"
+    },
+    "metrics": {
+      "mean_precision": 0.3402777777777778,
+      "mean_recall": 0.1222089947089947,
+      "mean_f1": 0.16647065897065896,
+      "mean_level_mae": 1.6388888888888888,
+      "mean_level_accuracy_exact": 0.19444444444444445,
+      "mean_level_accuracy_within_1": 0.5555555555555556,
+      "mean_seconds_per_record": 0.27837310753335864,
+      "failed_roles": 0
+    }
+  },
+  {
+    "implementation": "llm-workers-ai",
+    "config": {
+      "model": "@cf/meta/llama-4-scout-17b-16e-instruct"
+    },
+    "metrics": {
+      "mean_precision": 0.22506734006734008,
+      "mean_recall": 0.13134920634920635,
+      "mean_f1": 0.15313399563399563,
+      "mean_level_mae": 0.3611111111111111,
+      "mean_level_accuracy_exact": 0.6944444444444444,
+      "mean_level_accuracy_within_1": 0.9444444444444444,
+      "mean_seconds_per_record": 0.24100520196667882,
+      "failed_roles": 0
+    }
+  },
+  {
+    "implementation": "llm-workers-ai",
+    "config": {
+      "model": "@cf/qwen/qwen3-30b-a3b-fp8"
+    },
+    "metrics": {
+      "mean_precision": 0.3777777777777778,
+      "mean_recall": 0.09865079365079366,
+      "mean_f1": 0.15196007696007696,
+      "mean_level_mae": 0.9333333333333333,
+      "mean_level_accuracy_exact": 0.4,
+      "mean_level_accuracy_within_1": 0.7333333333333333,
+      "mean_seconds_per_record": 0.22346848630004387,
+      "failed_roles": 0
+    }
+  },
+  {
+    "implementation": "llm-workers-ai",
+    "config": {
+      "model": "@cf/mistralai/mistral-small-3.1-24b-instruct"
+    },
+    "metrics": {
+      "mean_precision": 0.27666666666666667,
+      "mean_recall": 0.10605820105820105,
+      "mean_f1": 0.13884559884559883,
+      "mean_level_mae": 0.75,
+      "mean_level_accuracy_exact": 0.39285714285714285,
+      "mean_level_accuracy_within_1": 0.8571428571428571,
+      "mean_seconds_per_record": 0.22965664663342977,
+      "failed_roles": 0
+    }
+  },
+  {
+    "implementation": "llm-workers-ai",
+    "config": {
+      "model": "@cf/google/gemma-4-26b-a4b-it"
+    },
+    "metrics": {
+      "mean_precision": 0.4361111111111111,
+      "mean_recall": 0.11724867724867724,
+      "mean_f1": 0.1757984607984608,
+      "mean_level_mae": 0.7368421052631579,
+      "mean_level_accuracy_exact": 0.3684210526315789,
+      "mean_level_accuracy_within_1": 0.8947368421052632,
+      "mean_seconds_per_record": 0.2289369225332545,
+      "failed_roles": 0
+    }
+  },
+  {
+    "implementation": "llm-workers-ai",
+    "config": {
+      "model": "@cf/moonshotai/kimi-k2.6"
+    },
+    "metrics": {
+      "mean_precision": 0.36000000000000004,
+      "mean_recall": 0.08933862433862433,
+      "mean_f1": 0.13645743145743147,
+      "mean_level_mae": 0.7857142857142857,
+      "mean_level_accuracy_exact": 0.2857142857142857,
+      "mean_level_accuracy_within_1": 0.9285714285714286,
+      "mean_seconds_per_record": 0.22659377973332084,
+      "failed_roles": 3
+    }
+  },
+  {
+    "implementation": "llm-workers-ai",
+    "config": {
+      "model": "@cf/moonshotai/kimi-k2.7-code"
+    },
+    "metrics": {
+      "mean_precision": 0.43333333333333335,
+      "mean_recall": 0.081005291005291,
+      "mean_f1": 0.1344973544973545,
+      "mean_level_mae": 0.5,
+      "mean_level_accuracy_exact": 0.5,
+      "mean_level_accuracy_within_1": 1.0,
+      "mean_seconds_per_record": 0.2341604833666679,
+      "failed_roles": 5
+    }
+  },
+  {
+    "implementation": "llm-workers-ai",
+    "config": {
+      "model": "@cf/nvidia/nemotron-3-120b-a12b"
+    },
+    "metrics": {
+      "mean_precision": 0.48333333333333334,
+      "mean_recall": 0.11123015873015873,
+      "mean_f1": 0.17407647907647908,
+      "mean_level_mae": 0.875,
+      "mean_level_accuracy_exact": 0.4375,
+      "mean_level_accuracy_within_1": 0.875,
+      "mean_seconds_per_record": 1.0074119162665738,
+      "failed_roles": 0
+    }
+  },
+  {
+    "implementation": "llm-workers-ai",
+    "config": {
+      "model": "@cf/zai-org/glm-4.7-flash"
+    },
+    "metrics": {
+      "mean_precision": 0.29444444444444445,
+      "mean_recall": 0.061375661375661375,
+      "mean_f1": 0.09965848965848965,
+      "mean_level_mae": 0.4,
+      "mean_level_accuracy_exact": 0.6,
+      "mean_level_accuracy_within_1": 1.0,
+      "mean_seconds_per_record": 0.23339384976652583,
+      "failed_roles": 9
+    }
+  },
+  {
+    "implementation": "llm-workers-ai",
+    "config": {
+      "model": "@cf/zai-org/glm-5.2"
+    },
+    "metrics": {
+      "mean_precision": 0.3111111111111111,
+      "mean_recall": 0.07948412698412698,
+      "mean_f1": 0.12293650793650794,
+      "mean_level_mae": 0.5833333333333334,
+      "mean_level_accuracy_exact": 0.5,
+      "mean_level_accuracy_within_1": 0.9166666666666666,
+      "mean_seconds_per_record": 0.23505143430002134,
+      "failed_roles": 7
+    }
   }
 ]
