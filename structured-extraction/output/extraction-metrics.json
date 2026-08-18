@@ -3,15 +3,22 @@
     "pages": 147,
     "pages_with_html": 147,
     "context_pages_scanned": 318,
-    "context_pages_relevant": 109,
+    "context_pages_relevant": 114,
     "extracted": 672,
     "range_rejected": 0,
-    "verifier_rejected": 2,
-    "kept": 670,
-    "rescued_after_manual_check": 2,
-    "kept_final": 672
+    "verifier_rejected": 3,
+    "kept": 669
   },
   "pages": [
+    {
+      "url": "https://sfia-online.org/en/sfia-9/skills/ai-data-ethics",
+      "skill": "Artificial intelligence (AI) and data ethics",
+      "html_available": true,
+      "extracted": 4,
+      "range_rejected": [],
+      "verifier_rejected": [],
+      "kept": 4
+    },
     {
       "url": "https://sfia-online.org/en/sfia-9/skills/application-support",
       "skill": "Application support",
@@ -20,6 +27,15 @@
       "range_rejected": [],
       "verifier_rejected": [],
       "kept": 4
+    },
+    {
+      "url": "https://sfia-online.org/en/sfia-9/skills/accessibility-and-inclusion",
+      "skill": "Accessibility and inclusion",
+      "html_available": true,
+      "extracted": 5,
+      "range_rejected": [],
+      "verifier_rejected": [],
+      "kept": 5
     },
     {
       "url": "https://sfia-online.org/en/sfia-9/skills/availability-management",
@@ -40,15 +56,6 @@
       "kept": 5
     },
     {
-      "url": "https://sfia-online.org/en/sfia-9/skills/ai-data-ethics",
-      "skill": "Artificial intelligence (AI) and data ethics",
-      "html_available": true,
-      "extracted": 4,
-      "range_rejected": [],
-      "verifier_rejected": [],
-      "kept": 4
-    },
-    {
       "url": "https://sfia-online.org/en/sfia-9/skills/animation-development",
       "skill": "Animation development",
       "html_available": true,
@@ -58,22 +65,13 @@
       "kept": 5
     },
     {
-      "url": "https://sfia-online.org/en/sfia-9/skills/accessibility-and-inclusion",
-      "skill": "Accessibility and inclusion",
+      "url": "https://sfia-online.org/en/sfia-9/skills/benefits-management",
+      "skill": "Benefits management",
       "html_available": true,
-      "extracted": 5,
+      "extracted": 4,
       "range_rejected": [],
       "verifier_rejected": [],
-      "kept": 5
-    },
-    {
-      "url": "https://sfia-online.org/en/sfia-9/skills/analytical-classification-and-coding",
-      "skill": "Analytical classification and coding",
-      "html_available": true,
-      "extracted": 5,
-      "range_rejected": [],
-      "verifier_rejected": [],
-      "kept": 5
+      "kept": 4
     },
     {
       "url": "https://sfia-online.org/en/sfia-9/skills/audit",
@@ -85,8 +83,26 @@
       "kept": 6
     },
     {
-      "url": "https://sfia-online.org/en/sfia-9/skills/benefits-management",
-      "skill": "Benefits management",
+      "url": "https://sfia-online.org/en/sfia-9/skills/analytical-classification-and-coding",
+      "skill": "Analytical classification and coding",
+      "html_available": true,
+      "extracted": 5,
+      "range_rejected": [],
+      "verifier_rejected": [],
+      "kept": 5
+    },
+    {
+      "url": "https://sfia-online.org/en/sfia-9/skills/business-intelligence",
+      "skill": "Business intelligence",
+      "html_available": true,
+      "extracted": 4,
+      "range_rejected": [],
+      "verifier_rejected": [],
+      "kept": 4
+    },
+    {
+      "url": "https://sfia-online.org/en/sfia-9/skills/bid-proposal-management",
+      "skill": "Bid/proposal management",
       "html_available": true,
       "extracted": 4,
       "range_rejected": [],
@@ -112,22 +128,13 @@
       "kept": 5
     },
     {
-      "url": "https://sfia-online.org/en/sfia-9/skills/bid-proposal-management",
-      "skill": "Bid/proposal management",
+      "url": "https://sfia-online.org/en/sfia-9/skills/business-administration",
+      "skill": "Business administration",
       "html_available": true,
-      "extracted": 4,
+      "extracted": 6,
       "range_rejected": [],
       "verifier_rejected": [],
-      "kept": 4
-    },
-    {
-      "url": "https://sfia-online.org/en/sfia-9/skills/business-intelligence",
-      "skill": "Business intelligence",
-      "html_available": true,
-      "extracted": 4,
-      "range_rejected": [],
-      "verifier_rejected": [],
-      "kept": 4
+      "kept": 6
     },
     {
       "url": "https://sfia-online.org/en/sfia-9/skills/business-situation-analysis",
@@ -139,8 +146,8 @@
       "kept": 5
     },
     {
-      "url": "https://sfia-online.org/en/sfia-9/skills/certification-scheme-operation",
-      "skill": "Certification scheme operation",
+      "url": "https://sfia-online.org/en/sfia-9/skills/business-modelling",
+      "skill": "Business modelling",
       "html_available": true,
       "extracted": 5,
       "range_rejected": [],
@@ -157,13 +164,22 @@
       "kept": 6
     },
     {
-      "url": "https://sfia-online.org/en/sfia-9/skills/business-administration",
-      "skill": "Business administration",
+      "url": "https://sfia-online.org/en/sfia-9/skills/capacity-management",
+      "skill": "Capacity management",
       "html_available": true,
-      "extracted": 6,
+      "extracted": 5,
       "range_rejected": [],
       "verifier_rejected": [],
-      "kept": 6
+      "kept": 5
+    },
+    {
+      "url": "https://sfia-online.org/en/sfia-9/skills/certification-scheme-operation",
+      "skill": "Certification scheme operation",
+      "html_available": true,
+      "extracted": 5,
+      "range_rejected": [],
+      "verifier_rejected": [],
+      "kept": 5
     },
     {
       "url": "https://sfia-online.org/en/sfia-9/skills/competency-assessment",
@@ -184,24 +200,6 @@
       "kept": 5
     },
     {
-      "url": "https://sfia-online.org/en/sfia-9/skills/business-modelling",
-      "skill": "Business modelling",
-      "html_available": true,
-      "extracted": 5,
-      "range_rejected": [],
-      "verifier_rejected": [],
-      "kept": 5
-    },
-    {
-      "url": "https://sfia-online.org/en/sfia-9/skills/capacity-management",
-      "skill": "Capacity management",
-      "html_available": true,
-      "extracted": 5,
-      "range_rejected": [],
-      "verifier_rejected": [],
-      "kept": 5
-    },
-    {
       "url": "https://sfia-online.org/en/sfia-9/skills/consultancy",
       "skill": "Consultancy",
       "html_available": true,
@@ -209,15 +207,6 @@
       "range_rejected": [],
       "verifier_rejected": [],
       "kept": 4
-    },
-    {
-      "url": "https://sfia-online.org/en/sfia-9/skills/content-publishing",
-      "skill": "Content publishing",
-      "html_available": true,
-      "extracted": 6,
-      "range_rejected": [],
-      "verifier_rejected": [],
-      "kept": 6
     },
     {
       "url": "https://sfia-online.org/en/sfia-9/skills/continuity-management",
@@ -238,6 +227,33 @@
       "kept": 6
     },
     {
+      "url": "https://sfia-online.org/en/sfia-9/skills/configuration-management",
+      "skill": "Configuration management",
+      "html_available": true,
+      "extracted": 5,
+      "range_rejected": [],
+      "verifier_rejected": [],
+      "kept": 5
+    },
+    {
+      "url": "https://sfia-online.org/en/sfia-9/skills/content-publishing",
+      "skill": "Content publishing",
+      "html_available": true,
+      "extracted": 6,
+      "range_rejected": [],
+      "verifier_rejected": [],
+      "kept": 6
+    },
+    {
+      "url": "https://sfia-online.org/en/sfia-9/skills/customer-engagement-and-loyalty",
+      "skill": "Customer engagement and loyalty",
+      "html_available": true,
+      "extracted": 4,
+      "range_rejected": [],
+      "verifier_rejected": [],
+      "kept": 4
+    },
+    {
       "url": "https://sfia-online.org/en/sfia-9/skills/contract-management",
       "skill": "Contract management",
       "html_available": true,
@@ -256,26 +272,8 @@
       "kept": 5
     },
     {
-      "url": "https://sfia-online.org/en/sfia-9/skills/customer-engagement-and-loyalty",
-      "skill": "Customer engagement and loyalty",
-      "html_available": true,
-      "extracted": 4,
-      "range_rejected": [],
-      "verifier_rejected": [],
-      "kept": 4
-    },
-    {
-      "url": "https://sfia-online.org/en/sfia-9/skills/configuration-management",
-      "skill": "Configuration management",
-      "html_available": true,
-      "extracted": 5,
-      "range_rejected": [],
-      "verifier_rejected": [],
-      "kept": 5
-    },
-    {
-      "url": "https://sfia-online.org/en/sfia-9/skills/customer-service-support",
-      "skill": "Customer service support",
+      "url": "https://sfia-online.org/en/sfia-9/skills/data-analytics",
+      "skill": "Data analytics",
       "html_available": true,
       "extracted": 6,
       "range_rejected": [],
@@ -292,6 +290,15 @@
       "kept": 5
     },
     {
+      "url": "https://sfia-online.org/en/sfia-9/skills/cybercrime-investigation",
+      "skill": "Cybercrime investigation",
+      "html_available": true,
+      "extracted": 5,
+      "range_rejected": [],
+      "verifier_rejected": [],
+      "kept": 5
+    },
+    {
       "url": "https://sfia-online.org/en/sfia-9/skills/data-modelling-and-design",
       "skill": "Data modelling and design",
       "html_available": true,
@@ -301,8 +308,17 @@
       "kept": 4
     },
     {
-      "url": "https://sfia-online.org/en/sfia-9/skills/cybercrime-investigation",
-      "skill": "Cybercrime investigation",
+      "url": "https://sfia-online.org/en/sfia-9/skills/customer-service-support",
+      "skill": "Customer service support",
+      "html_available": true,
+      "extracted": 6,
+      "range_rejected": [],
+      "verifier_rejected": [],
+      "kept": 6
+    },
+    {
+      "url": "https://sfia-online.org/en/sfia-9/skills/data-science",
+      "skill": "Data science",
       "html_available": true,
       "extracted": 5,
       "range_rejected": [],
@@ -328,35 +344,8 @@
       "kept": 5
     },
     {
-      "url": "https://sfia-online.org/en/sfia-9/skills/data-analytics",
-      "skill": "Data analytics",
-      "html_available": true,
-      "extracted": 6,
-      "range_rejected": [],
-      "verifier_rejected": [],
-      "kept": 6
-    },
-    {
-      "url": "https://sfia-online.org/en/sfia-9/skills/data-science",
-      "skill": "Data science",
-      "html_available": true,
-      "extracted": 5,
-      "range_rejected": [],
-      "verifier_rejected": [],
-      "kept": 5
-    },
-    {
       "url": "https://sfia-online.org/en/sfia-9/skills/data-visualisation",
       "skill": "Data visualisation",
-      "html_available": true,
-      "extracted": 4,
-      "range_rejected": [],
-      "verifier_rejected": [],
-      "kept": 4
-    },
-    {
-      "url": "https://sfia-online.org/en/sfia-9/skills/delivery-management",
-      "skill": "Delivery management",
       "html_available": true,
       "extracted": 4,
       "range_rejected": [],
@@ -382,15 +371,6 @@
       "kept": 4
     },
     {
-      "url": "https://sfia-online.org/en/sfia-9/skills/deployment",
-      "skill": "Deployment",
-      "html_available": true,
-      "extracted": 5,
-      "range_rejected": [],
-      "verifier_rejected": [],
-      "kept": 5
-    },
-    {
       "url": "https://sfia-online.org/en/sfia-9/skills/demand-management",
       "skill": "Demand management",
       "html_available": true,
@@ -398,6 +378,15 @@
       "range_rejected": [],
       "verifier_rejected": [],
       "kept": 3
+    },
+    {
+      "url": "https://sfia-online.org/en/sfia-9/skills/delivery-management",
+      "skill": "Delivery management",
+      "html_available": true,
+      "extracted": 4,
+      "range_rejected": [],
+      "verifier_rejected": [],
+      "kept": 4
     },
     {
       "url": "https://sfia-online.org/en/sfia-9/skills/digital-forensics",
@@ -418,6 +407,15 @@
       "kept": 3
     },
     {
+      "url": "https://sfia-online.org/en/sfia-9/skills/deployment",
+      "skill": "Deployment",
+      "html_available": true,
+      "extracted": 5,
+      "range_rejected": [],
+      "verifier_rejected": [],
+      "kept": 5
+    },
+    {
       "url": "https://sfia-online.org/en/sfia-9/skills/digital-marketing",
       "skill": "Digital marketing",
       "html_available": true,
@@ -436,6 +434,15 @@
       "kept": 3
     },
     {
+      "url": "https://sfia-online.org/en/sfia-9/skills/enterprise-and-business-architecture",
+      "skill": "Enterprise and business architecture",
+      "html_available": true,
+      "extracted": 3,
+      "range_rejected": [],
+      "verifier_rejected": [],
+      "kept": 3
+    },
+    {
       "url": "https://sfia-online.org/en/sfia-9/skills/financial-management",
       "skill": "Financial management",
       "html_available": true,
@@ -445,17 +452,8 @@
       "kept": 3
     },
     {
-      "url": "https://sfia-online.org/en/sfia-9/skills/feasibility-assessment",
-      "skill": "Feasibility assessment",
-      "html_available": true,
-      "extracted": 5,
-      "range_rejected": [],
-      "verifier_rejected": [],
-      "kept": 5
-    },
-    {
-      "url": "https://sfia-online.org/en/sfia-9/skills/financial-analysis",
-      "skill": "Financial analysis",
+      "url": "https://sfia-online.org/en/sfia-9/skills/facilities-management",
+      "skill": "Facilities management",
       "html_available": true,
       "extracted": 5,
       "range_rejected": [],
@@ -472,15 +470,6 @@
       "kept": 2
     },
     {
-      "url": "https://sfia-online.org/en/sfia-9/skills/enterprise-and-business-architecture",
-      "skill": "Enterprise and business architecture",
-      "html_available": true,
-      "extracted": 3,
-      "range_rejected": [],
-      "verifier_rejected": [],
-      "kept": 3
-    },
-    {
       "url": "https://sfia-online.org/en/sfia-9/skills/functional-testing",
       "skill": "Functional testing",
       "html_available": true,
@@ -490,8 +479,17 @@
       "kept": 6
     },
     {
-      "url": "https://sfia-online.org/en/sfia-9/skills/facilities-management",
-      "skill": "Facilities management",
+      "url": "https://sfia-online.org/en/sfia-9/skills/financial-analysis",
+      "skill": "Financial analysis",
+      "html_available": true,
+      "extracted": 5,
+      "range_rejected": [],
+      "verifier_rejected": [],
+      "kept": 5
+    },
+    {
+      "url": "https://sfia-online.org/en/sfia-9/skills/feasibility-assessment",
+      "skill": "Feasibility assessment",
       "html_available": true,
       "extracted": 5,
       "range_rejected": [],
@@ -508,15 +506,6 @@
       "kept": 5
     },
     {
-      "url": "https://sfia-online.org/en/sfia-9/skills/graphic-design",
-      "skill": "Graphic design",
-      "html_available": true,
-      "extracted": 5,
-      "range_rejected": [],
-      "verifier_rejected": [],
-      "kept": 5
-    },
-    {
       "url": "https://sfia-online.org/en/sfia-9/skills/high-performance-computing",
       "skill": "High-performance computing",
       "html_available": true,
@@ -524,6 +513,15 @@
       "range_rejected": [],
       "verifier_rejected": [],
       "kept": 4
+    },
+    {
+      "url": "https://sfia-online.org/en/sfia-9/skills/graphic-design",
+      "skill": "Graphic design",
+      "html_available": true,
+      "extracted": 5,
+      "range_rejected": [],
+      "verifier_rejected": [],
+      "kept": 5
     },
     {
       "url": "https://sfia-online.org/en/sfia-9/skills/hardware-design",
@@ -535,22 +533,13 @@
       "kept": 5
     },
     {
-      "url": "https://sfia-online.org/en/sfia-9/skills/information-systems-coordination",
-      "skill": "Information systems coordination",
+      "url": "https://sfia-online.org/en/sfia-9/skills/identity-and-access-management",
+      "skill": "Identity and access management",
       "html_available": true,
-      "extracted": 2,
+      "extracted": 6,
       "range_rejected": [],
       "verifier_rejected": [],
-      "kept": 2
-    },
-    {
-      "url": "https://sfia-online.org/en/sfia-9/skills/information-management",
-      "skill": "Information management",
-      "html_available": true,
-      "extracted": 5,
-      "range_rejected": [],
-      "verifier_rejected": [],
-      "kept": 5
+      "kept": 6
     },
     {
       "url": "https://sfia-online.org/en/sfia-9/skills/information-and-data-compliance",
@@ -560,6 +549,15 @@
       "range_rejected": [],
       "verifier_rejected": [],
       "kept": 3
+    },
+    {
+      "url": "https://sfia-online.org/en/sfia-9/skills/information-systems-coordination",
+      "skill": "Information systems coordination",
+      "html_available": true,
+      "extracted": 2,
+      "range_rejected": [],
+      "verifier_rejected": [],
+      "kept": 2
     },
     {
       "url": "https://sfia-online.org/en/sfia-9/skills/incident-management",
@@ -580,17 +578,17 @@
       "kept": 6
     },
     {
-      "url": "https://sfia-online.org/en/sfia-9/skills/information-security",
-      "skill": "Information security",
+      "url": "https://sfia-online.org/en/sfia-9/skills/information-management",
+      "skill": "Information management",
       "html_available": true,
-      "extracted": 6,
+      "extracted": 5,
       "range_rejected": [],
       "verifier_rejected": [],
-      "kept": 6
+      "kept": 5
     },
     {
-      "url": "https://sfia-online.org/en/sfia-9/skills/identity-and-access-management",
-      "skill": "Identity and access management",
+      "url": "https://sfia-online.org/en/sfia-9/skills/information-security",
+      "skill": "Information security",
       "html_available": true,
       "extracted": 6,
       "range_rejected": [],
@@ -607,13 +605,13 @@
       "kept": 5
     },
     {
-      "url": "https://sfia-online.org/en/sfia-9/skills/innovation-management",
-      "skill": "Innovation management",
+      "url": "https://sfia-online.org/en/sfia-9/skills/infrastructure-operations",
+      "skill": "Infrastructure operations",
       "html_available": true,
-      "extracted": 3,
+      "extracted": 5,
       "range_rejected": [],
       "verifier_rejected": [],
-      "kept": 3
+      "kept": 5
     },
     {
       "url": "https://sfia-online.org/en/sfia-9/skills/investment-appraisal",
@@ -621,12 +619,36 @@
       "html_available": true,
       "extracted": 3,
       "range_rejected": [],
-      "verifier_rejected": [],
-      "kept": 3
+      "verifier_rejected": [
+        {
+          "code": "INVA",
+          "level": 5,
+          "verdict": "INVALID: no such section"
+        }
+      ],
+      "kept": 2
     },
     {
       "url": "https://sfia-online.org/en/sfia-9/skills/job-analysis-and-design",
       "skill": "Job analysis and design",
+      "html_available": true,
+      "extracted": 3,
+      "range_rejected": [],
+      "verifier_rejected": [],
+      "kept": 3
+    },
+    {
+      "url": "https://sfia-online.org/en/sfia-9/skills/learning-design-and-development",
+      "skill": "Learning design and development",
+      "html_available": true,
+      "extracted": 4,
+      "range_rejected": [],
+      "verifier_rejected": [],
+      "kept": 4
+    },
+    {
+      "url": "https://sfia-online.org/en/sfia-9/skills/innovation-management",
+      "skill": "Innovation management",
       "html_available": true,
       "extracted": 3,
       "range_rejected": [],
@@ -652,31 +674,13 @@
       "kept": 6
     },
     {
-      "url": "https://sfia-online.org/en/sfia-9/skills/infrastructure-operations",
-      "skill": "Infrastructure operations",
+      "url": "https://sfia-online.org/en/sfia-9/skills/machine-learning",
+      "skill": "Machine learning",
       "html_available": true,
       "extracted": 5,
       "range_rejected": [],
       "verifier_rejected": [],
       "kept": 5
-    },
-    {
-      "url": "https://sfia-online.org/en/sfia-9/skills/market-research",
-      "skill": "Market research",
-      "html_available": true,
-      "extracted": 4,
-      "range_rejected": [],
-      "verifier_rejected": [],
-      "kept": 4
-    },
-    {
-      "url": "https://sfia-online.org/en/sfia-9/skills/learning-design-and-development",
-      "skill": "Learning design and development",
-      "html_available": true,
-      "extracted": 4,
-      "range_rejected": [],
-      "verifier_rejected": [],
-      "kept": 4
     },
     {
       "url": "https://sfia-online.org/en/sfia-9/skills/marketing-campaign-management",
@@ -688,15 +692,6 @@
       "kept": 3
     },
     {
-      "url": "https://sfia-online.org/en/sfia-9/skills/marketing-management",
-      "skill": "Marketing management",
-      "html_available": true,
-      "extracted": 4,
-      "range_rejected": [],
-      "verifier_rejected": [],
-      "kept": 4
-    },
-    {
       "url": "https://sfia-online.org/en/sfia-9/skills/knowledge-management",
       "skill": "Knowledge management",
       "html_available": true,
@@ -706,22 +701,13 @@
       "kept": 6
     },
     {
-      "url": "https://sfia-online.org/en/sfia-9/skills/machine-learning",
-      "skill": "Machine learning",
+      "url": "https://sfia-online.org/en/sfia-9/skills/market-research",
+      "skill": "Market research",
       "html_available": true,
-      "extracted": 5,
+      "extracted": 4,
       "range_rejected": [],
       "verifier_rejected": [],
-      "kept": 5
-    },
-    {
-      "url": "https://sfia-online.org/en/sfia-9/skills/methods-and-tools",
-      "skill": "Methods and tools",
-      "html_available": true,
-      "extracted": 5,
-      "range_rejected": [],
-      "verifier_rejected": [],
-      "kept": 5
+      "kept": 4
     },
     {
       "url": "https://sfia-online.org/en/sfia-9/skills/measurement",
@@ -733,6 +719,15 @@
       "kept": 5
     },
     {
+      "url": "https://sfia-online.org/en/sfia-9/skills/marketing-management",
+      "skill": "Marketing management",
+      "html_available": true,
+      "extracted": 4,
+      "range_rejected": [],
+      "verifier_rejected": [],
+      "kept": 4
+    },
+    {
       "url": "https://sfia-online.org/en/sfia-9/skills/numerical-analysis",
       "skill": "Numerical analysis",
       "html_available": true,
@@ -740,6 +735,15 @@
       "range_rejected": [],
       "verifier_rejected": [],
       "kept": 4
+    },
+    {
+      "url": "https://sfia-online.org/en/sfia-9/skills/methods-and-tools",
+      "skill": "Methods and tools",
+      "html_available": true,
+      "extracted": 5,
+      "range_rejected": [],
+      "verifier_rejected": [],
+      "kept": 5
     },
     {
       "url": "https://sfia-online.org/en/sfia-9/skills/offensive-cyber-operations",
@@ -751,13 +755,13 @@
       "kept": 5
     },
     {
-      "url": "https://sfia-online.org/en/sfia-9/skills/non-functional-testing",
-      "skill": "Non-functional testing NFTS",
+      "url": "https://sfia-online.org/en/sfia-9/skills/network-design",
+      "skill": "Network design",
       "html_available": true,
-      "extracted": 6,
+      "extracted": 5,
       "range_rejected": [],
       "verifier_rejected": [],
-      "kept": 6
+      "kept": 5
     },
     {
       "url": "https://sfia-online.org/en/sfia-9/skills/organisational-capability-development",
@@ -769,13 +773,13 @@
       "kept": 3
     },
     {
-      "url": "https://sfia-online.org/en/sfia-9/skills/network-design",
-      "skill": "Network design",
+      "url": "https://sfia-online.org/en/sfia-9/skills/organisational-change-enablement",
+      "skill": "Organisational change enablement",
       "html_available": true,
-      "extracted": 5,
+      "extracted": 3,
       "range_rejected": [],
       "verifier_rejected": [],
-      "kept": 5
+      "kept": 3
     },
     {
       "url": "https://sfia-online.org/en/sfia-9/skills/network-support",
@@ -787,8 +791,17 @@
       "kept": 5
     },
     {
-      "url": "https://sfia-online.org/en/sfia-9/skills/organisational-change-enablement",
-      "skill": "Organisational change enablement",
+      "url": "https://sfia-online.org/en/sfia-9/skills/non-functional-testing",
+      "skill": "Non-functional testing",
+      "html_available": true,
+      "extracted": 6,
+      "range_rejected": [],
+      "verifier_rejected": [],
+      "kept": 6
+    },
+    {
+      "url": "https://sfia-online.org/en/sfia-9/skills/organisational-facilitation",
+      "skill": "Organisational facilitation",
       "html_available": true,
       "extracted": 3,
       "range_rejected": [],
@@ -805,15 +818,6 @@
       "kept": 5
     },
     {
-      "url": "https://sfia-online.org/en/sfia-9/skills/portfolio-management",
-      "skill": "Portfolio management",
-      "html_available": true,
-      "extracted": 3,
-      "range_rejected": [],
-      "verifier_rejected": [],
-      "kept": 3
-    },
-    {
       "url": "https://sfia-online.org/en/sfia-9/skills/performance-management",
       "skill": "Performance management",
       "html_available": true,
@@ -823,53 +827,8 @@
       "kept": 3
     },
     {
-      "url": "https://sfia-online.org/en/sfia-9/skills/organisational-facilitation",
-      "skill": "Organisational facilitation",
-      "html_available": true,
-      "extracted": 3,
-      "range_rejected": [],
-      "verifier_rejected": [],
-      "kept": 3
-    },
-    {
-      "url": "https://sfia-online.org/en/sfia-9/skills/problem-management",
-      "skill": "Problem management",
-      "html_available": true,
-      "extracted": 4,
-      "range_rejected": [],
-      "verifier_rejected": [],
-      "kept": 4
-    },
-    {
       "url": "https://sfia-online.org/en/sfia-9/skills/penetration-testing",
       "skill": "Penetration testing",
-      "html_available": true,
-      "extracted": 5,
-      "range_rejected": [],
-      "verifier_rejected": [],
-      "kept": 5
-    },
-    {
-      "url": "https://sfia-online.org/en/sfia-9/skills/organisational-change-management",
-      "skill": "Organisational change management",
-      "html_available": true,
-      "extracted": 5,
-      "range_rejected": [],
-      "verifier_rejected": [],
-      "kept": 5
-    },
-    {
-      "url": "https://sfia-online.org/en/sfia-9/skills/programme-management",
-      "skill": "Programme management",
-      "html_available": true,
-      "extracted": 2,
-      "range_rejected": [],
-      "verifier_rejected": [],
-      "kept": 2
-    },
-    {
-      "url": "https://sfia-online.org/en/sfia-9/skills/product-management",
-      "skill": "Product management",
       "html_available": true,
       "extracted": 5,
       "range_rejected": [],
@@ -886,8 +845,26 @@
       "kept": 5
     },
     {
-      "url": "https://sfia-online.org/en/sfia-9/skills/programming-software-development",
-      "skill": "Programming/software development",
+      "url": "https://sfia-online.org/en/sfia-9/skills/portfolio-management",
+      "skill": "Portfolio management",
+      "html_available": true,
+      "extracted": 3,
+      "range_rejected": [],
+      "verifier_rejected": [],
+      "kept": 3
+    },
+    {
+      "url": "https://sfia-online.org/en/sfia-9/skills/problem-management",
+      "skill": "Problem management",
+      "html_available": true,
+      "extracted": 4,
+      "range_rejected": [],
+      "verifier_rejected": [],
+      "kept": 4
+    },
+    {
+      "url": "https://sfia-online.org/en/sfia-9/skills/organisational-change-management",
+      "skill": "Organisational change management",
       "html_available": true,
       "extracted": 5,
       "range_rejected": [],
@@ -904,6 +881,15 @@
       "kept": 3
     },
     {
+      "url": "https://sfia-online.org/en/sfia-9/skills/product-management",
+      "skill": "Product management",
+      "html_available": true,
+      "extracted": 5,
+      "range_rejected": [],
+      "verifier_rejected": [],
+      "kept": 5
+    },
+    {
       "url": "https://sfia-online.org/en/sfia-9/skills/process-testing",
       "skill": "Process testing",
       "html_available": true,
@@ -913,17 +899,17 @@
       "kept": 6
     },
     {
-      "url": "https://sfia-online.org/en/sfia-9/skills/project-management",
-      "skill": "Project management",
+      "url": "https://sfia-online.org/en/sfia-9/skills/programme-management",
+      "skill": "Programme management",
       "html_available": true,
-      "extracted": 4,
+      "extracted": 2,
       "range_rejected": [],
       "verifier_rejected": [],
-      "kept": 4
+      "kept": 2
     },
     {
-      "url": "https://sfia-online.org/en/sfia-9/skills/radio-frequency-engineering",
-      "skill": "Radio frequency engineering",
+      "url": "https://sfia-online.org/en/sfia-9/skills/programming-software-development",
+      "skill": "Programming/software development",
       "html_available": true,
       "extracted": 5,
       "range_rejected": [],
@@ -940,6 +926,15 @@
       "kept": 5
     },
     {
+      "url": "https://sfia-online.org/en/sfia-9/skills/project-management",
+      "skill": "Project management",
+      "html_available": true,
+      "extracted": 4,
+      "range_rejected": [],
+      "verifier_rejected": [],
+      "kept": 4
+    },
+    {
       "url": "https://sfia-online.org/en/sfia-9/skills/quality-management",
       "skill": "Quality management",
       "html_available": true,
@@ -949,8 +944,8 @@
       "kept": 6
     },
     {
-      "url": "https://sfia-online.org/en/sfia-9/skills/records-management",
-      "skill": "Records management",
+      "url": "https://sfia-online.org/en/sfia-9/skills/radio-frequency-engineering",
+      "skill": "Radio frequency engineering",
       "html_available": true,
       "extracted": 5,
       "range_rejected": [],
@@ -965,6 +960,15 @@
       "range_rejected": [],
       "verifier_rejected": [],
       "kept": 5
+    },
+    {
+      "url": "https://sfia-online.org/en/sfia-9/skills/safety-assessment",
+      "skill": "Safety assessment",
+      "html_available": true,
+      "extracted": 3,
+      "range_rejected": [],
+      "verifier_rejected": [],
+      "kept": 3
     },
     {
       "url": "https://sfia-online.org/en/sfia-9/skills/release-and-deployment",
@@ -985,13 +989,13 @@
       "kept": 5
     },
     {
-      "url": "https://sfia-online.org/en/sfia-9/skills/safety-assessment",
-      "skill": "Safety assessment",
+      "url": "https://sfia-online.org/en/sfia-9/skills/records-management",
+      "skill": "Records management",
       "html_available": true,
-      "extracted": 3,
+      "extracted": 5,
       "range_rejected": [],
       "verifier_rejected": [],
-      "kept": 3
+      "kept": 5
     },
     {
       "url": "https://sfia-online.org/en/sfia-9/skills/risk-management",
@@ -1001,15 +1005,6 @@
       "range_rejected": [],
       "verifier_rejected": [],
       "kept": 6
-    },
-    {
-      "url": "https://sfia-online.org/en/sfia-9/skills/resourcing",
-      "skill": "Resourcing",
-      "html_available": true,
-      "extracted": 5,
-      "range_rejected": [],
-      "verifier_rejected": [],
-      "kept": 5
     },
     {
       "url": "https://sfia-online.org/en/sfia-9/skills/safety-engineering",
@@ -1028,6 +1023,33 @@
       "range_rejected": [],
       "verifier_rejected": [],
       "kept": 4
+    },
+    {
+      "url": "https://sfia-online.org/en/sfia-9/skills/resourcing",
+      "skill": "Resourcing",
+      "html_available": true,
+      "extracted": 5,
+      "range_rejected": [],
+      "verifier_rejected": [],
+      "kept": 5
+    },
+    {
+      "url": "https://sfia-online.org/en/sfia-9/skills/sales-support",
+      "skill": "Sales support",
+      "html_available": true,
+      "extracted": 6,
+      "range_rejected": [],
+      "verifier_rejected": [],
+      "kept": 6
+    },
+    {
+      "url": "https://sfia-online.org/en/sfia-9/skills/security-operations",
+      "skill": "Security operations",
+      "html_available": true,
+      "extracted": 6,
+      "range_rejected": [],
+      "verifier_rejected": [],
+      "kept": 6
     },
     {
       "url": "https://sfia-online.org/en/sfia-9/skills/service-acceptance",
@@ -1054,17 +1076,8 @@
       "kept": 4
     },
     {
-      "url": "https://sfia-online.org/en/sfia-9/skills/sales-support",
-      "skill": "Sales support",
-      "html_available": true,
-      "extracted": 6,
-      "range_rejected": [],
-      "verifier_rejected": [],
-      "kept": 6
-    },
-    {
-      "url": "https://sfia-online.org/en/sfia-9/skills/security-operations",
-      "skill": "Security operations",
+      "url": "https://sfia-online.org/en/sfia-9/skills/service-level-management",
+      "skill": "Service level management",
       "html_available": true,
       "extracted": 6,
       "range_rejected": [],
@@ -1081,6 +1094,15 @@
       "kept": 4
     },
     {
+      "url": "https://sfia-online.org/en/sfia-9/skills/solution-architecture",
+      "skill": "Solution architecture",
+      "html_available": true,
+      "extracted": 3,
+      "range_rejected": [],
+      "verifier_rejected": [],
+      "kept": 3
+    },
+    {
       "url": "https://sfia-online.org/en/sfia-9/skills/software-configuration",
       "skill": "Software configuration",
       "html_available": true,
@@ -1090,13 +1112,31 @@
       "kept": 5
     },
     {
-      "url": "https://sfia-online.org/en/sfia-9/skills/service-level-management",
-      "skill": "Service level management",
+      "url": "https://sfia-online.org/en/sfia-9/skills/software-design",
+      "skill": "Software design",
+      "html_available": true,
+      "extracted": 5,
+      "range_rejected": [],
+      "verifier_rejected": [],
+      "kept": 5
+    },
+    {
+      "url": "https://sfia-online.org/en/sfia-9/skills/sourcing",
+      "skill": "Sourcing",
       "html_available": true,
       "extracted": 6,
       "range_rejected": [],
       "verifier_rejected": [],
       "kept": 6
+    },
+    {
+      "url": "https://sfia-online.org/en/sfia-9/skills/subject-formation",
+      "skill": "Subject formation",
+      "html_available": true,
+      "extracted": 4,
+      "range_rejected": [],
+      "verifier_rejected": [],
+      "kept": 4
     },
     {
       "url": "https://sfia-online.org/en/sfia-9/skills/specialist-advice",
@@ -1108,13 +1148,13 @@
       "kept": 3
     },
     {
-      "url": "https://sfia-online.org/en/sfia-9/skills/software-design",
-      "skill": "Software design",
+      "url": "https://sfia-online.org/en/sfia-9/skills/strategic-planning",
+      "skill": "Strategic planning",
       "html_available": true,
-      "extracted": 5,
+      "extracted": 4,
       "range_rejected": [],
       "verifier_rejected": [],
-      "kept": 5
+      "kept": 4
     },
     {
       "url": "https://sfia-online.org/en/sfia-9/skills/stakeholder-relationship-management",
@@ -1135,22 +1175,13 @@
       "kept": 5
     },
     {
-      "url": "https://sfia-online.org/en/sfia-9/skills/solution-architecture",
-      "skill": "Solution architecture",
+      "url": "https://sfia-online.org/en/sfia-9/skills/supplier-management",
+      "skill": "Supplier management",
       "html_available": true,
-      "extracted": 3,
+      "extracted": 6,
       "range_rejected": [],
       "verifier_rejected": [],
-      "kept": 3
-    },
-    {
-      "url": "https://sfia-online.org/en/sfia-9/skills/subject-formation",
-      "skill": "Subject formation",
-      "html_available": true,
-      "extracted": 4,
-      "range_rejected": [],
-      "verifier_rejected": [],
-      "kept": 4
+      "kept": 6
     },
     {
       "url": "https://sfia-online.org/en/sfia-9/skills/sustainability",
@@ -1162,17 +1193,8 @@
       "kept": 3
     },
     {
-      "url": "https://sfia-online.org/en/sfia-9/skills/sourcing",
-      "skill": "Sourcing",
-      "html_available": true,
-      "extracted": 6,
-      "range_rejected": [],
-      "verifier_rejected": [],
-      "kept": 6
-    },
-    {
-      "url": "https://sfia-online.org/en/sfia-9/skills/strategic-planning",
-      "skill": "Strategic planning",
+      "url": "https://sfia-online.org/en/sfia-9/skills/systems-development-management",
+      "skill": "Systems development management",
       "html_available": true,
       "extracted": 4,
       "range_rejected": [],
@@ -1180,17 +1202,17 @@
       "kept": 4
     },
     {
-      "url": "https://sfia-online.org/en/sfia-9/skills/supplier-management",
-      "skill": "Supplier management",
+      "url": "https://sfia-online.org/en/sfia-9/skills/systems-installation-removal",
+      "skill": "Systems installation and removal",
       "html_available": true,
-      "extracted": 6,
+      "extracted": 5,
       "range_rejected": [],
       "verifier_rejected": [],
-      "kept": 6
+      "kept": 5
     },
     {
-      "url": "https://sfia-online.org/en/sfia-9/skills/systems-development-management",
-      "skill": "Systems development management",
+      "url": "https://sfia-online.org/en/sfia-9/skills/system-software-administration",
+      "skill": "System software administration",
       "html_available": true,
       "extracted": 4,
       "range_rejected": [],
@@ -1216,13 +1238,13 @@
       "kept": 5
     },
     {
-      "url": "https://sfia-online.org/en/sfia-9/skills/systems-installation-removal",
-      "skill": "Systems installation and removal",
+      "url": "https://sfia-online.org/en/sfia-9/skills/technology-service-management",
+      "skill": "Technology service management",
       "html_available": true,
-      "extracted": 5,
+      "extracted": 3,
       "range_rejected": [],
       "verifier_rejected": [],
-      "kept": 5
+      "kept": 3
     },
     {
       "url": "https://sfia-online.org/en/sfia-9/skills/systems-integration-and-build",
@@ -1234,15 +1256,6 @@
       "kept": 5
     },
     {
-      "url": "https://sfia-online.org/en/sfia-9/skills/system-software-administration",
-      "skill": "System software administration",
-      "html_available": true,
-      "extracted": 4,
-      "range_rejected": [],
-      "verifier_rejected": [],
-      "kept": 4
-    },
-    {
       "url": "https://sfia-online.org/en/sfia-9/skills/teaching",
       "skill": "Teaching",
       "html_available": true,
@@ -1252,13 +1265,13 @@
       "kept": 6
     },
     {
-      "url": "https://sfia-online.org/en/sfia-9/skills/technology-service-management",
-      "skill": "Technology service management",
+      "url": "https://sfia-online.org/en/sfia-9/skills/user-experience-analysis",
+      "skill": "User experience analysis",
       "html_available": true,
-      "extracted": 3,
+      "extracted": 4,
       "range_rejected": [],
       "verifier_rejected": [],
-      "kept": 3
+      "kept": 4
     },
     {
       "url": "https://sfia-online.org/en/sfia-9/skills/threat-intelligence",
@@ -1268,15 +1281,6 @@
       "range_rejected": [],
       "verifier_rejected": [],
       "kept": 5
-    },
-    {
-      "url": "https://sfia-online.org/en/sfia-9/skills/user-experience-analysis",
-      "skill": "User experience analysis",
-      "html_available": true,
-      "extracted": 4,
-      "range_rejected": [],
-      "verifier_rejected": [],
-      "kept": 4
     },
     {
       "url": "https://sfia-online.org/en/sfia-9/skills/user-experience-design",
@@ -1306,21 +1310,6 @@
       "kept": 4
     },
     {
-      "url": "https://sfia-online.org/en/sfia-9/skills/user-research",
-      "skill": "User research",
-      "html_available": true,
-      "extracted": 5,
-      "range_rejected": [],
-      "verifier_rejected": [
-        {
-          "code": "URCH",
-          "level": 2,
-          "verdict": "INVALID: extracted_text is missing a period at the end of the second sentence compared to the reference text."
-        }
-      ],
-      "kept": 4
-    },
-    {
       "url": "https://sfia-online.org/en/sfia-9/skills/user-experience-evaluation",
       "skill": "User experience evaluation",
       "html_available": true,
@@ -1339,6 +1328,21 @@
       "kept": 3
     },
     {
+      "url": "https://sfia-online.org/en/sfia-9/skills/user-research",
+      "skill": "User research",
+      "html_available": true,
+      "extracted": 5,
+      "range_rejected": [],
+      "verifier_rejected": [
+        {
+          "code": "URCH",
+          "level": 2,
+          "verdict": "INVALID: extracted_text is missing a period at the end of the second sentence compared to the reference text."
+        }
+      ],
+      "kept": 4
+    },
+    {
       "url": "https://sfia-online.org/en/sfia-9/skills/vulnerability-research",
       "skill": "Vulnerability research",
       "html_available": true,
@@ -1346,18 +1350,6 @@
       "range_rejected": [],
       "verifier_rejected": [],
       "kept": 5
-    }
-  ],
-  "rescued": [
-    {
-      "code": "SEAC",
-      "level": 5,
-      "note": "verifier false INVALID; re-extracted and manually confirmed verbatim against source span"
-    },
-    {
-      "code": "URCH",
-      "level": 2,
-      "note": "verifier false INVALID; re-extracted and manually confirmed verbatim against source span"
     }
   ]
 }
