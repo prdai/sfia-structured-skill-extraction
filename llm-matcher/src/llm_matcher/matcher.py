@@ -25,7 +25,9 @@ class Match(BaseModel):
 
 def load_skill_names() -> list[str]:
     records = json.loads(RECORDS_PATH.read_text())
-    return sorted({m["skill"] for r in records for m in r["mappings"]})
+    chart = json.loads((RECORDS_PATH.parent / "sfia-9-summary-chart.json").read_text())
+    names = {s["code"]: s["name"] for s in chart["skills"]}
+    return sorted({names[r["code"]] for r in records})
 
 
 def response_schema(skill_names: list[str]) -> dict:

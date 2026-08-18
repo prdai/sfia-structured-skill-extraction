@@ -22,3 +22,17 @@ def load_skill_pages(dataset_path: Path) -> list[dict]:
         if SKILL_PAGE_URL.fullmatch(r.get("url", ""))
         and not r["url"].endswith("/all-skills-a-z")
     ]
+
+
+def load_context_pages(dataset_path: Path) -> list[dict]:
+    """Completed pages that are NOT individual skill pages.
+
+    About/framework/reference pages carry general SFIA context (what the
+    responsibility levels mean, how skill pages are structured, terminology)
+    that the context agent distills into a briefing for the extractor.
+    """
+    skill_urls = {p["url"] for p in load_skill_pages(dataset_path)}
+    return [
+        r for r in load_completed_pages(dataset_path)
+        if r.get("markdown") and r["url"] not in skill_urls
+    ]

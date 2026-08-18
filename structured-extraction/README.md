@@ -17,8 +17,24 @@ generic boilerplate; that assumption was wrong for 16 skills and cost
 their level-1 records, and the same run let 7 generic level-7 blurbs
 through — the guard + generalized prompt replace it.
 
-Two agents run per page (not per level block — see below), then the
-guard:
+Before the per-page work, a one-off **context stage** runs over the
+crawl's non-skill pages (about/framework/reference — 318 of them): a
+scout agent judges each page for general framework context useful to
+extraction (what levels 1-7 mean, their attributes, why skills are not
+defined at all levels, page-structure conventions) and notes it —
+pages longer than the scout's payload budget are scouted chunk by
+chunk and the chunk notes merged, so no page text is ever cut off.
+A synthesizer agent on a long-context model
+(`@cf/meta/llama-4-scout-17b-16e-instruct`, 131k context) then takes
+all notes in a single call and synthesizes the briefing; briefing size
+is enforced by the call's output-token cap (400 tokens) with a
+250-word instruction in the prompt. The briefing is cached in
+`output/framework-context.json` (delete to rebuild) and injected into
+every extractor prompt as standing background — marked explicitly as
+never being a source of extracted text.
+
+Then two agents run per page (not per level block — see below), with
+the guard between them:
 
 1. **Extractor** (`@cf/meta/llama-3.3-70b-instruct-fp8-fast`) — given
    the page's markdown and raw HTML, returns one JSON record per
@@ -140,6 +156,48 @@ page producing duplicate text without duplicate rows.
   verdict token, temperature 0, and a different model family from the
   extractor (its self-enhancement-bias caution — a model grading its
   own output scores it too favourably).
+- For the context stage (no single paper proposes exactly "scan the
+  non-target pages of the same site into a standing briefing for the
+  extractor"; the stage combines these verified precedents):
+  - Lee, K.-H., Chen, X., Furuta, H., Canny, J., Fischer, I. (2024).
+    ["A Human-Inspired Reading Agent with Gist Memory of Very Long
+    Contexts"](https://arxiv.org/abs/2402.09727). ICML 2024, PMLR 235.
+    The mechanism: compressed "gist" background kept standing in the
+    prompt while the model works on detail.
+  - Edge, D., Trinh, H., Cheng, N., et al. (2024). ["From Local to
+    Global: A Graph RAG Approach to Query-Focused
+    Summarization"](https://arxiv.org/abs/2404.16130). arXiv preprint.
+    Why corpus-level pre-generated summaries are needed at all:
+    per-chunk processing misses global context.
+  - Sarthi, P., Abdullah, S., Tuli, A., et al. (2024). ["RAPTOR:
+    Recursive Abstractive Processing for Tree-Organized
+    Retrieval"](https://arxiv.org/abs/2401.18059). ICLR 2024. Mixing
+    higher-level abstractive summaries with detail content in the same
+    context measurably improves task performance.
+  - Mu, W., Ning, J., Zhao, D., Zhang, Y. (2026). ["A Multi-Agent LLM
+    Framework for Multi-Domain Low-Resource In-Context NER via
+    Knowledge Retrieval, Disambiguation and Reflective
+    Analysis"](https://arxiv.org/abs/2511.19083) (KDR-Agent). AAAI
+    2026. The agent-role split: one agent gathers background
+    knowledge, separate agents consume it for extraction and
+    reflection.
+  - Li, Z., Li, C., Zhang, M., Mei, Q., Bendersky, M. (2024).
+    ["Retrieval Augmented Generation or Long-Context LLMs? A
+    Comprehensive Study and Hybrid
+    Approach"](https://arxiv.org/abs/2407.16833). EMNLP 2024 Industry
+    Track. Why the synthesizer is a single long-context call rather
+    than chunked/recursive reduction: long-context processing
+    outperforms split-and-merge pipelines whenever the input fits the
+    window, which the notes (about 92KB against a 131k-token window)
+    do.
+  - Anthropic (2024). ["Introducing Contextual
+    Retrieval"](https://www.anthropic.com/news/contextual-retrieval),
+    with Merola, C., Singh, J. (2025), ["Reconstructing Context:
+    Evaluating Advanced Chunking Strategies for
+    RAG"](https://arxiv.org/abs/2504.19754), ECIR 2025 KEIR workshop,
+    as the peer-reviewed companion. Prepending document-level context
+    to a unit of work improves downstream processing (shown for
+    retrieval; applied here to extraction by analogy).
 - Jang, J., Ye, S., Seo, M. (2023). ["Can Large Language Models Truly
   Understand Prompts? A Case Study with Negated
   Prompts"](https://arxiv.org/abs/2209.12711). PMLR 203 (Transfer

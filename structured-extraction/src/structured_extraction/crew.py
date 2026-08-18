@@ -1,4 +1,5 @@
 import json
+import re
 from functools import cache
 from pathlib import Path
 
@@ -10,6 +11,115 @@ EXTRACTOR_MODEL = "@cf/meta/llama-3.3-70b-instruct-fp8-fast"
 VERIFIER_MODEL = "@cf/qwen/qwen2.5-coder-32b-instruct"
 
 CHART_PATH = Path(__file__).resolve().parents[3] / "data" / "sfia-9-summary-chart.json"
+
+
+CONTEXT_MODEL = EXTRACTOR_MODEL
+
+
+def build_context_notes_crew() -> Crew:
+    llm = WorkersAILLM(model=CONTEXT_MODEL, temperature=0.0, max_tokens=512)
+    scout = Agent(
+        role="SFIA framework context scout",
+        goal="Judge whether a non-skill page of sfia-online.org holds general framework context useful to a skill-page extraction agent, and note it if so",
+        backstory="",
+        llm=llm,
+        verbose=False,
+    )
+    task = Task(
+        description=(
+            "The page below is from sfia-online.org (SFIA 9) and is NOT an "
+            "individual skill page. Decide whether it contains general "
+            "framework context that would help an agent extracting per-level "
+            "skill descriptions from the skill pages - for example: what the "
+            "responsibility levels 1-7 mean, the attributes behind them "
+            "(autonomy, influence, complexity), why skills are not defined at "
+            "all seven levels, how skill pages are structured, or framework "
+            "terminology. Page navigation, news, licensing and marketing text "
+            "are not useful context.\n\n"
+            "Extract:\n"
+            "  relevant: true or false,\n"
+            "  notes: when relevant, 3-6 short factual sentences stating the "
+            "useful context in your own words; empty string when not\n\n"
+            "from the following page markdown:\n\n{page_markdown}\n\n"
+            "Return ONLY the JSON object, no text outside it."
+        ),
+        expected_output='{"relevant": true, "notes": "..."}',
+        agent=scout,
+    )
+    return Crew(agents=[scout], tasks=[task], process=Process.sequential)
+
+
+SYNTHESIZER_MODEL = "@cf/meta/llama-4-scout-17b-16e-instruct"
+BRIEFING_MAX_TOKENS = 400
+
+
+def build_context_synthesizer_crew() -> Crew:
+    # Long-context model: all notes go in as one call, no chunked reduce.
+    # The output token cap is the hard size enforcement on the briefing;
+    # the word limit in the prompt is the soft one.
+    llm = WorkersAILLM(model=SYNTHESIZER_MODEL, temperature=0.0, max_tokens=BRIEFING_MAX_TOKENS)
+    synthesizer = Agent(
+        role="SFIA framework briefing synthesizer",
+        goal="Synthesize per-page context notes into one condensed framework briefing for extraction agents",
+        backstory="",
+        llm=llm,
+        verbose=False,
+    )
+    task = Task(
+        description=(
+            "The notes below were gathered from every non-skill page of "
+            "sfia-online.org (SFIA 9). Synthesize them into a single "
+            "briefing of at most 250 words for an agent that extracts "
+            "per-level skill descriptions from SFIA skill pages. Keep only "
+            "what helps that task: the meaning of responsibility levels 1-7 "
+            "and their attributes, why skills are defined at only some "
+            "levels, how skill pages are structured, and framework "
+            "terminology. Merge duplicates, drop trivia, state facts "
+            "plainly, as condensed as possible.\n\n"
+            "Notes:\n\n{notes}\n\n"
+            "Return ONLY the briefing text, no preamble."
+        ),
+        expected_output="A plain-text briefing of at most 250 words.",
+        agent=synthesizer,
+    )
+    return Crew(agents=[synthesizer], tasks=[task], process=Process.sequential)
+
+
+SCOUT_CHUNK_CHARS = 20000
+
+
+def collect_context_notes(page: dict) -> dict | None:
+    """Run the context scout on one non-skill page; None when irrelevant.
+
+    Pages longer than the model's payload budget are scouted in chunks and
+    the chunk notes merged - the scout synthesizes each chunk instead of the
+    page being cut off at an arbitrary length."""
+    markdown = page["markdown"]
+    chunks = [
+        markdown[i:i + SCOUT_CHUNK_CHARS]
+        for i in range(0, len(markdown), SCOUT_CHUNK_CHARS)
+    ]
+    notes = []
+    for chunk in chunks:
+        crew = build_context_notes_crew()
+        crew.kickoff(inputs={"page_markdown": chunk})
+        try:
+            parsed = _parse_extraction(crew.tasks[0].output.raw)
+        except (json.JSONDecodeError, KeyError):
+            continue
+        if parsed.get("relevant") and str(parsed.get("notes", "")).strip():
+            notes.append(str(parsed["notes"]).strip())
+    if not notes:
+        return None
+    return {"url": page["url"], "notes": " ".join(notes)}
+
+
+def synthesize_context_briefing(notes: list[dict]) -> str:
+    """One synthesizer call over all notes; no cutting, no recursion."""
+    crew = build_context_synthesizer_crew()
+    joined = "\n".join(f"- ({n['url']}) {n['notes']}" for n in notes)
+    crew.kickoff(inputs={"notes": joined})
+    return crew.tasks[0].output.raw.strip()
 
 
 def build_extract_crew() -> Crew:
@@ -57,6 +167,10 @@ def build_extract_crew() -> Crew:
             "the HTML's structure (section containers, anchors such as "
             "'skill_level_section_N') only to resolve where sections start and "
             "end.\n\n"
+            "Framework briefing (background distilled from the rest of "
+            "sfia-online.org; use it to understand the framework, never as a "
+            "source of extracted text - all text comes from the page markdown "
+            "below):\n{framework_context}\n\n"
             "Extract:\n"
             "  skill: the skill name exactly as the page's top-level '# ' title "
             "states it,\n"
@@ -135,11 +249,32 @@ def _parse_extraction(raw: str) -> dict:
     return json.loads(raw)
 
 
-def _run_extraction(page: dict) -> dict:
+def _trim_html(html: str) -> str:
+    """Deterministically shrink page HTML to fit the extractor's context.
+
+    Full pages (nav, scripts, inline SVG) exceed the model's context window;
+    the structural cues the prompt uses (section containers,
+    skill_level_section_N anchors) all live inside <main>. Keep <main> when
+    present, then drop script/style/svg/comment blocks and collapse
+    whitespace.
+    """
+    main = re.search(r"<main\b.*?</main>", html, re.DOTALL)
+    if main:
+        html = main.group(0)
+    html = re.sub(
+        r"<script\b.*?</script>|<style\b.*?</style>|<svg\b.*?</svg>|<!--.*?-->",
+        "", html, flags=re.DOTALL,
+    )
+    return re.sub(r"\s+", " ", html)
+
+
+def _run_extraction(page: dict, framework_context: str) -> dict:
     extract_crew = build_extract_crew()
+    html = page.get("html", "")
     extract_crew.kickoff(inputs={
         "page_markdown": page["markdown"],
-        "page_html": page.get("html") or "(no HTML was extracted for this page)",
+        "page_html": _trim_html(html) if html else "(no HTML was extracted for this page)",
+        "framework_context": framework_context or "(no briefing available)",
     })
     try:
         return _parse_extraction(extract_crew.tasks[0].output.raw)
@@ -158,12 +293,12 @@ def _run_verification(page: dict, skill_name: str, entry: dict) -> str:
     return verify_crew.tasks[0].output.raw.strip()
 
 
-def extract_page(page: dict) -> tuple[list[dict], dict]:
+def extract_page(page: dict, framework_context: str = "") -> tuple[list[dict], dict]:
     """Extract one page's records: extract, range-check against the chart,
     verify, and count what each check rejected.
 
     Returns (records, metrics). A record is one (code, level, text)."""
-    parsed = _run_extraction(page)
+    parsed = _run_extraction(page, framework_context)
     skill_name = parsed["skill"]
     chart = chart_levels()
 
@@ -183,6 +318,7 @@ def extract_page(page: dict) -> tuple[list[dict], dict]:
             "code": code,
             "level": entry["level"],
             "text": entry["text"],
+            "reasoning": entry.get("reasoning", ""),
             "source_url": page["url"],
         })
 

@@ -11,19 +11,20 @@ BATCH_SIZE = 50
 
 def load_entries() -> list[dict]:
     records = json.loads(CORPUS_PATH.read_text())
-    # One entry per (record, mapping): the embedded text concatenates the
-    # skill name with the level description (label + description beats
-    # description alone for taxonomy linking - see README citations).
+    chart = json.loads((CORPUS_PATH.parent / "sfia-9-summary-chart.json").read_text())
+    names = {s["code"]: s["name"] for s in chart["skills"]}
+    # One entry per record: the embedded text concatenates the skill name
+    # with the level description (label + description beats description
+    # alone for taxonomy linking - see README citations).
     return [
         {
-            "embed_text": f"{m['skill']}: {r['text']}",
-            "skill": m["skill"],
-            "level": m["level"],
+            "embed_text": f"{names[r['code']]}: {r['text']}",
+            "skill": names[r["code"]],
+            "level": r["level"],
             "text": r["text"],
             "source_url": r["source_url"],
         }
         for r in records
-        for m in r["mappings"]
     ]
 
 

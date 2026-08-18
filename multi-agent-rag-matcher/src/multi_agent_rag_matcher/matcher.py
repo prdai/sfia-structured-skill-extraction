@@ -23,7 +23,9 @@ class MatchList(BaseModel):
 
 def canonical_skill_names() -> dict[str, str]:
     records = json.loads(CORPUS_PATH.read_text())
-    return {m["skill"].lower(): m["skill"] for r in records for m in r["mappings"]}
+    chart = json.loads((CORPUS_PATH.parent / "sfia-9-summary-chart.json").read_text())
+    names = {s["code"]: s["name"] for s in chart["skills"]}
+    return {names[r["code"]].lower(): names[r["code"]] for r in records}
 
 
 def build_llm(model: str = MODEL) -> LLM:
