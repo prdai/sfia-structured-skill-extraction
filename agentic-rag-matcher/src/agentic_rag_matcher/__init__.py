@@ -4,7 +4,7 @@ REPO_ROOT = Path(__file__).resolve().parents[3]
 CORPUS_PATH = REPO_ROOT / "data" / "sfia-skill-level-records.json"
 ENV_PATH = REPO_ROOT / "agentic-rag-matcher" / ".env"
 
-MODEL = "@cf/nvidia/nemotron-3-120b-a12b"
+MODEL = "@cf/zai-org/glm-4.7-flash"
 
 SWEEP_MODELS = [
     "@cf/mistralai/mistral-small-3.1-24b-instruct",

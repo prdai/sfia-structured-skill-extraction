@@ -1,4 +1,5 @@
 import json
+import sys
 import time
 from pathlib import Path
 
@@ -72,7 +73,13 @@ def run_eval(matcher: SkillMatcher, roles_path: Path) -> EvalReport:
     durations = []
     for role in data["roles"]:
         start = time.perf_counter()
-        predicted = matcher.match(role["summary_statement"])
+        # Score a role whose matcher call fails as an empty prediction,
+        # matching the sweep scripts, instead of aborting the whole eval.
+        try:
+            predicted = matcher.match(role["summary_statement"])
+        except Exception as e:
+            print(f"FAILED {role['title']}: {e}", file=sys.stderr)
+            predicted = []
         durations.append(time.perf_counter() - start)
         role_results.append(_score_role(role, predicted))
 

@@ -4,7 +4,7 @@ REPO_ROOT = Path(__file__).resolve().parents[3]
 CORPUS_PATH = REPO_ROOT / "data" / "sfia-skill-level-records.json"
 ENV_PATH = REPO_ROOT / "multi-agent-rag-matcher" / ".env"
 
-MODEL = "@cf/moonshotai/kimi-k2.7-code"
+MODEL = "@cf/moonshotai/kimi-k2.6"
 COMPAT_BASE_URL = "https://gateway.ai.cloudflare.com/v1/{account_id}/{gateway_id}/compat"
 
 SWEEP_MODELS = [

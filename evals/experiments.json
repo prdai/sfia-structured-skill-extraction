@@ -654,5 +654,213 @@
       "mean_seconds_per_record": 0.23505143430002134,
       "failed_roles": 7
     }
+  },
+  {
+    "implementation": "multi-agent-rag-crewai",
+    "config": {
+      "model": "@cf/moonshotai/kimi-k2.6"
+    },
+    "metrics": {
+      "mean_precision": 0.28507706003673744,
+      "mean_recall": 0.23879629629629628,
+      "mean_f1": 0.18911129260557177,
+      "mean_level_mae": 1.2031746031746031,
+      "mean_level_accuracy_exact": 0.2873015873015873,
+      "mean_level_accuracy_within_1": 0.7095238095238096,
+      "mean_seconds_per_record": 342.23511997203326,
+      "failed_roles": 0
+    }
+  },
+  {
+    "implementation": "multi-agent-rag-crewai",
+    "config": {
+      "model": "@cf/moonshotai/kimi-k2.7-code"
+    },
+    "metrics": {
+      "mean_precision": 0.15,
+      "mean_recall": 0.04226190476190476,
+      "mean_f1": 0.05907407407407407,
+      "mean_level_mae": 0.6,
+      "mean_level_accuracy_exact": 0.4,
+      "mean_level_accuracy_within_1": 1.0,
+      "mean_seconds_per_record": 78.15887721126698,
+      "failed_roles": 21
+    }
+  },
+  {
+    "implementation": "multi-agent-rag-crewai",
+    "config": {
+      "model": "@cf/nvidia/nemotron-3-120b-a12b"
+    },
+    "metrics": {
+      "mean_precision": 0.44846153846153847,
+      "mean_recall": 0.13206349206349205,
+      "mean_f1": 0.17234770675947148,
+      "mean_level_mae": 0.868421052631579,
+      "mean_level_accuracy_exact": 0.3157894736842105,
+      "mean_level_accuracy_within_1": 0.8157894736842105,
+      "mean_seconds_per_record": 401.48981120619976,
+      "failed_roles": 3
+    }
+  },
+  {
+    "implementation": "multi-agent-rag-crewai",
+    "config": {
+      "model": "@cf/zai-org/glm-4.7-flash"
+    },
+    "metrics": {
+      "mean_precision": 0.2308693863710549,
+      "mean_recall": 0.21533068783068782,
+      "mean_f1": 0.16012622453798925,
+      "mean_level_mae": 0.9242424242424242,
+      "mean_level_accuracy_exact": 0.3409090909090909,
+      "mean_level_accuracy_within_1": 0.7348484848484849,
+      "mean_seconds_per_record": 314.74188835113324,
+      "failed_roles": 1
+    }
+  },
+  {
+    "implementation": "multi-agent-rag-crewai",
+    "config": {
+      "model": "@cf/zai-org/glm-5.2"
+    },
+    "metrics": {
+      "mean_precision": 0.14444444444444443,
+      "mean_recall": 0.06031746031746032,
+      "mean_f1": 0.07333333333333333,
+      "mean_level_mae": 0.5,
+      "mean_level_accuracy_exact": 0.5,
+      "mean_level_accuracy_within_1": 1.0,
+      "mean_seconds_per_record": 43.51040596069991,
+      "failed_roles": 24
+    }
+  },
+  {
+    "implementation": "agentic-rag-crewai",
+    "config": {
+      "model": "@cf/mistralai/mistral-small-3.1-24b-instruct"
+    },
+    "metrics": {
+      "mean_precision": 0.3466666666666667,
+      "mean_recall": 0.18363756613756613,
+      "mean_f1": 0.22437229437229436,
+      "mean_level_mae": 0.95,
+      "mean_level_accuracy_exact": 0.25,
+      "mean_level_accuracy_within_1": 0.8,
+      "mean_seconds_per_record": 14.361740190600662,
+      "failed_roles": 1
+    }
+  },
+  {
+    "implementation": "agentic-rag-crewai",
+    "config": {
+      "model": "@cf/meta/llama-4-scout-17b-16e-instruct"
+    },
+    "metrics": {
+      "mean_precision": 0.0,
+      "mean_recall": 0.0,
+      "mean_f1": 0.0,
+      "mean_level_mae": null,
+      "mean_level_accuracy_exact": null,
+      "mean_level_accuracy_within_1": null,
+      "mean_seconds_per_record": 4.26758302413388,
+      "failed_roles": 0
+    }
+  },
+  {
+    "implementation": "agentic-rag-crewai",
+    "config": {
+      "model": "@cf/google/gemma-4-26b-a4b-it"
+    },
+    "metrics": {
+      "mean_precision": 0.40555555555555556,
+      "mean_recall": 0.12308201058201057,
+      "mean_f1": 0.17634920634920634,
+      "mean_level_mae": 0.84375,
+      "mean_level_accuracy_exact": 0.375,
+      "mean_level_accuracy_within_1": 0.78125,
+      "mean_seconds_per_record": 244.42628648253316,
+      "failed_roles": 4
+    }
+  },
+  {
+    "implementation": "agentic-rag-crewai",
+    "config": {
+      "model": "@cf/moonshotai/kimi-k2.6"
+    },
+    "metrics": {
+      "mean_precision": 0.5666666666666667,
+      "mean_recall": 0.1382142857142857,
+      "mean_f1": 0.21563732563732563,
+      "mean_level_mae": 0.6666666666666666,
+      "mean_level_accuracy_exact": 0.5238095238095238,
+      "mean_level_accuracy_within_1": 0.8571428571428571,
+      "mean_seconds_per_record": 150.7189509949339,
+      "failed_roles": 0
+    }
+  },
+  {
+    "implementation": "agentic-rag-crewai",
+    "config": {
+      "model": "@cf/moonshotai/kimi-k2.7-code"
+    },
+    "metrics": {
+      "mean_precision": 0.1277777777777778,
+      "mean_recall": 0.04583333333333333,
+      "mean_f1": 0.06011303511303511,
+      "mean_level_mae": 0.3333333333333333,
+      "mean_level_accuracy_exact": 0.6666666666666666,
+      "mean_level_accuracy_within_1": 1.0,
+      "mean_seconds_per_record": 24.99827092350012,
+      "failed_roles": 21
+    }
+  },
+  {
+    "implementation": "agentic-rag-crewai",
+    "config": {
+      "model": "@cf/nvidia/nemotron-3-120b-a12b"
+    },
+    "metrics": {
+      "mean_precision": 0.3888888888888889,
+      "mean_recall": 0.1364153439153439,
+      "mean_f1": 0.18847041847041848,
+      "mean_level_mae": 0.6470588235294118,
+      "mean_level_accuracy_exact": 0.5294117647058824,
+      "mean_level_accuracy_within_1": 0.8529411764705882,
+      "mean_seconds_per_record": 154.55603127780003,
+      "failed_roles": 0
+    }
+  },
+  {
+    "implementation": "agentic-rag-crewai",
+    "config": {
+      "model": "@cf/zai-org/glm-4.7-flash"
+    },
+    "metrics": {
+      "mean_precision": 0.38563492063492066,
+      "mean_recall": 0.19706349206349208,
+      "mean_f1": 0.23556526806526806,
+      "mean_level_mae": 0.9469696969696969,
+      "mean_level_accuracy_exact": 0.37121212121212116,
+      "mean_level_accuracy_within_1": 0.7045454545454546,
+      "mean_seconds_per_record": 226.49663864226642,
+      "failed_roles": 1
+    }
+  },
+  {
+    "implementation": "agentic-rag-crewai",
+    "config": {
+      "model": "@cf/zai-org/glm-5.2"
+    },
+    "metrics": {
+      "mean_precision": 0.17222222222222222,
+      "mean_recall": 0.06605820105820107,
+      "mean_f1": 0.08574314574314575,
+      "mean_level_mae": 0.5,
+      "mean_level_accuracy_exact": 0.5,
+      "mean_level_accuracy_within_1": 1.0,
+      "mean_seconds_per_record": 20.095284462033668,
+      "failed_roles": 22
+    }
   }
 ]
