@@ -37,15 +37,15 @@ results with noise (precision collapses at 0.3).
 |---|---|---|---|
 | 0.9 | 0.198 | 0.072 | 0.100 |
 | 0.8 | 0.132 | 0.092 | 0.105 |
-| **0.7** | **0.138** | **0.133** | **0.127** |
+| **0.7** | **0.141** | **0.133** | **0.128** |
 | 0.5 | 0.081 | 0.259 | 0.118 |
 | 0.3 | 0.055 | 0.431 | 0.093 |
 
 ## Known baseline result
 
 Evaluated against all 30 roles in `evals/eu-ict-sfia-role-profiles.json` via
-the shared harness (`evals/`, `eval-keyword`): mean precision 0.138, recall
-0.133, F1 0.127; mean level MAE 0.938, exact-level accuracy 0.260,
+the shared harness (`evals/`, `eval-keyword`): mean precision 0.141, recall
+0.133, F1 0.128; mean level MAE 0.938, exact-level accuracy 0.260,
 accuracy-within-1 0.875, on the skills correctly identified by name. Mean
 time per record: 0.8ms. Low precision/recall is expected for a
 lexical baseline against short, abstract `summary_statement` text that

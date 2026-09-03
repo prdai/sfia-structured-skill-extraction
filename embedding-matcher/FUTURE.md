@@ -2,7 +2,7 @@
 
 Current state: retrieve-and-rerank with a pointwise relevance prompt,
 threshold tuned by sweep (see README). Skill identification beats the BM25
-baseline (F1 0.210 vs 0.127); exact-level placement is behind it (0.175 vs
+baseline (F1 0.232 vs 0.128); exact-level placement is behind it (0.181 vs
 0.260).
 
 Not doing this now, but worth doing later:

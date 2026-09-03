@@ -60,12 +60,12 @@ identity would prefer llama-4-scout. Level metrics are conditional on
 correctly-named skills, so optimizing them directly would reward models that
 match very few skills.
 
-`@cf/meta/llama-3.1-8b-instruct-fast` wins on mean F1 and is the saved
-default. Earlier sweep rounds (also in experiments.json) ran without
-`max_tokens`; Workers AI's default output cap truncated long responses
-mid-JSON, so those rows carry high failed-role counts. The final round sets
-`max_tokens` 8192 plus `maxItems` 20 on the matches array: zero failures
-across all three models.
+`@cf/meta/llama-3.1-8b-instruct-fast` wins on mean F1. The configured default
+is `@cf/google/gemma-4-26b-a4b-it`. Earlier sweep rounds (also in
+experiments.json) ran without `max_tokens`; Workers AI's default output cap
+truncated long responses mid-JSON, so those rows carry high failed-role
+counts. The final round sets `max_tokens` 8192 plus `maxItems` 20 on the
+matches array: zero failures across all three models.
 
 Excluded: `@cf/meta/llama-3.3-70b-instruct-fp8-fast` fails constrained
 generation deterministically on some inputs (Workers AI error 5024, "JSON

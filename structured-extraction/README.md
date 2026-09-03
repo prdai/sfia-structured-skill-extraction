@@ -1,10 +1,10 @@
 # structured-extraction
 
 Agentic pipeline that turns the crawler's raw pages
-(`data/sfia-dataset.json`, markdown + HTML per page) into
-`{skill, level, text}` records for `keyword-matcher`'s BM25 corpus (and
-any other matcher that needs per-skill, per-level description text
-instead of full pages).
+(`data/sfia-dataset.json`, markdown + HTML per page) into a code-keyed,
+level-aware corpus for `keyword-matcher` and other matchers. Output groups
+identical text with `mappings: [{"code": ..., "level": ...}]`; skill names
+resolve through `data/sfia-9-summary-chart.json`.
 
 Each SFIA skill page has `### <Skill>: Level N` sections for the levels
 that skill is defined at. Not every skill spans levels 1-7 (most don't:

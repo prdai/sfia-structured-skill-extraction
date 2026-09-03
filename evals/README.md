@@ -79,8 +79,8 @@ eval-keyword
 
 ## Known baseline result (keyword-matcher, BM25)
 
-Mean precision 0.198, recall 0.072, F1 0.100 across all 30 roles; mean level
-MAE 0.818, exact-level accuracy 0.364, accuracy-within-1 0.818, on the
+Mean precision 0.141, recall 0.133, F1 0.128 across all 30 roles; mean level
+MAE 0.938, exact-level accuracy 0.260, accuracy-within-1 0.875, on the
 skills it did identify correctly. Mean time per record: 0.8ms. Low
 recall/precision is expected for a lexical baseline against
 short, abstract `summary_statement` text (see `keyword-matcher/README.md`
@@ -89,7 +89,7 @@ embedding/LLM matchers, not a bug in this harness.
 
 ## How this was extracted (current process)
 
-Done by hand, through Claude Code, in one session:
+Done by hand in one session:
 
 1. Fetched the EU ICT SFIA skills profiles listing page
    (sfia-online.org, paginated via `?b_start:int=`) to get all 30 role names

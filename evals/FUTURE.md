@@ -1,9 +1,9 @@
 # Future work on evals/ extraction
 
-Current state: this dataset was extracted by hand, by prompting Claude Code
-(one model, one session, manual fetch + read + transcribe per PDF). That's
-fine for a one-off 30-document dataset, but it doesn't scale and has no
-independent check on accuracy beyond re-reading each PDF once.
+Current state: this dataset was extracted by hand in one session with manual
+fetch, read, and transcription per PDF. That's fine for a one-off 30-document
+dataset, but it doesn't scale and has no independent check on accuracy beyond
+re-reading each PDF once.
 
 Not doing this now, but worth doing later:
 

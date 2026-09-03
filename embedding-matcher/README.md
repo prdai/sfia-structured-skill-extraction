@@ -86,11 +86,11 @@ pointwise LLM emits scores in coarse steps, not a continuum.
 ## Known baseline result
 
 At the saved 0.6 threshold (stored as `embedding-qwen3-llm-rerank` in
-`evals/results.json`): mean precision 0.242, recall 0.222, F1 0.210; level
-MAE 1.684, exact-level accuracy 0.175, within-1 0.470 on correctly-named
-skills; ~1.1s per query.
+`evals/results.json`): mean precision 0.266, recall 0.243, F1 0.232; level
+MAE 1.604, exact-level accuracy 0.181, within-1 0.436 on correctly-named
+skills; ~6.17s per query.
 
-Against keyword-bm25 (F1 0.127, exact-level 0.260, within-1 0.875): better
+Against keyword-bm25 (F1 0.128, exact-level 0.260, within-1 0.875): better
 at finding the right skills (F1 +65%), worse at placing exact levels on the
 ones found. The retrieval stage surfaces semantically-close level texts
 across adjacent levels, and the pointwise reranker doesn't discriminate

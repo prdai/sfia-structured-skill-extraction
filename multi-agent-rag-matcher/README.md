@@ -71,7 +71,8 @@ logged in `evals/experiments.json`:
 | @cf/moonshotai/kimi-k2.6 | 0.319 | 0.175 | 0.160 | 0.476 | 0.794 | 0.78 | 319.8 | 0 |
 | @cf/zai-org/glm-5.2 | 0.067 | 0.025 | 0.036 | 0.167 | 1.000 | 0.83 | 73.1 | 23 |
 
-`@cf/moonshotai/kimi-k2.7-code` wins on mean F1 and is the saved default.
+`@cf/moonshotai/kimi-k2.7-code` wins on mean F1. The configured default is
+`@cf/moonshotai/kimi-k2.6`.
 Every working model is 235-373s/record here, an order of magnitude slower
 than the same models' single-agent numbers in `agentic-rag-matcher` - three
 sequential agents each making their own LLM/tool-call round trips, rather

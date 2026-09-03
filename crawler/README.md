@@ -14,14 +14,17 @@ object in R2.
 ## Setup
 
 1. `wrangler login`.
-2. Create a Cloudflare API token scoped **Browser Rendering - Edit**
+2. Create the R2 bucket if it does not already exist:
+   `npx wrangler r2 bucket create sfia-dataset`.
+3. Create a Cloudflare API token scoped **Browser Rendering - Edit**
    (separate from the wrangler login OAuth token). Store it:
    `wrangler secret put CF_API_TOKEN`.
-3. `npm install && npm run deploy`.
+4. `npm install && npm run deploy`.
 
 ## Not yet done
 
-- Not deployed, not run against the live site yet.
+- The checked-in dataset was produced by a completed live-site crawl.
+  Deployment status is not recorded in this repository.
 - `records[].markdown` and `records[].html` are raw per-page content,
   not parsed into a skills/levels structure — separate downstream step
   (`structured-extraction/`). The `html` field only exists in crawls

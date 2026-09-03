@@ -95,10 +95,10 @@ leaderboard to transfer.
 | @cf/meta/llama-4-scout-17b-16e-instruct | 0.000 | 0.000 | 0.000 | n/a | n/a | n/a | 4.5 | 0 |
 
 `@cf/nvidia/nemotron-3-120b-a12b` wins on mean F1 and is also the fastest of
-the working models (9.1s/record, one clean call chain with no retries) - it
-is the saved default. `kimi-k2.6` has the best level-exact accuracy (0.611)
-despite lower F1, so it is the better pick if level precision matters more
-than skill-name F1. `glm-4.7-flash` is close on F1 but ~19x slower than
+the working models (9.1s/record, one clean call chain with no retries). The
+configured default is `@cf/zai-org/glm-4.7-flash`. `kimi-k2.6` has the best
+level-exact accuracy (0.611) despite lower F1, so it is the better pick if
+level precision matters more than skill-name F1. `glm-4.7-flash` is close on F1 but ~19x slower than
 nemotron (173.6s/record), likely burning many extra turns/retries per role.
 glm-5.2's high failure count is a rate-limit artifact of the 16-way parallel
 sweep, not a model or format failure - most of its 30 roles hit Workers AI's
