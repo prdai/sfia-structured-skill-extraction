@@ -25,6 +25,8 @@ object in R2.
 
 - The checked-in dataset was produced by a completed live-site crawl.
   Deployment status is not recorded in this repository.
+- The crawler stores to R2 as `sfia-crawl.json`; the checked-in local file used
+  by downstream code is `data/sfia-dataset.json`.
 - `records[].markdown` and `records[].html` are raw per-page content,
   not parsed into a skills/levels structure — separate downstream step
   (`structured-extraction/`). The `html` field only exists in crawls

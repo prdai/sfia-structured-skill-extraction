@@ -257,13 +257,18 @@ instruction-following on this task, not any component model.
 
 ```
 uv venv && uv pip install -e .
-python -m structured_extraction.run        # all skill pages
-python -m structured_extraction.run 10     # first 10 pages, for testing
+uv run extract        # all skill pages
+uv run extract 10     # first 10 pages, for testing
 ```
 
 Outputs `output/skill-level-records.json` (the corpus) and
 `output/extraction-metrics.json` (per-page and total counts of
 extracted / range-rejected / verifier-rejected / kept records).
+
+To refresh the shared matcher corpus used by `keyword-matcher/`,
+`embedding-matcher/`, `llm-matcher/`, and both RAG matchers, copy:
+`structured-extraction/output/skill-level-records.json` ->
+`data/sfia-skill-level-records.json`.
 
 Requires `CF_ACCOUNT_ID`, `CF_API_EMAIL`, `CF_API_KEY` in
 `structured-extraction/.env` (gitignored, not committed).

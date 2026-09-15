@@ -25,4 +25,8 @@ which is a Worker). The root `Makefile` orchestrates them:
 
 ```
 make help
+make vector-db
+make ingest
+make search TEXT="builds and tests python services"
+make llm-match TEXT="leads solution architecture for complex enterprise systems"
 ```
