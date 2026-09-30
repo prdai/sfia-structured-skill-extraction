@@ -64,7 +64,12 @@ call per query).
 
 ```
 uv venv && uv pip install -e .
-eval-keyword
+uv run eval-keyword
+uv run eval-embedding
+uv run eval-llm
+uv run eval-agentic-rag
+uv run eval-multi-agent-rag
+uv run eval-compare
 ```
 
 ## Files

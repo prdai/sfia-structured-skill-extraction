@@ -53,8 +53,8 @@ Gateway (`structured-extraction`) for per-request cost visibility.
 ```
 docker compose up -d      # local Qdrant
 uv venv && uv pip install -e .
-ingest                    # embed the corpus into Qdrant (one-off, ~700 points)
-search "builds and tests python services"
+uv run ingest             # embed the corpus into Qdrant (one-off, 669 points in current dataset)
+uv run search "builds and tests python services"
 ```
 
 Requires `CF_ACCOUNT_ID`, `CF_API_EMAIL`, `CF_API_KEY` (and optionally

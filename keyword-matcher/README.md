@@ -58,5 +58,5 @@ embedding/LLM matchers in the other directories, not a bug to fix here. See
 
 ```
 uv venv && uv pip install -e .
-match "some job or course description text"
+uv run match "some job or course description text"
 ```
