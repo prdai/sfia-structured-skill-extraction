@@ -23,7 +23,7 @@
   "kv_namespaces": [
     {
       "binding": "MATCH_CACHE",
-      "id": "REPLACE_WITH_KV_NAMESPACE_ID"
+      "id": "dc3452b6379e4a1b88046eaca295d429"
     }
   ],
   "durable_objects": {
