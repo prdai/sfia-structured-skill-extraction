@@ -1,0 +1,23 @@
+---
+import { SkillDirectory } from "../../components/SkillDirectory";
+import skills from "../../data/skills.json";
+import Base from "../../layouts/Base.astro";
+---
+
+<Base
+  title="SFIA 9 skills — SFIA Explorer"
+  description="Browse all 147 SFIA 9 skills, their codes, and the responsibility levels each skill is defined at."
+>
+  <section class="mx-auto w-full max-w-5xl px-5 py-10">
+    <div class="mb-8 max-w-2xl">
+      <p class="mb-2 text-xs uppercase tracking-[0.18em] text-muted-foreground">Catalogue</p>
+      <h1 class="text-3xl font-medium tracking-tight">SFIA 9 skills</h1>
+      <p class="mt-3 text-sm leading-relaxed text-muted-foreground">
+        SFIA defines 147 professional skills, each at one or more of seven
+        responsibility levels. Every page links to the official SFIA description
+        and shows a short excerpt from the public framework.
+      </p>
+    </div>
+    <SkillDirectory client:load skills={skills} />
+  </section>
+</Base>

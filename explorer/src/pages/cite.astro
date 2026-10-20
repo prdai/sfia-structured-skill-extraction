@@ -1,0 +1,50 @@
+---
+import { CopyButton } from "../components/CopyButton";
+import Base from "../layouts/Base.astro";
+
+const bibtex = `@misc{disansa2026sfia,
+  title = {From Lexical Baselines to Agentic Retrieval-Augmented Generation:
+           Structured Skill and Responsibility-Level Extraction with the SFIA Framework},
+  author = {Disansa, Ranuga and Samarasinghe, U. S. and Gunawardena, Lasith},
+  year = {2026},
+  eprint = {2609.35806},
+  archivePrefix = {arXiv},
+  primaryClass = {cs.CL},
+  url = {https://arxiv.org/abs/2609.35806}
+}`;
+---
+
+<Base
+  title="Cite — SFIA Explorer"
+  description="BibTeX citation for the SFIA structured skill extraction paper behind SFIA Explorer."
+>
+  <section class="mx-auto w-full max-w-3xl px-5 py-10">
+    <p class="mb-2 text-xs uppercase tracking-[0.18em] text-muted-foreground">Citation</p>
+    <h1 class="text-3xl font-medium tracking-tight">Cite this work</h1>
+    <p class="mt-3 max-w-2xl text-sm leading-relaxed text-muted-foreground">
+      If you use the corpus, the harness, the matchers, or this demo in your
+      work, please cite the paper. The code and data are on GitHub.
+    </p>
+
+    <div class="mt-6 flex items-center justify-between gap-3">
+      <p class="text-sm font-medium">BibTeX</p>
+      <CopyButton client:idle text={bibtex} />
+    </div>
+    <pre class="mt-3 overflow-x-auto rounded-2xl border bg-card p-4 font-mono text-xs leading-relaxed">{bibtex}</pre>
+
+    <div class="mt-6 flex flex-wrap gap-2">
+      <a
+        class="inline-flex h-9 items-center rounded-2xl bg-foreground px-4 text-sm font-medium text-background transition-opacity hover:opacity-90"
+        href="https://arxiv.org/abs/2609.35806"
+        target="_blank"
+        rel="noreferrer">arXiv:2609.35806</a
+      >
+      <a
+        class="inline-flex h-9 items-center rounded-2xl border px-4 text-sm font-medium transition-colors hover:bg-muted"
+        href="https://github.com/prdai/sfia-structured-skill-extraction"
+        target="_blank"
+        rel="noreferrer">GitHub repository</a
+      >
+    </div>
+  </section>
+</Base>

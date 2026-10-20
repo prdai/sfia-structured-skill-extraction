@@ -1,8 +1,14 @@
 # sfia-structured-skill-extraction
 
+**Demo:** <https://sfia.prdai.dev> · **Paper:** <https://arxiv.org/abs/2609.35806>
+
 Maps free-text job, course, and skill descriptions to SFIA skills and
 responsibility levels (1-7). Multiple matching strategies live side by side so
 they can be compared on the same dataset.
+
+**Live explorer:** <https://sfia.prdai.dev> — paste a role description to get
+SFIA 9 skills and levels, or browse the 147-skill catalogue. Source is in
+[`explorer/`](explorer/).
 
 This repo is organized so someone can either:
 
@@ -22,6 +28,8 @@ This repo is organized so someone can either:
 - `llm-matcher/` — pure Workers AI LLM matching with constrained JSON output.
 - `agentic-rag-matcher/` — single-agent RAG over dense and BM25 retrieval.
 - `multi-agent-rag-matcher/` — retriever, matcher, and verifier RAG crew.
+- `explorer/` — public Astro + Cloudflare Worker demo (AI Search retrieval,
+  Workers AI, Turnstile, KV cache) behind <https://sfia.prdai.dev>.
 
 ## Usage
 
