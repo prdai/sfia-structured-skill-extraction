@@ -29,15 +29,15 @@ The model must call both before it can submit matches.
 ## Local development
 
 ```bash
-npm install
-npm run data     # regenerate src/data/skills.json from ../data
-npm run dev      # http://localhost:4321
+bun install
+bun run data     # regenerate src/data/skills.json from ../data
+bun run dev      # http://localhost:4321
 ```
 
 `astro dev` serves the static pages but not the Worker API. To exercise the API,
-run `npm run dev:worker` in another terminal; `/api` is proxied to
+run `bun run dev:worker` in another terminal; `/api` is proxied to
 `http://localhost:8787`. AI Search and Workers AI are remote bindings, so use
-`npx wrangler dev --remote` when you need real retrieval.
+`bunx wrangler dev --remote` when you need real retrieval.
 
 Turnstile is skipped when `PUBLIC_TURNSTILE_SITE_KEY` is unset. The API also
 skips server verification when the `TURNSTILE_SECRET` binding is unset. Set
@@ -50,7 +50,7 @@ Requires a Workers Paid plan (AI Search paid models and Durable Objects).
 ### 1. R2 corpus
 
 ```bash
-npx wrangler r2 bucket create sfia-corpus
+bunx wrangler r2 bucket create sfia-corpus
 ```
 
 Create an R2 API token with object read/write access, then:
@@ -60,7 +60,7 @@ export R2_ACCOUNT_ID=...
 export R2_ACCESS_KEY_ID=...
 export R2_SECRET_ACCESS_KEY=...
 export R2_BUCKET=sfia-corpus
-npm run seed
+bun run seed
 ```
 
 The seed script uploads one object per skill-level record
@@ -72,7 +72,7 @@ metadata.
 The keyword tool needs hybrid search enabled at the instance level:
 
 ```bash
-npx wrangler ai-search create sfia-corpus \
+bunx wrangler ai-search create sfia-corpus \
   --type r2 \
   --source sfia-corpus \
   --hybrid-search \
@@ -84,7 +84,7 @@ npx wrangler ai-search create sfia-corpus \
   --custom-metadata level:number \
   --custom-metadata source_url:text
 
-npx wrangler ai-search jobs create sfia-corpus
+bunx wrangler ai-search jobs create sfia-corpus
 ```
 
 The instance name must match `instance_name` in `wrangler.jsonc`.
@@ -92,10 +92,10 @@ The instance name must match `instance_name` in `wrangler.jsonc`.
 ### 3. KV cache and secrets
 
 ```bash
-npx wrangler kv namespace create MATCH_CACHE
+bunx wrangler kv namespace create MATCH_CACHE
 # put the returned id into wrangler.jsonc
 
-npx wrangler secret put TURNSTILE_SECRET
+bunx wrangler secret put TURNSTILE_SECRET
 ```
 
 Create a Turnstile widget for `sfia.prdai.dev`, then put the site key in
@@ -109,7 +109,7 @@ cp .env.example .env
 ### 4. Deploy
 
 ```bash
-npm run deploy
+bun run deploy
 ```
 
 `wrangler.jsonc` already routes `sfia.prdai.dev` as a custom domain. Change the
