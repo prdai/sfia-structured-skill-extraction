@@ -1,5 +1,7 @@
 # sfia-structured-skill-extraction
 
+**Demo:** <https://sfia.prdai.dev> · **Paper:** <https://arxiv.org/abs/2609.35806>
+
 Maps free-text job, course, and skill descriptions to SFIA skills and
 responsibility levels (1-7). Multiple matching strategies live side by side so
 they can be compared on the same dataset.
