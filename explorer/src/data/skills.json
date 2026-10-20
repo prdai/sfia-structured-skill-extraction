@@ -1,0 +1,1850 @@
+[
+  {
+    "code": "ACIN",
+    "name": "Accessibility and inclusion",
+    "levels": [
+      2,
+      3,
+      4,
+      5,
+      6
+    ],
+    "excerpt": "Engages with stakeholders to explain accessibility factors. Influences designs to improve accessibility. Provides detailed accessibility analysis to inform decisions throughout the product or service lifecycle.…",
+    "sourceUrl": "https://sfia-online.org/en/sfia-9/skills/accessibility-and-inclusion"
+  },
+  {
+    "code": "ANCC",
+    "name": "Analytical classification and coding",
+    "levels": [
+      2,
+      3,
+      4,
+      5,
+      6
+    ],
+    "excerpt": "Assigns classifications/labels to highly complex information. Performs quality assurance checks on the work of others. Investigates and corrects complex classification/labelling errors. Delivers training to team members.…",
+    "sourceUrl": "https://sfia-online.org/en/sfia-9/skills/analytical-classification-and-coding"
+  },
+  {
+    "code": "ADEV",
+    "name": "Animation development",
+    "levels": [
+      2,
+      3,
+      4,
+      5,
+      6
+    ],
+    "excerpt": "Builds visual and audio components and integrates them into the system structure. Uses design tools to evolve rapid prototypes and assess the viability of design concepts for interactive systems and user interfaces.…",
+    "sourceUrl": "https://sfia-online.org/en/sfia-9/skills/animation-development"
+  },
+  {
+    "code": "ASUP",
+    "name": "Application support",
+    "levels": [
+      2,
+      3,
+      4,
+      5
+    ],
+    "excerpt": "Maintains application support processes and checks that all requests for support are dealt with according to agreed procedures.…",
+    "sourceUrl": "https://sfia-online.org/en/sfia-9/skills/application-support"
+  },
+  {
+    "code": "AIDE",
+    "name": "Artificial intelligence (AI) and data ethics",
+    "levels": [
+      3,
+      4,
+      5,
+      6
+    ],
+    "excerpt": "Engages stakeholders to communicate ethical considerations and influence design decisions. Conducts detailed impact assessments and makes recommendations. Manages ethical reviews to ensure compliance with standards.…",
+    "sourceUrl": "https://sfia-online.org/en/sfia-9/skills/ai-data-ethics"
+  },
+  {
+    "code": "ASMG",
+    "name": "Asset management",
+    "levels": [
+      2,
+      3,
+      4,
+      5,
+      6
+    ],
+    "excerpt": "Controls assets in one or more significant areas ensuring administration of full lifecycle of assets is carried out.…",
+    "sourceUrl": "https://sfia-online.org/en/sfia-9/skills/asset-management"
+  },
+  {
+    "code": "AUDT",
+    "name": "Audit",
+    "levels": [
+      2,
+      3,
+      4,
+      5,
+      6,
+      7
+    ],
+    "excerpt": "Contributes to planning and executing of risk-based audit of existing and planned processes, products, systems and services. Identifies and documents risks in detail.…",
+    "sourceUrl": "https://sfia-online.org/en/sfia-9/skills/audit"
+  },
+  {
+    "code": "AVMT",
+    "name": "Availability management",
+    "levels": [
+      3,
+      4,
+      5,
+      6
+    ],
+    "excerpt": "Analyses service and component availability, reliability, maintainability and serviceability. Contributes to the availability management process and its operation.…",
+    "sourceUrl": "https://sfia-online.org/en/sfia-9/skills/availability-management"
+  },
+  {
+    "code": "BENM",
+    "name": "Benefits management",
+    "levels": [
+      3,
+      4,
+      5,
+      6
+    ],
+    "excerpt": "Contributes to the development and implementation of benefits management plans for projects and programmes.…",
+    "sourceUrl": "https://sfia-online.org/en/sfia-9/skills/benefits-management"
+  },
+  {
+    "code": "BIDM",
+    "name": "Bid/proposal management",
+    "levels": [
+      3,
+      4,
+      5,
+      6
+    ],
+    "excerpt": "Leads the creation of small to medium proposals, integrating technical analysis and broader context.…",
+    "sourceUrl": "https://sfia-online.org/en/sfia-9/skills/bid-proposal-management"
+  },
+  {
+    "code": "BRMG",
+    "name": "Brand management",
+    "levels": [
+      4,
+      5,
+      6
+    ],
+    "excerpt": "Contributes to the development and implementation of brand identity elements and guidelines. Supports brand research and analysis. Ensures consistent application of brand standards across assigned projects.…",
+    "sourceUrl": "https://sfia-online.org/en/sfia-9/skills/brand-management"
+  },
+  {
+    "code": "BUDF",
+    "name": "Budgeting and forecasting",
+    "levels": [
+      2,
+      3,
+      4,
+      5,
+      6
+    ],
+    "excerpt": "Contributes to the development of budgets and forecasts for specific areas of responsibility. Gathers and analyses financial data and prepares budget templates and reports.…",
+    "sourceUrl": "https://sfia-online.org/en/sfia-9/skills/budgeting-and-forecasting"
+  },
+  {
+    "code": "ADMN",
+    "name": "Business administration",
+    "levels": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6
+    ],
+    "excerpt": "Assists the teams and managers in ensuring they have the information and resources needed to support ongoing processes. Assists in planning for meetings. Liaises and organises across functions.…",
+    "sourceUrl": "https://sfia-online.org/en/sfia-9/skills/business-administration"
+  },
+  {
+    "code": "BINT",
+    "name": "Business intelligence",
+    "levels": [
+      2,
+      3,
+      4,
+      5
+    ],
+    "excerpt": "Supports business intelligence needs of specific management or governance processes or operational areas.…",
+    "sourceUrl": "https://sfia-online.org/en/sfia-9/skills/business-intelligence"
+  },
+  {
+    "code": "BSMO",
+    "name": "Business modelling",
+    "levels": [
+      2,
+      3,
+      4,
+      5,
+      6
+    ],
+    "excerpt": "Develops models for complex and ambiguous business scenarios. Selects appropriate techniques and approaches to ensure models capture the necessary business elements.…",
+    "sourceUrl": "https://sfia-online.org/en/sfia-9/skills/business-modelling"
+  },
+  {
+    "code": "BPRE",
+    "name": "Business process improvement",
+    "levels": [
+      2,
+      3,
+      4,
+      5,
+      6,
+      7
+    ],
+    "excerpt": "Analyses and designs business processes to identify alternative solutions to improve efficiency, effectiveness and exploit new technologies and automation.…",
+    "sourceUrl": "https://sfia-online.org/en/sfia-9/skills/business-process-improvement"
+  },
+  {
+    "code": "BUSA",
+    "name": "Business situation analysis",
+    "levels": [
+      2,
+      3,
+      4,
+      5,
+      6
+    ],
+    "excerpt": "Investigates business situations where there is some complexity and ambiguity. Adopts holistic view to identify and analyse problems and opportunities.…",
+    "sourceUrl": "https://sfia-online.org/en/sfia-9/skills/business-situation-analysis"
+  },
+  {
+    "code": "CPMG",
+    "name": "Capacity management",
+    "levels": [
+      2,
+      3,
+      4,
+      5,
+      6
+    ],
+    "excerpt": "Monitors service component capacity and initiates actions to resolve any shortfalls according to agreed procedures. Applies techniques to control the demand upon a particular resource or service.…",
+    "sourceUrl": "https://sfia-online.org/en/sfia-9/skills/capacity-management"
+  },
+  {
+    "code": "CSOP",
+    "name": "Certification scheme operation",
+    "levels": [
+      2,
+      3,
+      4,
+      5,
+      6
+    ],
+    "excerpt": "Documents instructions for all personnel involved in certification, including legally enforceable agreements with any third parties involved in the process.…",
+    "sourceUrl": "https://sfia-online.org/en/sfia-9/skills/certification-scheme-operation"
+  },
+  {
+    "code": "CHMG",
+    "name": "Change control",
+    "levels": [
+      2,
+      3,
+      4,
+      5,
+      6
+    ],
+    "excerpt": "Assesses, analyses, develops, documents and implements changes based on requests for change. Ensures operational processes and procedures are in place for effective change control.…",
+    "sourceUrl": "https://sfia-online.org/en/sfia-9/skills/change-control"
+  },
+  {
+    "code": "LEDA",
+    "name": "Competency assessment",
+    "levels": [
+      2,
+      3,
+      4,
+      5,
+      6
+    ],
+    "excerpt": "Performs routine and non-routine assessments of knowledge, skill, competency or behaviour using specified methods. Provides advice and guidance to support the adoption of assessment methods and tools.…",
+    "sourceUrl": "https://sfia-online.org/en/sfia-9/skills/competency-assessment"
+  },
+  {
+    "code": "CFMG",
+    "name": "Configuration management",
+    "levels": [
+      2,
+      3,
+      4,
+      5,
+      6
+    ],
+    "excerpt": "Proposes and agrees the configuration items (CIs) to be uniquely identified with naming conventions.…",
+    "sourceUrl": "https://sfia-online.org/en/sfia-9/skills/configuration-management"
+  },
+  {
+    "code": "CNSL",
+    "name": "Consultancy",
+    "levels": [
+      4,
+      5,
+      6,
+      7
+    ],
+    "excerpt": "Takes responsibility for specific elements of a consulting engagement within a defined scope. Collaborates with clients as part of formal or informal consultancy engagements.…",
+    "sourceUrl": "https://sfia-online.org/en/sfia-9/skills/consultancy"
+  },
+  {
+    "code": "INCA",
+    "name": "Content design and authoring",
+    "levels": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6
+    ],
+    "excerpt": "Designs the content and appearance of complex information artefacts. Controls, monitors and evaluates content to ensure quality, consistency and accessibility of messages and optimal use of chosen media.…",
+    "sourceUrl": "https://sfia-online.org/en/sfia-9/skills/content-design-and-authoring"
+  },
+  {
+    "code": "ICPM",
+    "name": "Content publishing",
+    "levels": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6
+    ],
+    "excerpt": "Applies organisational guidelines and uses appropriate tools and techniques to provide publishing interfaces to new or existing platforms and applications.…",
+    "sourceUrl": "https://sfia-online.org/en/sfia-9/skills/content-publishing"
+  },
+  {
+    "code": "COPL",
+    "name": "Continuity management",
+    "levels": [
+      2,
+      3,
+      4,
+      5,
+      6
+    ],
+    "excerpt": "Contributes to the development of continuity management plans. Identifies information and communication systems that support critical business processes.…",
+    "sourceUrl": "https://sfia-online.org/en/sfia-9/skills/continuity-management"
+  },
+  {
+    "code": "ITCM",
+    "name": "Contract management",
+    "levels": [
+      2,
+      3,
+      4,
+      5,
+      6,
+      7
+    ],
+    "excerpt": "Sources and collects contract performance data (such as pricing and supply chain costs), and monitors performance against key performance indicators.…",
+    "sourceUrl": "https://sfia-online.org/en/sfia-9/skills/contract-management"
+  },
+  {
+    "code": "COMG",
+    "name": "Cost management",
+    "levels": [
+      2,
+      3,
+      4,
+      5,
+      6
+    ],
+    "excerpt": "Develops and implements cost management processes and procedures for a department or function. Monitors actual performance against budget and identifies variances.…",
+    "sourceUrl": "https://sfia-online.org/en/sfia-9/skills/cost-management"
+  },
+  {
+    "code": "CELO",
+    "name": "Customer engagement and loyalty",
+    "levels": [
+      3,
+      4,
+      5,
+      6
+    ],
+    "excerpt": "Develops and executes customer engagement and loyalty initiatives. Creates and manages loyalty programmes. Analyses customer data to inform targeted communications and experiences.…",
+    "sourceUrl": "https://sfia-online.org/en/sfia-9/skills/customer-engagement-and-loyalty"
+  },
+  {
+    "code": "CEXP",
+    "name": "Customer experience",
+    "levels": [
+      2,
+      3,
+      4,
+      5,
+      6
+    ],
+    "excerpt": "Uses customer research findings to gain a comprehensive understanding of customer needs and expectations. Enables the creation of visual representations of customer journeys to enhance cross-functional collaboration.…",
+    "sourceUrl": "https://sfia-online.org/en/sfia-9/skills/customer-experience"
+  },
+  {
+    "code": "CSMG",
+    "name": "Customer service support",
+    "levels": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6
+    ],
+    "excerpt": "Monitors service delivery across multiple channels and analyses performance data. Contributes to the development and implementation of service standards and procedures.…",
+    "sourceUrl": "https://sfia-online.org/en/sfia-9/skills/customer-service-support"
+  },
+  {
+    "code": "CRIM",
+    "name": "Cybercrime investigation",
+    "levels": [
+      2,
+      3,
+      4,
+      5,
+      6
+    ],
+    "excerpt": "Oversees mid-level investigations, coordinating evidence collection and forensic analyses. Assesses target vulnerabilities and operational impacts of cyber incidents.…",
+    "sourceUrl": "https://sfia-online.org/en/sfia-9/skills/cybercrime-investigation"
+  },
+  {
+    "code": "DAAN",
+    "name": "Data analytics",
+    "levels": [
+      2,
+      3,
+      4,
+      5,
+      6,
+      7
+    ],
+    "excerpt": "Conducts end-to-end data analysis, defining data requirements and ensuring data integrity. Applies advanced analytical and statistical techniques to extract meaningful insights and develop predictive models.…",
+    "sourceUrl": "https://sfia-online.org/en/sfia-9/skills/data-analytics"
+  },
+  {
+    "code": "DENG",
+    "name": "Data engineering",
+    "levels": [
+      2,
+      3,
+      4,
+      5,
+      6
+    ],
+    "excerpt": "Designs, implements and maintains complex data engineering solutions to acquire and prepare data. Creates and maintains data pipelines to connect data across data stores, applications and organisations.…",
+    "sourceUrl": "https://sfia-online.org/en/sfia-9/skills/data-engineering"
+  },
+  {
+    "code": "DATM",
+    "name": "Data management",
+    "levels": [
+      2,
+      3,
+      4,
+      5,
+      6
+    ],
+    "excerpt": "Devises and implements data governance and master data management processes for specific subsets of data. Assesses the integrity of data from multiple sources. Advises on transformation of data between formats or media.…",
+    "sourceUrl": "https://sfia-online.org/en/sfia-9/skills/data-management"
+  },
+  {
+    "code": "DTAN",
+    "name": "Data modelling and design",
+    "levels": [
+      2,
+      3,
+      4,
+      5
+    ],
+    "excerpt": "Investigates enterprise data requirements where there is some complexity and ambiguity. Plans data modelling and design activities, selecting appropriate techniques and levels of detail to meet objectives.…",
+    "sourceUrl": "https://sfia-online.org/en/sfia-9/skills/data-modelling-and-design"
+  },
+  {
+    "code": "DATS",
+    "name": "Data science",
+    "levels": [
+      2,
+      3,
+      4,
+      5,
+      6
+    ],
+    "excerpt": "Investigates problems and datasets to assess the usefulness of data science solutions. Applies diverse data science techniques and specialised programming languages.…",
+    "sourceUrl": "https://sfia-online.org/en/sfia-9/skills/data-science"
+  },
+  {
+    "code": "VISL",
+    "name": "Data visualisation",
+    "levels": [
+      2,
+      3,
+      4,
+      5
+    ],
+    "excerpt": "Applies a variety of visualisation techniques and designs the content and appearance of data visuals. Operationalises and automates activities for efficient and timely production of data visuals.…",
+    "sourceUrl": "https://sfia-online.org/en/sfia-9/skills/data-visualisation"
+  },
+  {
+    "code": "DBAD",
+    "name": "Database administration",
+    "levels": [
+      2,
+      3,
+      4,
+      5
+    ],
+    "excerpt": "Applies technical expertise to maintain and optimise databases, executing updates and employing automation tools. Configures tools and/or creates scripts to automate database tasks.…",
+    "sourceUrl": "https://sfia-online.org/en/sfia-9/skills/database-administration"
+  },
+  {
+    "code": "DBDS",
+    "name": "Database design",
+    "levels": [
+      2,
+      3,
+      4,
+      5
+    ],
+    "excerpt": "Implements physical database designs to support transactional data requirements for performance and availability.…",
+    "sourceUrl": "https://sfia-online.org/en/sfia-9/skills/database-design"
+  },
+  {
+    "code": "DEMG",
+    "name": "Delivery management",
+    "levels": [
+      3,
+      4,
+      5,
+      6
+    ],
+    "excerpt": "Manages the delivery of products or services for small to medium-sized initiatives. Applies appropriate delivery methodologies and tools.…",
+    "sourceUrl": "https://sfia-online.org/en/sfia-9/skills/delivery-management"
+  },
+  {
+    "code": "DEMM",
+    "name": "Demand management",
+    "levels": [
+      4,
+      5,
+      6
+    ],
+    "excerpt": "Performs demand management analysis and planning activities within a specific business or operational area. Monitors patterns of demand and identifies insights and proposals to improve business value.…",
+    "sourceUrl": "https://sfia-online.org/en/sfia-9/skills/demand-management"
+  },
+  {
+    "code": "DEPL",
+    "name": "Deployment",
+    "levels": [
+      2,
+      3,
+      4,
+      5,
+      6
+    ],
+    "excerpt": "Plans and executes deployments of complex software releases and updates. Manages continuous deployment using automation tools and techniques. Develops and maintains deployment processes, procedures and scripts.…",
+    "sourceUrl": "https://sfia-online.org/en/sfia-9/skills/deployment"
+  },
+  {
+    "code": "DGFS",
+    "name": "Digital forensics",
+    "levels": [
+      2,
+      3,
+      4,
+      5,
+      6
+    ],
+    "excerpt": "Designs and executes complex digital forensic examinations. Specifies requirements for specialised forensic tools and resources. Provides guidance on advanced data recovery techniques and artefact analysis.…",
+    "sourceUrl": "https://sfia-online.org/en/sfia-9/skills/digital-forensics"
+  },
+  {
+    "code": "DIGM",
+    "name": "Digital marketing",
+    "levels": [
+      2,
+      3,
+      4,
+      5
+    ],
+    "excerpt": "Plans and executes digital marketing activities across various platforms. Analyses detailed marketing data to derive insights and improve campaign performance.…",
+    "sourceUrl": "https://sfia-online.org/en/sfia-9/skills/digital-marketing"
+  },
+  {
+    "code": "EMRG",
+    "name": "Emerging technology monitoring",
+    "levels": [
+      4,
+      5,
+      6
+    ],
+    "excerpt": "Supports monitoring of the external environment and assessment of emerging technologies. Contributes to the creation of reports, technology roadmapping and the sharing of knowledge and insights.",
+    "sourceUrl": "https://sfia-online.org/en/sfia-9/skills/emerging-technology-monitoring"
+  },
+  {
+    "code": "EEXP",
+    "name": "Employee experience",
+    "levels": [
+      4,
+      5,
+      6
+    ],
+    "excerpt": "Supports assigned co-workers by providing guidance on areas such as organisational contacts, communication channels, processes, job expectations and manager relations.…",
+    "sourceUrl": "https://sfia-online.org/en/sfia-9/skills/employee-experience"
+  },
+  {
+    "code": "STPL",
+    "name": "Enterprise and business architecture",
+    "levels": [
+      5,
+      6,
+      7
+    ],
+    "excerpt": "Develops models and plans to drive the execution of the business strategy, taking advantage of opportunities to improve business performance.…",
+    "sourceUrl": "https://sfia-online.org/en/sfia-9/skills/enterprise-and-business-architecture"
+  },
+  {
+    "code": "DCMA",
+    "name": "Facilities management",
+    "levels": [
+      2,
+      3,
+      4,
+      5,
+      6
+    ],
+    "excerpt": "Uses data centre management tools to produce management information on power, cooling and space and investigate issues where necessary. Carries out routine audit and checks to ensure adherence to policies and procedures.…",
+    "sourceUrl": "https://sfia-online.org/en/sfia-9/skills/facilities-management"
+  },
+  {
+    "code": "FEAS",
+    "name": "Feasibility assessment",
+    "levels": [
+      2,
+      3,
+      4,
+      5,
+      6
+    ],
+    "excerpt": "Selects relevant feasibility assessment approaches and techniques. Identifies the range of possible options. Undertakes short-listing of options and feasibility assessment.…",
+    "sourceUrl": "https://sfia-online.org/en/sfia-9/skills/feasibility-assessment"
+  },
+  {
+    "code": "FIAN",
+    "name": "Financial analysis",
+    "levels": [
+      2,
+      3,
+      4,
+      5,
+      6
+    ],
+    "excerpt": "Performs financial analysis for specific areas, using standard techniques and tools. Prepares reports and provides insights to support decision-making.…",
+    "sourceUrl": "https://sfia-online.org/en/sfia-9/skills/financial-analysis"
+  },
+  {
+    "code": "FMIT",
+    "name": "Financial management",
+    "levels": [
+      4,
+      5,
+      6
+    ],
+    "excerpt": "Monitors and maintains financial records to ensure compliance and audit requirements are met. Provides general support in financial planning and budgeting by compiling and reporting on financial data.…",
+    "sourceUrl": "https://sfia-online.org/en/sfia-9/skills/financial-management"
+  },
+  {
+    "code": "RSCH",
+    "name": "Formal research",
+    "levels": [
+      2,
+      3,
+      4,
+      5,
+      6
+    ],
+    "excerpt": "Builds on and refines appropriate outline ideas for the evaluation, development, demonstration and implementation of research. Contributes to research goals and funding proposals.…",
+    "sourceUrl": "https://sfia-online.org/en/sfia-9/skills/formal-research"
+  },
+  {
+    "code": "TEST",
+    "name": "Functional testing",
+    "levels": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6
+    ],
+    "excerpt": "Selects appropriate functional testing approaches, considering risk, criticality and complexity. Develops, automates and executes comprehensive test plans and cases.…",
+    "sourceUrl": "https://sfia-online.org/en/sfia-9/skills/functional-testing"
+  },
+  {
+    "code": "GOVN",
+    "name": "Governance",
+    "levels": [
+      6,
+      7
+    ],
+    "excerpt": "Implements the governance framework to enable governance activity to be conducted.…",
+    "sourceUrl": "https://sfia-online.org/en/sfia-9/skills/governance"
+  },
+  {
+    "code": "GRDN",
+    "name": "Graphic design",
+    "levels": [
+      1,
+      2,
+      3,
+      4,
+      5
+    ],
+    "excerpt": "Designs visual concepts and comprehensive designs for complex assignments. Engages with clients and stakeholders to elicit and document design requirements and goals.…",
+    "sourceUrl": "https://sfia-online.org/en/sfia-9/skills/graphic-design"
+  },
+  {
+    "code": "HWDE",
+    "name": "Hardware design",
+    "levels": [
+      2,
+      3,
+      4,
+      5,
+      6
+    ],
+    "excerpt": "Designs hardware components, taking account of target environment, performance, security, safety, reliability and sustainability requirements.…",
+    "sourceUrl": "https://sfia-online.org/en/sfia-9/skills/hardware-design"
+  },
+  {
+    "code": "HPCC",
+    "name": "High-performance computing",
+    "levels": [
+      4,
+      5,
+      6,
+      7
+    ],
+    "excerpt": "Develops moderately complex solutions that use high-performance computing environments to address real-world problems.…",
+    "sourceUrl": "https://sfia-online.org/en/sfia-9/skills/high-performance-computing"
+  },
+  {
+    "code": "IAMT",
+    "name": "Identity and access management",
+    "levels": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6
+    ],
+    "excerpt": "Designs and implements complex identity and access management solutions, focusing on automated access control and role allocation.…",
+    "sourceUrl": "https://sfia-online.org/en/sfia-9/skills/identity-and-access-management"
+  },
+  {
+    "code": "USUP",
+    "name": "Incident management",
+    "levels": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6
+    ],
+    "excerpt": "Monitors and manages incident queues to ensure incidents are handled according to procedures and service levels. Contributes to developing, testing and improving incident management procedures.…",
+    "sourceUrl": "https://sfia-online.org/en/sfia-9/skills/incident-management"
+  },
+  {
+    "code": "PEDP",
+    "name": "Information and data compliance",
+    "levels": [
+      4,
+      5,
+      6
+    ],
+    "excerpt": "Supports the implementation of policy, standards and guidelines related to information and data legislation and compliance requirements.…",
+    "sourceUrl": "https://sfia-online.org/en/sfia-9/skills/information-and-data-compliance"
+  },
+  {
+    "code": "INAS",
+    "name": "Information assurance",
+    "levels": [
+      2,
+      3,
+      4,
+      5,
+      6,
+      7
+    ],
+    "excerpt": "Performs technical assessments and/or accreditation of complex or higher-risk information systems. Identifies risk mitigation measures required in addition to the standard organisation or domain measures.…",
+    "sourceUrl": "https://sfia-online.org/en/sfia-9/skills/information-assurance"
+  },
+  {
+    "code": "IRMG",
+    "name": "Information management",
+    "levels": [
+      3,
+      4,
+      5,
+      6,
+      7
+    ],
+    "excerpt": "Enables the organisation to organise, control and discover information assets.…",
+    "sourceUrl": "https://sfia-online.org/en/sfia-9/skills/information-management"
+  },
+  {
+    "code": "SCTY",
+    "name": "Information security",
+    "levels": [
+      2,
+      3,
+      4,
+      5,
+      6,
+      7
+    ],
+    "excerpt": "Provides guidance on the application and operation of elementary physical, procedural and technical security controls.…",
+    "sourceUrl": "https://sfia-online.org/en/sfia-9/skills/information-security"
+  },
+  {
+    "code": "ISCO",
+    "name": "Information systems coordination",
+    "levels": [
+      6,
+      7
+    ],
+    "excerpt": "Maintains awareness of the global needs of the organisation. Promotes the benefits that a common approach to technology deployment will bring to the entire organisation.…",
+    "sourceUrl": "https://sfia-online.org/en/sfia-9/skills/information-systems-coordination"
+  },
+  {
+    "code": "IFDN",
+    "name": "Infrastructure design",
+    "levels": [
+      2,
+      3,
+      4,
+      5,
+      6
+    ],
+    "excerpt": "Leads the design of complex infrastructure systems to deliver comprehensive design solutions. Develops detailed architectural frameworks and ensures integration of all infrastructure components, including cloud services.…",
+    "sourceUrl": "https://sfia-online.org/en/sfia-9/skills/infrastructure-design"
+  },
+  {
+    "code": "ITOP",
+    "name": "Infrastructure operations",
+    "levels": [
+      1,
+      2,
+      3,
+      4,
+      5
+    ],
+    "excerpt": "Applies technical expertise to maintain and optimise technology infrastructure, executing updates and employing automation tools. Configures tools and/or creates scripts to automate infrastructure tasks.…",
+    "sourceUrl": "https://sfia-online.org/en/sfia-9/skills/infrastructure-operations"
+  },
+  {
+    "code": "INOV",
+    "name": "Innovation management",
+    "levels": [
+      5,
+      6,
+      7
+    ],
+    "excerpt": "Manages the innovation pipeline and executes innovation processes. Develops and adapts innovation tools, processes and infrastructures to drive the process of innovation.…",
+    "sourceUrl": "https://sfia-online.org/en/sfia-9/skills/innovation-management"
+  },
+  {
+    "code": "INVA",
+    "name": "Investment appraisal",
+    "levels": [
+      4,
+      5,
+      6
+    ],
+    "excerpt": "Develops and documents investment appraisals for a range of different projects. Identifies suitable appraisal techniques based on the characteristics of a project.…",
+    "sourceUrl": "https://sfia-online.org/en/sfia-9/skills/investment-appraisal"
+  },
+  {
+    "code": "JADN",
+    "name": "Job analysis and design",
+    "levels": [
+      3,
+      4,
+      5
+    ],
+    "excerpt": "Performs detailed job analyses, breaking down roles using data-driven insights. Creates or revises job descriptions with consideration of required skills, competencies and organisational culture.…",
+    "sourceUrl": "https://sfia-online.org/en/sfia-9/skills/job-analysis-and-design"
+  },
+  {
+    "code": "KNOW",
+    "name": "Knowledge management",
+    "levels": [
+      2,
+      3,
+      4,
+      5,
+      6,
+      7
+    ],
+    "excerpt": "Organises knowledge assets and oversees the lifecycle of identifying, capturing, classifying, storing and maintaining assets. Facilitates sharing, collaboration and communication of knowledge.…",
+    "sourceUrl": "https://sfia-online.org/en/sfia-9/skills/knowledge-management"
+  },
+  {
+    "code": "ETMG",
+    "name": "Learning and development management",
+    "levels": [
+      2,
+      3,
+      4,
+      5,
+      6,
+      7
+    ],
+    "excerpt": "Contributes to the development and maintenance of a catalogue of learning and development resources. Uses data to analyse and evaluate the effectiveness of learning/educational activities.…",
+    "sourceUrl": "https://sfia-online.org/en/sfia-9/skills/learning-and-development-management"
+  },
+  {
+    "code": "ETDL",
+    "name": "Learning delivery",
+    "levels": [
+      2,
+      3,
+      4,
+      5
+    ],
+    "excerpt": "Prepares and delivers learning activities tailored to various audiences and specific learning objectives. Contributes to the design and selection of appropriate environments.…",
+    "sourceUrl": "https://sfia-online.org/en/sfia-9/skills/learning-delivery"
+  },
+  {
+    "code": "TMCR",
+    "name": "Learning design and development",
+    "levels": [
+      2,
+      3,
+      4,
+      5
+    ],
+    "excerpt": "Specifies the content and structure of learning and development materials. Takes responsibility for design, creation, packaging and maintenance. Manages development to deliver agreed outcomes.…",
+    "sourceUrl": "https://sfia-online.org/en/sfia-9/skills/learning-design-and-development"
+  },
+  {
+    "code": "MLNG",
+    "name": "Machine learning",
+    "levels": [
+      2,
+      3,
+      4,
+      5,
+      6
+    ],
+    "excerpt": "Assesses the suitability of machine learning and designs and develops solutions for a range of business problems.…",
+    "sourceUrl": "https://sfia-online.org/en/sfia-9/skills/machine-learning"
+  },
+  {
+    "code": "MRCH",
+    "name": "Market research",
+    "levels": [
+      3,
+      4,
+      5,
+      6
+    ],
+    "excerpt": "Designs and conducts market research studies independently. Analyses market data to identify trends, opportunities and challenges. Segments markets and identifies target customers based on research findings.…",
+    "sourceUrl": "https://sfia-online.org/en/sfia-9/skills/market-research"
+  },
+  {
+    "code": "MKCM",
+    "name": "Marketing campaign management",
+    "levels": [
+      3,
+      4,
+      5
+    ],
+    "excerpt": "Plans and executes marketing campaigns across multiple channels. Selects appropriate tools and platforms to reach desired audiences. Creates and distributes engaging marketing content and materials.…",
+    "sourceUrl": "https://sfia-online.org/en/sfia-9/skills/marketing-campaign-management"
+  },
+  {
+    "code": "MKTG",
+    "name": "Marketing management",
+    "levels": [
+      4,
+      5,
+      6,
+      7
+    ],
+    "excerpt": "Contributes to the development and execution of marketing plans. Applies recognised good practices to analyse marketing effectiveness and ROI. Assists in defining target customers and brand positioning.…",
+    "sourceUrl": "https://sfia-online.org/en/sfia-9/skills/marketing-management"
+  },
+  {
+    "code": "MEAS",
+    "name": "Measurement",
+    "levels": [
+      2,
+      3,
+      4,
+      5,
+      6
+    ],
+    "excerpt": "Identifies and prioritises appropriate measures, scales and targets. Supports projects, functions or teams in the development of measurement methods.…",
+    "sourceUrl": "https://sfia-online.org/en/sfia-9/skills/measurement"
+  },
+  {
+    "code": "METL",
+    "name": "Methods and tools",
+    "levels": [
+      2,
+      3,
+      4,
+      5,
+      6
+    ],
+    "excerpt": "Engages with stakeholders to understand requirements and recommends appropriate solutions. Provides advice and guidance to support the adoption of methods and tools and adherence to policies and standards.…",
+    "sourceUrl": "https://sfia-online.org/en/sfia-9/skills/methods-and-tools"
+  },
+  {
+    "code": "NTDS",
+    "name": "Network design",
+    "levels": [
+      2,
+      3,
+      4,
+      5,
+      6
+    ],
+    "excerpt": "Designs specific network components using agreed architectures, design standards, patterns and methodology.…",
+    "sourceUrl": "https://sfia-online.org/en/sfia-9/skills/network-design"
+  },
+  {
+    "code": "NTAS",
+    "name": "Network support",
+    "levels": [
+      1,
+      2,
+      3,
+      4,
+      5
+    ],
+    "excerpt": "Applies technical expertise to maintain and optimise network infrastructure, executing updates and employing automation tools. Uses network management tools to monitor load, performance, and security statistics.…",
+    "sourceUrl": "https://sfia-online.org/en/sfia-9/skills/network-support"
+  },
+  {
+    "code": "NFTS",
+    "name": "Non-functional testing",
+    "levels": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6
+    ],
+    "excerpt": "Selects suitable non-functional testing approaches, considering system criticality and complexity. Develops, automates and executes test plans for end-to-end system attributes.…",
+    "sourceUrl": "https://sfia-online.org/en/sfia-9/skills/non-functional-testing"
+  },
+  {
+    "code": "NUAN",
+    "name": "Numerical analysis",
+    "levels": [
+      4,
+      5,
+      6,
+      7
+    ],
+    "excerpt": "Creates moderately complex algorithms using a range of mathematical techniques and with sensitivity to the limitations of the techniques. Uses sophisticated scientific computing and visualisation environments.…",
+    "sourceUrl": "https://sfia-online.org/en/sfia-9/skills/numerical-analysis"
+  },
+  {
+    "code": "OCOP",
+    "name": "Offensive cyber operations",
+    "levels": [
+      2,
+      3,
+      4,
+      5,
+      6
+    ],
+    "excerpt": "Responsible for the execution of offensive cyber operations, including detailed planning and target selection. Manages the development and updating of electronic target folders, ensuring accuracy and comprehensiveness.…",
+    "sourceUrl": "https://sfia-online.org/en/sfia-9/skills/offensive-cyber-operations"
+  },
+  {
+    "code": "ORDI",
+    "name": "Organisation design and implementation",
+    "levels": [
+      3,
+      4,
+      5,
+      6,
+      7
+    ],
+    "excerpt": "Designs team structures and workflows using modelling techniques, following agreed architectures, design standards and methodologies.…",
+    "sourceUrl": "https://sfia-online.org/en/sfia-9/skills/organisation-design-and-implementation"
+  },
+  {
+    "code": "OCDV",
+    "name": "Organisational capability development",
+    "levels": [
+      5,
+      6,
+      7
+    ],
+    "excerpt": "Contributes to identifying new areas of capability improvement within the organisation which may be enhancements to skills, technology or processes.…",
+    "sourceUrl": "https://sfia-online.org/en/sfia-9/skills/organisational-capability-development"
+  },
+  {
+    "code": "OCEN",
+    "name": "Organisational change enablement",
+    "levels": [
+      4,
+      5,
+      6
+    ],
+    "excerpt": "Supports teams in adopting new practices, providing ongoing resources and guidance. Facilitates a safe environment for exploring challenges related to change.…",
+    "sourceUrl": "https://sfia-online.org/en/sfia-9/skills/organisational-change-enablement"
+  },
+  {
+    "code": "CIPM",
+    "name": "Organisational change management",
+    "levels": [
+      2,
+      3,
+      4,
+      5,
+      6
+    ],
+    "excerpt": "Conducts readiness assessments to assess the size, nature and impact of organisational change. Defines tactics to use considering the challenges to be addressed.…",
+    "sourceUrl": "https://sfia-online.org/en/sfia-9/skills/organisational-change-management"
+  },
+  {
+    "code": "OFCL",
+    "name": "Organisational facilitation",
+    "levels": [
+      4,
+      5,
+      6
+    ],
+    "excerpt": "Facilitates a series of group activities or workshops in situations of complexity and ambiguity and competing stakeholder needs. Designs a structured sequence of meetings, events or workshops to solve complex problems.…",
+    "sourceUrl": "https://sfia-online.org/en/sfia-9/skills/organisational-facilitation"
+  },
+  {
+    "code": "PENT",
+    "name": "Penetration testing",
+    "levels": [
+      2,
+      3,
+      4,
+      5,
+      6
+    ],
+    "excerpt": "Selects appropriate testing approaches using in-depth technical analysis of risks and typical vulnerabilities. Produces test scripts, materials and test packs and tests new and existing networks, systems or applications.…",
+    "sourceUrl": "https://sfia-online.org/en/sfia-9/skills/penetration-testing"
+  },
+  {
+    "code": "PEMT",
+    "name": "Performance management",
+    "levels": [
+      4,
+      5,
+      6
+    ],
+    "excerpt": "Provides operational direction, support and guidance to assigned colleagues. Allocates routine tasks or project work, in line with team objectives and individual capabilities.…",
+    "sourceUrl": "https://sfia-online.org/en/sfia-9/skills/performance-management"
+  },
+  {
+    "code": "POMG",
+    "name": "Portfolio management",
+    "levels": [
+      5,
+      6,
+      7
+    ],
+    "excerpt": "Ensures programme/project leads and/or service owners adhere to the agreed portfolio management and governance frameworks.…",
+    "sourceUrl": "https://sfia-online.org/en/sfia-9/skills/portfolio-management"
+  },
+  {
+    "code": "PROF",
+    "name": "Portfolio, programme and project support",
+    "levels": [
+      2,
+      3,
+      4,
+      5,
+      6
+    ],
+    "excerpt": "Supports programme or project control boards, project assurance teams and quality review meetings. Takes responsibility for the provision of support services to projects.…",
+    "sourceUrl": "https://sfia-online.org/en/sfia-9/skills/portfolio-programme-and-project-support"
+  },
+  {
+    "code": "PBMG",
+    "name": "Problem management",
+    "levels": [
+      2,
+      3,
+      4,
+      5
+    ],
+    "excerpt": "Initiates and monitors actions to investigate and resolve problems in systems, processes and services. Determines problem fixes and remedies.…",
+    "sourceUrl": "https://sfia-online.org/en/sfia-9/skills/problem-management"
+  },
+  {
+    "code": "PRTS",
+    "name": "Process testing",
+    "levels": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6
+    ],
+    "excerpt": "Selects and applies appropriate testing approaches based on business criticality, risk and process complexity. Develops, automates and executes detailed test plans focusing on end-to-end process validation.…",
+    "sourceUrl": "https://sfia-online.org/en/sfia-9/skills/process-testing"
+  },
+  {
+    "code": "PROD",
+    "name": "Product management",
+    "levels": [
+      2,
+      3,
+      4,
+      5,
+      6
+    ],
+    "excerpt": "Manages one or more lower-value products or services. Prioritises product requirements and develops product roadmaps. Owns the product backlog.…",
+    "sourceUrl": "https://sfia-online.org/en/sfia-9/skills/product-management"
+  },
+  {
+    "code": "PDSV",
+    "name": "Professional development",
+    "levels": [
+      4,
+      5,
+      6
+    ],
+    "excerpt": "Assists practitioners with creating personal development plans. Advises on suitable development activities such as specific learning or experience to be gained.…",
+    "sourceUrl": "https://sfia-online.org/en/sfia-9/skills/professional-development"
+  },
+  {
+    "code": "PGMG",
+    "name": "Programme management",
+    "levels": [
+      6,
+      7
+    ],
+    "excerpt": "Plans, directs and co-ordinates activities to manage and implement a programme from initiation to final transition into operational, business-as-usual management.…",
+    "sourceUrl": "https://sfia-online.org/en/sfia-9/skills/programme-management"
+  },
+  {
+    "code": "PROG",
+    "name": "Programming/software development",
+    "levels": [
+      2,
+      3,
+      4,
+      5,
+      6
+    ],
+    "excerpt": "Designs, codes, verifies, tests, documents, amends and refactors complex programs/scripts and integration software services.…",
+    "sourceUrl": "https://sfia-online.org/en/sfia-9/skills/programming-software-development"
+  },
+  {
+    "code": "PRMG",
+    "name": "Project management",
+    "levels": [
+      4,
+      5,
+      6,
+      7
+    ],
+    "excerpt": "Defines, documents and executes small projects or sub-projects. Works independently or with a small team, actively participating in all project phases. Applies appropriate project management methods and tools.…",
+    "sourceUrl": "https://sfia-online.org/en/sfia-9/skills/project-management"
+  },
+  {
+    "code": "QUAS",
+    "name": "Quality assurance",
+    "levels": [
+      2,
+      3,
+      4,
+      5,
+      6
+    ],
+    "excerpt": "Plans, organises and conducts assessment activity and determines whether appropriate quality control has been applied.…",
+    "sourceUrl": "https://sfia-online.org/en/sfia-9/skills/quality-assurance"
+  },
+  {
+    "code": "QUMG",
+    "name": "Quality management",
+    "levels": [
+      2,
+      3,
+      4,
+      5,
+      6,
+      7
+    ],
+    "excerpt": "Assists in the development of new or improved practices and organisational processes or standards. Assists projects, functions or teams in planning the quality management for their area of responsibility.…",
+    "sourceUrl": "https://sfia-online.org/en/sfia-9/skills/quality-management"
+  },
+  {
+    "code": "RFEN",
+    "name": "Radio frequency engineering",
+    "levels": [
+      2,
+      3,
+      4,
+      5,
+      6
+    ],
+    "excerpt": "Investigates and resolves system-wide fault conditions using a wide range of diagnostic tools and techniques. Reconfigures equipment to circumvent temporary outages.…",
+    "sourceUrl": "https://sfia-online.org/en/sfia-9/skills/radio-frequency-engineering"
+  },
+  {
+    "code": "RESD",
+    "name": "Real-time/embedded systems development",
+    "levels": [
+      2,
+      3,
+      4,
+      5,
+      6
+    ],
+    "excerpt": "Designs, builds and integrates complex real-time/embedded components and sub-systems. Designs physical layouts that reflect the connection between system components to test and optimise performance.…",
+    "sourceUrl": "https://sfia-online.org/en/sfia-9/skills/real-time-embedded-systems-development"
+  },
+  {
+    "code": "RMGT",
+    "name": "Records management",
+    "levels": [
+      1,
+      2,
+      3,
+      4,
+      5
+    ],
+    "excerpt": "Supports the implementation of records management policies and practices including the approved disposal of records. Conducts complex or sensitive searches for records to address authorised requests.…",
+    "sourceUrl": "https://sfia-online.org/en/sfia-9/skills/records-management"
+  },
+  {
+    "code": "RELM",
+    "name": "Release management",
+    "levels": [
+      2,
+      3,
+      4,
+      5,
+      6
+    ],
+    "excerpt": "Plans and schedules releases in line with business requirements and objectives. Coordinates release activities across multiple teams and stakeholders.…",
+    "sourceUrl": "https://sfia-online.org/en/sfia-9/skills/release-and-deployment"
+  },
+  {
+    "code": "REQM",
+    "name": "Requirements definition and management",
+    "levels": [
+      2,
+      3,
+      4,
+      5,
+      6
+    ],
+    "excerpt": "Defines and manages scoping, requirements definition and prioritisation activities for initiatives of medium size and complexity. Contributes to selecting the requirements approach.…",
+    "sourceUrl": "https://sfia-online.org/en/sfia-9/skills/requirements-definition-and-management"
+  },
+  {
+    "code": "RESC",
+    "name": "Resourcing",
+    "levels": [
+      2,
+      3,
+      4,
+      5,
+      6
+    ],
+    "excerpt": "Facilitates and supports the execution of resourcing activities in collaboration with managers and teams. Analyses resource requests to determine tasks, skills and effort required.…",
+    "sourceUrl": "https://sfia-online.org/en/sfia-9/skills/resourcing"
+  },
+  {
+    "code": "BURM",
+    "name": "Risk management",
+    "levels": [
+      2,
+      3,
+      4,
+      5,
+      6,
+      7
+    ],
+    "excerpt": "Carries out risk management activities within a specific function, technical area or project of medium complexity.…",
+    "sourceUrl": "https://sfia-online.org/en/sfia-9/skills/risk-management"
+  },
+  {
+    "code": "SFAS",
+    "name": "Safety assessment",
+    "levels": [
+      4,
+      5,
+      6
+    ],
+    "excerpt": "Collects safety assurance evidence using appropriate methods and tools. Undertakes all work in accordance with agreed safety, technical and quality standards.",
+    "sourceUrl": "https://sfia-online.org/en/sfia-9/skills/safety-assessment"
+  },
+  {
+    "code": "SFEN",
+    "name": "Safety engineering",
+    "levels": [
+      2,
+      3,
+      4,
+      5,
+      6
+    ],
+    "excerpt": "Contributes to identifying, analysing and documenting hazards and safety risks using agreed methods and procedures. Contributes to the specification of safety requirements.…",
+    "sourceUrl": "https://sfia-online.org/en/sfia-9/skills/safety-engineering"
+  },
+  {
+    "code": "SSUP",
+    "name": "Sales support",
+    "levels": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6
+    ],
+    "excerpt": "Works closely with the sales team to help prospects to clarify their requirements. Devises solutions and assesses their feasibility and practicality.…",
+    "sourceUrl": "https://sfia-online.org/en/sfia-9/skills/sales-support"
+  },
+  {
+    "code": "SCMO",
+    "name": "Scientific modelling",
+    "levels": [
+      4,
+      5,
+      6,
+      7
+    ],
+    "excerpt": "Analyses the real-world problem, then selects appropriate physical and mathematical models to approximate the phenomena under investigation. Applies relevant mathematical techniques to simulate the problem.…",
+    "sourceUrl": "https://sfia-online.org/en/sfia-9/skills/scientific-modelling"
+  },
+  {
+    "code": "SCAD",
+    "name": "Security operations",
+    "levels": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6
+    ],
+    "excerpt": "Maintains and optimises operational security processes. Checks that all requests for support are dealt with according to established protocols, including for cloud-based and automated systems.…",
+    "sourceUrl": "https://sfia-online.org/en/sfia-9/skills/security-operations"
+  },
+  {
+    "code": "SALE",
+    "name": "Selling",
+    "levels": [
+      3,
+      4,
+      5,
+      6
+    ],
+    "excerpt": "Identifies and qualifies new sales leads and prospects with a view to developing a pipeline of potential opportunities. Manages existing sales leads. Collects and uses information to achieve sales objectives.…",
+    "sourceUrl": "https://sfia-online.org/en/sfia-9/skills/selling"
+  },
+  {
+    "code": "SEAC",
+    "name": "Service acceptance",
+    "levels": [
+      3,
+      4,
+      5,
+      6
+    ],
+    "excerpt": "Engages with delivery teams to confirm that products developed meet the service acceptance criteria and are to the required standard.…",
+    "sourceUrl": "https://sfia-online.org/en/sfia-9/skills/service-acceptance"
+  },
+  {
+    "code": "SCMG",
+    "name": "Service catalogue management",
+    "levels": [
+      2,
+      3,
+      4,
+      5
+    ],
+    "excerpt": "Contributes to the design and implementation of a service catalogue. Enables automation of service requests and order fulfilment. Provides advice and guidance on the information to be included in the service catalogue.…",
+    "sourceUrl": "https://sfia-online.org/en/sfia-9/skills/service-catalogue-management"
+  },
+  {
+    "code": "SLMO",
+    "name": "Service level management",
+    "levels": [
+      2,
+      3,
+      4,
+      5,
+      6,
+      7
+    ],
+    "excerpt": "Performs defined tasks to monitor service delivery against service level agreements and maintains records of relevant information.…",
+    "sourceUrl": "https://sfia-online.org/en/sfia-9/skills/service-level-management"
+  },
+  {
+    "code": "PORT",
+    "name": "Software configuration",
+    "levels": [
+      2,
+      3,
+      4,
+      5,
+      6
+    ],
+    "excerpt": "Designs, verifies, documents, amends and refactors complex software configurations for deployment. Contributes to the selection of the software configuration methods, tools and techniques.…",
+    "sourceUrl": "https://sfia-online.org/en/sfia-9/skills/software-configuration"
+  },
+  {
+    "code": "SWDN",
+    "name": "Software design",
+    "levels": [
+      2,
+      3,
+      4,
+      5,
+      6
+    ],
+    "excerpt": "Designs and architects complex software applications, components and modules. Uses appropriate modelling techniques in line with agreed software design standards, guidelines, patterns and methodologies.…",
+    "sourceUrl": "https://sfia-online.org/en/sfia-9/skills/software-design"
+  },
+  {
+    "code": "ARCH",
+    "name": "Solution architecture",
+    "levels": [
+      4,
+      5,
+      6
+    ],
+    "excerpt": "Contributes to the development of solution architectures in specific business, infrastructure or functional areas.…",
+    "sourceUrl": "https://sfia-online.org/en/sfia-9/skills/solution-architecture"
+  },
+  {
+    "code": "SORC",
+    "name": "Sourcing",
+    "levels": [
+      2,
+      3,
+      4,
+      5,
+      6,
+      7
+    ],
+    "excerpt": "Reviews business cases (requirements, potential benefits and options) and determines appropriate procurement routes.…",
+    "sourceUrl": "https://sfia-online.org/en/sfia-9/skills/sourcing"
+  },
+  {
+    "code": "TECH",
+    "name": "Specialist advice",
+    "levels": [
+      4,
+      5,
+      6
+    ],
+    "excerpt": "Provides detailed and specific advice to support the organisation's planning and operations, typically related to the immediate area of responsibility.…",
+    "sourceUrl": "https://sfia-online.org/en/sfia-9/skills/specialist-advice"
+  },
+  {
+    "code": "RLMT",
+    "name": "Stakeholder relationship management",
+    "levels": [
+      4,
+      5,
+      6,
+      7
+    ],
+    "excerpt": "Deals with problems and issues, managing resolutions, corrective actions, lessons learned and the collection and dissemination of relevant information. Implements stakeholder engagement/communications plans.…",
+    "sourceUrl": "https://sfia-online.org/en/sfia-9/skills/stakeholder-relationship-management"
+  },
+  {
+    "code": "STMG",
+    "name": "Storage management",
+    "levels": [
+      2,
+      3,
+      4,
+      5,
+      6
+    ],
+    "excerpt": "Prepares and maintains operational procedures for storage management. Monitors capacity, performance, availability and other operational metrics.…",
+    "sourceUrl": "https://sfia-online.org/en/sfia-9/skills/storage-management"
+  },
+  {
+    "code": "ITSP",
+    "name": "Strategic planning",
+    "levels": [
+      4,
+      5,
+      6,
+      7
+    ],
+    "excerpt": "Contributes to the collection and analysis of information to support strategy development. Assists in the preparation of reports and insights for strategic planning.…",
+    "sourceUrl": "https://sfia-online.org/en/sfia-9/skills/strategic-planning"
+  },
+  {
+    "code": "SUBF",
+    "name": "Subject formation",
+    "levels": [
+      4,
+      5,
+      6,
+      7
+    ],
+    "excerpt": "Contributes to curriculum development by selecting or specifying curriculum content or assessment approaches for one or more specialist areas.",
+    "sourceUrl": "https://sfia-online.org/en/sfia-9/skills/subject-formation"
+  },
+  {
+    "code": "SUPP",
+    "name": "Supplier management",
+    "levels": [
+      2,
+      3,
+      4,
+      5,
+      6,
+      7
+    ],
+    "excerpt": "Collects supplier performance data and investigates problems. Monitors and reports on supplier performance, customer satisfaction, adherence to security requirements and market intelligence.…",
+    "sourceUrl": "https://sfia-online.org/en/sfia-9/skills/supplier-management"
+  },
+  {
+    "code": "SUST",
+    "name": "Sustainability",
+    "levels": [
+      4,
+      5,
+      6
+    ],
+    "excerpt": "Assesses and reports on how different tactical decisions affect sustainability.…",
+    "sourceUrl": "https://sfia-online.org/en/sfia-9/skills/sustainability"
+  },
+  {
+    "code": "SYSP",
+    "name": "System software administration",
+    "levels": [
+      2,
+      3,
+      4,
+      5
+    ],
+    "excerpt": "Monitors system software metrics and adjusts configurations for optimum availability and performance.…",
+    "sourceUrl": "https://sfia-online.org/en/sfia-9/skills/system-software-administration"
+  },
+  {
+    "code": "SLEN",
+    "name": "Systems and software lifecycle engineering",
+    "levels": [
+      3,
+      4,
+      5,
+      6,
+      7
+    ],
+    "excerpt": "Elicits requirements for systems and software lifecycle working practices and automation. Prepares design options for the working environment of methods, procedures, techniques, tools and people.…",
+    "sourceUrl": "https://sfia-online.org/en/sfia-9/skills/systems-software-lifecycle-engineering"
+  },
+  {
+    "code": "DESN",
+    "name": "Systems design",
+    "levels": [
+      2,
+      3,
+      4,
+      5,
+      6
+    ],
+    "excerpt": "Designs system components using appropriate modelling techniques following agreed architectures, design standards, patterns and methodology. Identifies and evaluates alternative design options and trade-offs.…",
+    "sourceUrl": "https://sfia-online.org/en/sfia-9/skills/systems-design"
+  },
+  {
+    "code": "DLMG",
+    "name": "Systems development management",
+    "levels": [
+      4,
+      5,
+      6,
+      7
+    ],
+    "excerpt": "Contributes to the planning and management of systems development work. Adopts and applies appropriate systems development methods, tools and techniques in line with agreed standards.…",
+    "sourceUrl": "https://sfia-online.org/en/sfia-9/skills/systems-development-management"
+  },
+  {
+    "code": "HSIN",
+    "name": "Systems installation and removal",
+    "levels": [
+      1,
+      2,
+      3,
+      4,
+      5
+    ],
+    "excerpt": "Undertakes or supervises complex installations and de-installations of systems or components, including handover to the client.…",
+    "sourceUrl": "https://sfia-online.org/en/sfia-9/skills/systems-installation-removal"
+  },
+  {
+    "code": "SINT",
+    "name": "Systems integration and build",
+    "levels": [
+      2,
+      3,
+      4,
+      5,
+      6
+    ],
+    "excerpt": "Provides technical expertise to enable the configuration of system components and equipment for systems testing. Collaborates with technical teams to develop and agree system integration plans and report on progress.…",
+    "sourceUrl": "https://sfia-online.org/en/sfia-9/skills/systems-integration-and-build"
+  },
+  {
+    "code": "TEAC",
+    "name": "Teaching",
+    "levels": [
+      2,
+      3,
+      4,
+      5,
+      6,
+      7
+    ],
+    "excerpt": "Delivers a curriculum. Applies good practice supported by pedagogical research to learning content design, development and delivery. Assesses student performance and reviews cohort performance.…",
+    "sourceUrl": "https://sfia-online.org/en/sfia-9/skills/teaching"
+  },
+  {
+    "code": "ITMG",
+    "name": "Technology service management",
+    "levels": [
+      5,
+      6,
+      7
+    ],
+    "excerpt": "Takes responsibility for managing the design, procurement, installation, upgrading, operation, control, maintenance and effective use of specific technology services.…",
+    "sourceUrl": "https://sfia-online.org/en/sfia-9/skills/technology-service-management"
+  },
+  {
+    "code": "THIN",
+    "name": "Threat intelligence",
+    "levels": [
+      2,
+      3,
+      4,
+      5,
+      6
+    ],
+    "excerpt": "Collates and analyses information for threat intelligence requirements from a variety of sources. Contributes to reviewing, ranking and categorising qualitative threat intelligence information.…",
+    "sourceUrl": "https://sfia-online.org/en/sfia-9/skills/threat-intelligence"
+  },
+  {
+    "code": "BPTS",
+    "name": "User acceptance testing",
+    "levels": [
+      2,
+      3,
+      4,
+      5,
+      6
+    ],
+    "excerpt": "Develops acceptance criteria related to functional and non-functional requirements, business processes, features, user stories and business rules.…",
+    "sourceUrl": "https://sfia-online.org/en/sfia-9/skills/user-acceptance-testing"
+  },
+  {
+    "code": "UNAN",
+    "name": "User experience analysis",
+    "levels": [
+      2,
+      3,
+      4,
+      5
+    ],
+    "excerpt": "Selects appropriate techniques and tools to develop user stories and elicit user experience requirements in complex situations. Identifies and describes the design goals for systems, products, services and devices.…",
+    "sourceUrl": "https://sfia-online.org/en/sfia-9/skills/user-experience-analysis"
+  },
+  {
+    "code": "HCEV",
+    "name": "User experience design",
+    "levels": [
+      2,
+      3,
+      4,
+      5,
+      6
+    ],
+    "excerpt": "Selects appropriate tools, methods and design patterns to design user interactions with and experiences of a product, system or service. Translates concepts into outputs and prototypes for user feedback and evaluation.…",
+    "sourceUrl": "https://sfia-online.org/en/sfia-9/skills/user-experience-design"
+  },
+  {
+    "code": "USEV",
+    "name": "User experience evaluation",
+    "levels": [
+      2,
+      3,
+      4,
+      5,
+      6
+    ],
+    "excerpt": "Selects appropriate tools and techniques to evaluate user experiences of systems, products, services or devices. Validates that security, usability and accessibility requirements have been met.…",
+    "sourceUrl": "https://sfia-online.org/en/sfia-9/skills/user-experience-evaluation"
+  },
+  {
+    "code": "URCH",
+    "name": "User research",
+    "levels": [
+      2,
+      3,
+      4,
+      5,
+      6
+    ],
+    "excerpt": "Conducts generative research for the development of systems, products, services or devices. Plans own user research activities. Facilitates input from users and stakeholders.…",
+    "sourceUrl": "https://sfia-online.org/en/sfia-9/skills/user-research"
+  },
+  {
+    "code": "VUAS",
+    "name": "Vulnerability assessment",
+    "levels": [
+      2,
+      3,
+      4,
+      5
+    ],
+    "excerpt": "Collates and analyses catalogues of information and technology assets for vulnerability assessment. Performs vulnerability assessments and business impact analysis for medium complexity information systems.…",
+    "sourceUrl": "https://sfia-online.org/en/sfia-9/skills/vulnerability-assessment"
+  },
+  {
+    "code": "VURE",
+    "name": "Vulnerability research",
+    "levels": [
+      2,
+      3,
+      4,
+      5,
+      6
+    ],
+    "excerpt": "Designs and executes complex vulnerability research activities. Specifies requirements for environment, data, resources and tools to perform assessments. Reviews test results and modifies tests if necessary.…",
+    "sourceUrl": "https://sfia-online.org/en/sfia-9/skills/vulnerability-research"
+  },
+  {
+    "code": "WFPL",
+    "name": "Workforce planning",
+    "levels": [
+      4,
+      5,
+      6
+    ],
+    "excerpt": "Gathers, maintains and analyses organisation-wide workforce capability data. Performs gap analysis to identify workforce strengths and shortfalls with reference to business strategy and specific future needs.…",
+    "sourceUrl": "https://sfia-online.org/en/sfia-9/skills/workforce-planning"
+  }
+]

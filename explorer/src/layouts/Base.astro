@@ -1,0 +1,115 @@
+---
+import "@fontsource-variable/geist";
+import "@fontsource-variable/geist-mono";
+import "../styles/global.css";
+
+interface Props {
+  title: string;
+  description?: string;
+}
+
+const {
+  title,
+  description = "Map a job description to SFIA skills and responsibility levels with an agentic RAG matcher.",
+} = Astro.props;
+const canonical = new URL(Astro.url.pathname, Astro.site).href;
+const arxiv = "https://arxiv.org/abs/2609.35806";
+const github = "https://github.com/prdai/sfia-structured-skill-extraction";
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <link rel="canonical" href={canonical} />
+    <meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)" />
+    <meta name="theme-color" content="#0a0a0a" media="(prefers-color-scheme: dark)" />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="SFIA Explorer" />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={canonical} />
+    <meta name="twitter:card" content="summary" />
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <script is:inline>
+      (() => {
+        const stored = localStorage.getItem("theme");
+        const dark =
+          stored === "dark" ||
+          (!stored && window.matchMedia("(prefers-color-scheme: dark)").matches);
+        document.documentElement.classList.toggle("dark", dark);
+      })();
+    </script>
+  </head>
+  <body>
+    <div class="flex min-h-svh flex-col">
+      <header class="flex items-center justify-between gap-2 px-5 py-3 md:px-6">
+        <div class="flex items-center gap-5">
+          <a href="/" class="text-sm font-medium">
+            SFIA Explorer
+          </a>
+          <nav class="hidden items-center gap-4 text-sm text-muted-foreground sm:flex">
+            <a class="transition-colors hover:text-foreground" href="/skills/">Skills</a>
+            <a class="transition-colors hover:text-foreground" href="/method/">Method</a>
+            <a class="transition-colors hover:text-foreground" href="/cite/">Cite</a>
+          </nav>
+        </div>
+        <div class="flex items-center gap-1">
+          <a
+            class="hidden items-center gap-1.5 rounded-2xl px-3 py-1.5 text-sm text-muted-foreground transition-colors hover:bg-muted hover:text-foreground sm:inline-flex"
+            href={arxiv}>Paper</a
+          >
+          <a
+            class="hidden items-center gap-1.5 rounded-2xl px-3 py-1.5 text-sm text-muted-foreground transition-colors hover:bg-muted hover:text-foreground sm:inline-flex"
+            href={github}>GitHub</a
+          >
+          <button
+            id="theme-toggle"
+            type="button"
+            aria-label="Toggle theme"
+            class="grid size-8 place-items-center rounded-2xl text-muted-foreground transition-colors hover:bg-muted hover:text-foreground"
+          >
+            <svg class="size-4 dark:hidden" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z" />
+            </svg>
+            <svg class="hidden size-4 dark:block" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <circle cx="12" cy="12" r="4" />
+              <path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41" />
+            </svg>
+          </button>
+        </div>
+      </header>
+
+      <main class="flex min-h-0 flex-1 flex-col">
+        <slot />
+      </main>
+
+      <footer class="border-t px-5 py-6 md:px-6">
+        <div class="mx-auto flex max-w-5xl flex-col gap-3 text-xs text-muted-foreground">
+          <div class="flex flex-wrap items-center gap-x-4 gap-y-2">
+            <a class="hover:text-foreground" href={arxiv}>arXiv:2609.35806</a>
+            <a class="hover:text-foreground" href={github}>Source and corpus</a>
+            <a class="hover:text-foreground" href="/method/">How it works</a>
+          </div>
+          <p class="max-w-3xl leading-relaxed">
+            SFIA is a trademark of the SFIA Foundation. This independent
+            research demo is not affiliated with or endorsed by the SFIA
+            Foundation. Skill descriptions are short excerpts from the public
+            SFIA 9 documentation and link to the official pages.
+          </p>
+        </div>
+      </footer>
+    </div>
+
+    <script is:inline>
+      document.getElementById("theme-toggle")?.addEventListener("click", () => {
+        const root = document.documentElement;
+        root.classList.toggle("dark");
+        localStorage.setItem("theme", root.classList.contains("dark") ? "dark" : "light");
+      });
+    </script>
+  </body>
+</html>

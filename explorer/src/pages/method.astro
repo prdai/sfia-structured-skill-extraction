@@ -1,0 +1,188 @@
+---
+import Base from "../layouts/Base.astro";
+
+const arxiv = "https://arxiv.org/abs/2609.35806";
+const github = "https://github.com/prdai/sfia-structured-skill-extraction";
+
+const rows = [
+  ["BM25 lexical", "0.128", "0.260", "0.875", "0.8 ms"],
+  ["Dense + LLM rerank", "0.232", "0.181", "0.436", "6.2 s"],
+  ["Zero-shot LLM", "0.176", "0.368", "0.895", "54 ms"],
+  ["Single-agent RAG", "0.213", "0.526", "0.816", "167 s"],
+  ["Three-agent crew", "0.212", "0.319", "0.717", "327 s"],
+];
+---
+
+<Base
+  title="Why this is different — SFIA Explorer"
+  description="Level-aware skill extraction with agentic RAG: how the matcher works, what the paper found, and what the public demo changes."
+>
+  <article class="mx-auto w-full max-w-3xl px-5 py-10">
+    <header class="mb-10">
+      <p class="mb-2 text-xs uppercase tracking-[0.18em] text-muted-foreground">Method</p>
+      <h1 class="text-3xl font-medium tracking-tight text-balance sm:text-4xl">
+        Why this is different
+      </h1>
+      <p class="mt-4 text-sm leading-relaxed text-muted-foreground">
+        Most skill tools return a flat list of labels. This one predicts a
+        responsibility level for every skill, and grounds each decision in the
+        SFIA 9 description for that exact skill-level pair.
+      </p>
+    </header>
+
+    <div class="space-y-10 text-sm leading-relaxed">
+      <section class="space-y-3">
+        <h2 class="text-lg font-medium tracking-tight">The task is structured prediction</h2>
+        <p>
+          Given free text such as a job advert, course outline, or role profile,
+          the system returns pairs of <span class="font-mono text-xs">(skill, level)</span>{" "}
+          where the skill is one of 147 SFIA 9 skills and the level is an integer
+          from 1 to 7. A label such as “cloud architecture” says nothing about
+          whether the person follows instructions, works autonomously, leads
+          delivery, or sets strategy. SFIA encodes that dimension; a flat skill
+          list throws it away.
+        </p>
+        <p>
+          The corpus behind the demo is 669 skill-level descriptions extracted
+          automatically from the public SFIA 9 documentation. Every record pairs
+          one skill with the verbatim description of that skill at one level.
+        </p>
+      </section>
+
+      <section class="space-y-3">
+        <h2 class="text-lg font-medium tracking-tight">One agent, two retrievers</h2>
+        <p>
+          The matcher is a single agent with two search tools: semantic search
+          for meaning-based matches, and keyword search for jargon, acronyms and
+          named technologies. The agent chooses its own queries and can search
+          repeatedly before committing to an answer. It sees the retrieved
+          skill-level descriptions, not just skill names, so the level decision
+          is grounded in evidence.
+        </p>
+        <ul class="list-disc space-y-1.5 pl-5 text-muted-foreground">
+          <li>
+            <span class="font-mono text-xs text-foreground">semantic_skill_search</span>
+            — vector retrieval over the skill-level descriptions.
+          </li>
+          <li>
+            <span class="font-mono text-xs text-foreground">keyword_skill_search</span>
+            — BM25 retrieval for exact terms and named technologies.
+          </li>
+        </ul>
+        <figure class="overflow-hidden rounded-2xl border bg-card">
+          <img
+            src="/fig-arch-single.png"
+            alt="Architecture of the single-agent RAG matcher: the agent queries semantic and keyword retrieval tools over the SFIA skill-level corpus, then returns skill-level matches."
+            class="w-full"
+            loading="lazy"
+          />
+          <figcaption class="border-t px-4 py-3 text-xs text-muted-foreground">
+            Paper architecture. The demo keeps the loop and both retrieval tools
+            (semantic and keyword) but replaces Qdrant with AI Search.
+          </figcaption>
+        </figure>
+      </section>
+
+      <section class="space-y-3">
+        <h2 class="text-lg font-medium tracking-tight">What the evaluation found</h2>
+        <p>
+          Five strategies were scored on 30 expert-mapped European ICT role
+          profiles, using the same corpus and harness. Skill F1 ignores levels;
+          level metrics are computed only on skills the matcher named correctly.
+        </p>
+        <div class="overflow-x-auto rounded-2xl border">
+          <table class="w-full text-left text-xs">
+            <thead class="bg-muted/50 text-muted-foreground">
+              <tr>
+                <th class="px-3 py-2 font-medium">Strategy</th>
+                <th class="px-3 py-2 font-medium">Skill F1</th>
+                <th class="px-3 py-2 font-medium">Level exact</th>
+                <th class="px-3 py-2 font-medium">Within 1</th>
+                <th class="px-3 py-2 font-medium">s / role</th>
+              </tr>
+            </thead>
+            <tbody>
+              {rows.map((row) => (
+                <tr class="border-t">
+                  {row.map((cell, index) => (
+                    <td class:list={["px-3 py-2", index === 0 ? "font-medium" : "tabular-nums text-muted-foreground"]}>
+                      {cell}
+                    </td>
+                  ))}
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+        <p class="text-xs text-muted-foreground">
+          Paper results, each strategy at its swept configuration. The public
+          demo uses <span class="font-mono">nemotron-3-120b-a12b</span>, the
+          fastest model in the single-agent sweep (0.230 F1 at 9.1 s per role in
+          that sweep), rather than the paper's final GLM-4.7-Flash run above.
+          Run-to-run variance in this harness is several points, so read close
+          numbers as ties.
+        </p>
+      </section>
+
+      <section class="space-y-3">
+        <h2 class="text-lg font-medium tracking-tight">The negative result</h2>
+        <p>
+          Splitting the work across a retriever, matcher and verifier looks
+          appealing, but it did not help here. The three-agent crew matched the
+          single agent on skill F1 (0.212 versus 0.213) at roughly double the
+          latency (327 versus 167 seconds per role), with markedly worse level
+          fidelity (MAE 1.16 versus 0.68). Passing evidence through conversation
+          text lost the grounding the single agent gets from reading tool output
+          directly.
+        </p>
+        <p>
+          That is why the public demo is the single agent. More roles do not
+          automatically mean better closed-taxonomy prediction.
+        </p>
+      </section>
+
+      <section class="space-y-3">
+        <h2 class="text-lg font-medium tracking-tight">What the demo changes</h2>
+        <p>
+          The paper's implementation is Python and CrewAI, with local Qdrant and
+          a 20-candidate LLM reranker. The public demo is a port that keeps the
+          prompt, the two retrieval tools and the structured output, but runs on
+          Cloudflare Workers with AI Search and Workers AI. The reranker is
+          dropped to keep latency and cost inside a free demo budget.
+        </p>
+        <p>
+          That makes the deployed configuration a variant of the evaluated one.
+          Before citing demo numbers, the ported configuration should be re-run
+          on the same 30-role harness. The paper, code, corpus and evaluation
+          harness are all public.
+        </p>
+      </section>
+
+      <section class="space-y-3">
+        <h2 class="text-lg font-medium tracking-tight">Limits</h2>
+        <ul class="list-disc space-y-1.5 pl-5 text-muted-foreground">
+          <li>The evaluation set is 30 one-sentence role summaries. Longer inputs may behave differently.</li>
+          <li>Ground truth predates SFIA 9, so 31% of gold pairs are unreachable and recall is capped at 0.69.</li>
+          <li>Level metrics condition on correctly named skills, so denominators differ across strategies.</li>
+          <li>The demo is rate-limited to three analyses per person per day and has a monthly budget cap.</li>
+          <li>Skill pages show short excerpts and link to the official SFIA pages; they are not a substitute for the framework.</li>
+        </ul>
+      </section>
+
+      <section class="flex flex-wrap gap-2 border-t pt-6">
+        <a
+          class="inline-flex h-9 items-center rounded-2xl bg-foreground px-4 text-sm font-medium text-background transition-opacity hover:opacity-90"
+          href={arxiv}>Read the paper</a
+        >
+        <a
+          class="inline-flex h-9 items-center rounded-2xl border px-4 text-sm font-medium transition-colors hover:bg-muted"
+          href={github}>View source and corpus</a
+        >
+        <a
+          class="inline-flex h-9 items-center rounded-2xl border px-4 text-sm font-medium transition-colors hover:bg-muted"
+          href="/cite/">Cite this</a
+        >
+      </section>
+    </div>
+  </article>
+</Base>
