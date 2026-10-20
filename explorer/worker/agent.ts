@@ -20,7 +20,7 @@ The input may be a job advert, role profile, course outline, or resume excerpt.
 
 Rules:
 - Use both tools. Call semantic_skill_search for meaning-based matches and keyword_skill_search for jargon, acronyms, and exact terms.
-- Query with the distinct responsibilities in the text. Search more than once when the text covers different kinds of work.
+- Query with the distinct responsibilities in the text. Call each search tool at most twice, then stop searching.
 - Only include a skill-level pair when the retrieved description clearly supports it. Prefer specific skills over broad ones.
 - Copy the code, skill name, and level exactly from tool results. Never invent a code or a level.
 - Aim for the skills the text actually calls for. Five to fifteen pairs is typical; fewer is better than padding.
@@ -43,6 +43,19 @@ export async function runAgent(
   });
 
   let final: MatchResult | undefined;
+  let searches = 0;
+  const SEARCH_LIMIT = 6;
+
+  async function search(query: string, type: "vector" | "keyword") {
+    searches += 1;
+    if (searches > SEARCH_LIMIT) {
+      return {
+        results: [],
+        note: "Search budget exhausted. Call submit_matches now with the best results so far.",
+      };
+    }
+    return { results: await searchSkills(env, query, type) };
+  }
 
   return streamText({
     model,
@@ -50,7 +63,7 @@ export async function runAgent(
     messages: await convertToModelMessages(messages),
     temperature: 0,
     maxOutputTokens: 1600,
-    stopWhen: [stepCountIs(8), hasToolCall("submit_matches")],
+    stopWhen: [stepCountIs(14), hasToolCall("submit_matches")],
     tools: {
       semantic_skill_search: tool({
         description:
@@ -62,10 +75,7 @@ export async function runAgent(
             .max(500)
             .describe("A responsibility, task, or capability from the input text."),
         }),
-        execute: async ({ query }) => {
-          const hits = await searchSkills(env, query, "vector");
-          return { results: hits };
-        },
+        execute: async ({ query }) => search(query, "vector"),
       }),
       keyword_skill_search: tool({
         description:
@@ -77,10 +87,7 @@ export async function runAgent(
             .max(500)
             .describe("Exact terms, tool names, or jargon from the input text."),
         }),
-        execute: async ({ query }) => {
-          const hits = await searchSkills(env, query, "keyword");
-          return { results: hits };
-        },
+        execute: async ({ query }) => search(query, "keyword"),
       }),
       submit_matches: tool({
         description:
