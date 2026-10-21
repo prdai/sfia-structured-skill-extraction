@@ -8,7 +8,7 @@
     "dev:worker": "wrangler dev",
     "build": "bun run data && astro build",
     "data": "tsx scripts/build-skills.ts",
-    "check": "astro check && tsc --noEmit -p tsconfig.worker.json",
+    "check": "astro check && tsc --noEmit -p tsconfig.worker.json && tsc --noEmit -p tsconfig.scripts.json",
     "deploy": "bun run build && wrangler deploy",
     "seed": "tsx scripts/seed-ai-search.ts"
   },
@@ -35,6 +35,7 @@
     "@aws-sdk/client-s3": "^3.1153.0",
     "@cloudflare/workers-types": "^5.20261019.1",
     "@tailwindcss/vite": "^4.3.3",
+    "@types/node": "^26.6.5",
     "@types/react": "^19.3.0",
     "@types/react-dom": "^19.3.0",
     "shadcn": "^4.22.1",
