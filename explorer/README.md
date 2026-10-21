@@ -66,6 +66,11 @@ bun run seed
 The seed script uploads one object per skill-level record
 (`records/CODE-LEVEL.txt`) with `code`, `skill`, `level`, and `source_url`
 metadata.
+The body is `Skill name: level description`, matching the Python embedding
+indexer. Each complete record is the indexing unit. The seed script checks
+that every body is at most 1,024 UTF-8 bytes before uploading, a conservative
+token bound for the 1,024-token chunk size below. Oversized records fail
+before any uploads; raise both limits together if the corpus grows.
 
 ### 2. AI Search instance
 
@@ -76,7 +81,7 @@ bunx wrangler ai-search create sfia-corpus \
   --type r2 \
   --source sfia-corpus \
   --hybrid-search \
-  --chunk-size 256 \
+  --chunk-size 1024 \
   --chunk-overlap 0 \
   --max-num-results 10 \
   --custom-metadata code:text \
@@ -88,6 +93,18 @@ bunx wrangler ai-search jobs create sfia-corpus
 ```
 
 The instance name must match `instance_name` in `wrangler.jsonc`.
+
+For an existing instance, update its chunk settings, upload the new bodies,
+and trigger reindexing:
+
+```bash
+bunx wrangler ai-search update sfia-corpus --chunk-size 1024 --chunk-overlap 0
+bun run seed
+bunx wrangler ai-search jobs create sfia-corpus
+```
+
+After indexing completes, verify that the index contains one chunk per
+skill-level record (669 for the current corpus).
 
 ### 3. KV cache and secrets
 

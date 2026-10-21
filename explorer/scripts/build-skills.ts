@@ -1,100 +1,65 @@
-import { mkdirSync, readFileSync, writeFileSync } from "node:fs";
+import { mkdirSync, writeFileSync } from "node:fs";
 import { dirname, resolve } from "node:path";
 import { fileURLToPath } from "node:url";
+import type { Skill } from "../src/lib/types";
+import { loadCorpus, type SkillLevelRecord } from "./corpus";
 
-type Record_ = {
-  code: string;
-  level: number;
-  text: string;
-  source_url: string;
-};
+const EXPECTED_SKILLS = 147;
+const EXCERPT_MAX_CHARS = 220;
+// Mid-range levels read best as a one-paragraph summary of a whole skill.
+const LEVEL_PREFERENCE = [4, 5, 3, 6, 2, 7, 1];
+const OUT_DIR = resolve(dirname(fileURLToPath(import.meta.url)), "../src/data");
+const OUT_FILE = resolve(OUT_DIR, "skills.json");
 
-type Chart = {
-  skills: { code: string; name: string; levels: number[] }[];
-};
-
-const here = dirname(fileURLToPath(import.meta.url));
-const repoRoot = resolve(here, "../..");
-const records = JSON.parse(
-  readFileSync(resolve(repoRoot, "data/sfia-skill-level-records.json"), "utf8"),
-) as Record_[];
-const chart = JSON.parse(
-  readFileSync(resolve(repoRoot, "data/sfia-9-summary-chart.json"), "utf8"),
-) as Chart;
-
-const names = new Map(chart.skills.map((skill) => [skill.code, skill.name]));
-const byCode = new Map<string, Record_[]>();
-
-for (const record of records) {
-  const list = byCode.get(record.code) ?? [];
-  list.push(record);
-  byCode.set(record.code, list);
+function levelRank(level: number): number {
+  const rank = LEVEL_PREFERENCE.indexOf(level);
+  return rank === -1 ? Number.MAX_SAFE_INTEGER : rank;
 }
 
-function excerptFor(skillRecords: Record_[], maxChars = 220): string {
-  const preferred = [4, 5, 3, 6, 2, 7, 1];
-  const record = [...skillRecords].sort(
-    (a, b) => preferred.indexOf(a.level) - preferred.indexOf(b.level),
-  )[0];
-  return trimSentences(record.text, maxChars);
+function preferredRecord(records: SkillLevelRecord[]): SkillLevelRecord {
+  return [...records].sort((a, b) => levelRank(a.level) - levelRank(b.level))[0];
 }
 
-function trimSentences(text: string, maxChars: number): string {
+function excerpt(text: string): string {
   const normalized = text.replace(/\s+/g, " ").trim();
-  const sentences = (normalized.match(/[^.!?]+[.!?]+/g) ?? [normalized]).map((sentence) =>
-    sentence.trim(),
-  );
+  if (normalized.length <= EXCERPT_MAX_CHARS) return normalized;
+
+  const sentences = normalized.match(/[^.!?]+[.!?]+/g) ?? [];
   let out = "";
   for (const sentence of sentences) {
-    const next = `${out} ${sentence}`.trim();
-    if (next.length > maxChars) break;
+    const next = `${out} ${sentence.trim()}`.trim();
+    if (next.length > EXCERPT_MAX_CHARS) break;
     out = next;
   }
-  if (!out) out = `${text.slice(0, maxChars).trim()}…`;
-  else if (out.length < text.trim().length) out = `${out}…`;
-  return out;
+
+  return `${out || normalized.slice(0, EXCERPT_MAX_CHARS).trim()}…`;
 }
 
-const skills = chart.skills
+const { records, skills, recordsByCode } = loadCorpus();
+
+if (skills.length !== EXPECTED_SKILLS) {
+  throw new Error(`Expected ${EXPECTED_SKILLS} skills in the summary chart, got ${skills.length}`);
+}
+
+const catalogue: Skill[] = skills
   .map((skill) => {
-    const skillRecords = byCode.get(skill.code) ?? [];
-    const best = [...skillRecords].sort(
-      (a, b) => [4, 5, 3, 6, 2, 7, 1].indexOf(a.level) - [4, 5, 3, 6, 2, 7, 1].indexOf(b.level),
-    )[0];
+    const skillRecords = recordsByCode.get(skill.code);
+    if (!skillRecords?.length) {
+      throw new Error(`No extracted records for ${skill.code}: cannot build an excerpt`);
+    }
+
+    const record = preferredRecord(skillRecords);
     return {
       code: skill.code,
-      name: names.get(skill.code) ?? skill.code,
+      name: skill.name,
       levels: skill.levels,
-      excerpt: skillRecords.length ? excerptFor(skillRecords) : "",
-      sourceUrl: best?.source_url ?? `https://sfia-online.org/en/sfia-9/skills/${skill.code.toLowerCase()}`,
+      excerpt: excerpt(record.text),
+      sourceUrl: record.source_url,
     };
   })
   .sort((a, b) => a.name.localeCompare(b.name));
 
-if (skills.length !== 147) {
-  throw new Error(`Expected 147 skills, got ${skills.length}`);
-}
+mkdirSync(OUT_DIR, { recursive: true });
+writeFileSync(OUT_FILE, `${JSON.stringify(catalogue, null, 2)}\n`);
 
-const missingExcerpts = skills.filter((skill) => !skill.excerpt);
-if (missingExcerpts.length) {
-  throw new Error(`Missing excerpts for: ${missingExcerpts.map((s) => s.code).join(", ")}`);
-}
-
-const outDir = resolve(here, "../src/data");
-mkdirSync(outDir, { recursive: true });
-writeFileSync(resolve(outDir, "skills.json"), `${JSON.stringify(skills, null, 2)}\n`);
-writeFileSync(
-  resolve(outDir, "stats.json"),
-  `${JSON.stringify(
-    {
-      skills: skills.length,
-      records: records.length,
-      levels: 7,
-      generatedAt: new Date().toISOString().slice(0, 10),
-    },
-    null,
-    2,
-  )}\n`,
-);
-
-console.log(`wrote ${skills.length} skills from ${records.length} records`);
+console.log(`wrote ${catalogue.length} skills from ${records.length} records`);

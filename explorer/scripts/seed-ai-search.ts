@@ -1,26 +1,18 @@
 import { PutObjectCommand, S3Client } from "@aws-sdk/client-s3";
-import { readFileSync } from "node:fs";
-import { dirname, resolve } from "node:path";
-import { fileURLToPath } from "node:url";
+import { indexedText, loadCorpus, type SkillLevelRecord } from "./corpus";
 
-type Record_ = {
-  code: string;
-  level: number;
-  text: string;
-  source_url: string;
-};
-
-type Chart = {
-  skills: { code: string; name: string }[];
-};
-
-const here = dirname(fileURLToPath(import.meta.url));
-const repoRoot = resolve(here, "../..");
+const DEFAULT_BUCKET = "sfia-corpus";
+const INSTANCE = "sfia-corpus";
+const KEY_PREFIX = "records/";
+// Must stay in step with the instance's chunk_size so no record is ever split.
+const CHUNK_SIZE = 1024;
+const CONCURRENCY = 8;
+const PROGRESS_EVERY = 50;
 
 const accountId = process.env.R2_ACCOUNT_ID;
 const accessKeyId = process.env.R2_ACCESS_KEY_ID;
 const secretAccessKey = process.env.R2_SECRET_ACCESS_KEY;
-const bucket = process.env.R2_BUCKET ?? "sfia-corpus";
+const bucket = process.env.R2_BUCKET ?? DEFAULT_BUCKET;
 
 if (!accountId || !accessKeyId || !secretAccessKey) {
   console.error(
@@ -29,13 +21,23 @@ if (!accountId || !accessKeyId || !secretAccessKey) {
   process.exit(1);
 }
 
-const records = JSON.parse(
-  readFileSync(resolve(repoRoot, "data/sfia-skill-level-records.json"), "utf8"),
-) as Record_[];
-const chart = JSON.parse(
-  readFileSync(resolve(repoRoot, "data/sfia-9-summary-chart.json"), "utf8"),
-) as Chart;
-const names = new Map(chart.skills.map((skill) => [skill.code, skill.name]));
+const { records, nameOf } = loadCorpus();
+
+type IndexedRecord = SkillLevelRecord & { skill: string };
+
+const indexed: IndexedRecord[] = records.map((record) => {
+  const skill = nameOf(record.code);
+  const text = indexedText(skill, record);
+  // UTF-8 byte length bounds the token count conservatively.
+  const bytes = Buffer.byteLength(text, "utf8");
+  if (bytes > CHUNK_SIZE) {
+    throw new Error(
+      `${record.code}-${record.level} is ${bytes} bytes, over the ${CHUNK_SIZE}-byte indexing guard. ` +
+        `Raise the instance chunk_size and CHUNK_SIZE together before seeding.`,
+    );
+  }
+  return { ...record, text, skill };
+});
 
 const client = new S3Client({
   region: "auto",
@@ -45,19 +47,16 @@ const client = new S3Client({
 
 let uploaded = 0;
 
-async function upload(record: Record_) {
-  const skill = names.get(record.code);
-  if (!skill) throw new Error(`Unknown skill code ${record.code}`);
-
+async function upload(record: IndexedRecord): Promise<void> {
   await client.send(
     new PutObjectCommand({
       Bucket: bucket,
-      Key: `records/${record.code}-${record.level}.txt`,
+      Key: `${KEY_PREFIX}${record.code}-${record.level}.txt`,
       Body: record.text,
       ContentType: "text/plain; charset=utf-8",
       Metadata: {
         code: record.code,
-        skill,
+        skill: record.skill,
         level: String(record.level),
         source_url: record.source_url,
       },
@@ -65,23 +64,21 @@ async function upload(record: Record_) {
   );
 
   uploaded += 1;
-  if (uploaded % 50 === 0 || uploaded === records.length) {
-    console.log(`uploaded ${uploaded}/${records.length}`);
+  if (uploaded % PROGRESS_EVERY === 0 || uploaded === indexed.length) {
+    console.error(`uploaded ${uploaded}/${indexed.length}`);
   }
 }
 
-const concurrency = 8;
 let cursor = 0;
 
 await Promise.all(
-  Array.from({ length: concurrency }, async () => {
-    while (cursor < records.length) {
-      const record = records[cursor++];
-      await upload(record);
+  Array.from({ length: CONCURRENCY }, async () => {
+    while (cursor < indexed.length) {
+      await upload(indexed[cursor++]);
     }
   }),
 );
 
-console.log(`\nDone. ${records.length} objects in r2://${bucket}/records/`);
+console.log(`\nDone. ${indexed.length} objects in r2://${bucket}/${KEY_PREFIX}`);
 console.log("Trigger indexing with:");
-console.log("  npx wrangler ai-search jobs create sfia-corpus");
+console.log(`  bunx wrangler ai-search jobs create ${INSTANCE}`);
