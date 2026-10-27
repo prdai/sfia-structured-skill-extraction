@@ -1,6 +1,6 @@
 export interface Env {
   AI: Ai;
-  AI_SEARCH: AiSearchInstance;
+  VECTORIZE: VectorizeIndex;
   MATCH_CACHE: KVNamespace;
   BUDGET: DurableObjectNamespace;
   QUERIES: AnalyticsEngineDataset;

@@ -14,10 +14,10 @@
   "ai": {
     "binding": "AI"
   },
-  "ai_search": [
+  "vectorize": [
     {
-      "binding": "AI_SEARCH",
-      "instance_name": "sfia-corpus"
+      "binding": "VECTORIZE",
+      "index_name": "sfia-skill-level-records"
     }
   ],
   "kv_namespaces": [

@@ -1,3 +1,16 @@
+import rawRecords from "../src/data/records.json";
+import {
+  EMBEDDING_MODEL,
+  KEYWORD_THRESHOLD,
+  recordId,
+  rerankPrompt,
+  RERANK_THRESHOLD,
+  RERANKER_MODEL,
+  RETRIEVAL_K,
+  TOOL_RESULT_LIMIT,
+} from "../src/lib/retrieval-config";
+import type { CorpusRecord } from "../src/lib/types";
+import { BM25 } from "./bm25";
 import type { Env } from "./env";
 import { resolveSkill } from "./skills";
 
@@ -10,21 +23,66 @@ export type RetrievalHit = {
   score: number;
 };
 
-type Metadata = Record<string, unknown>;
+const RECORDS = rawRecords as CorpusRecord[];
+const byId = new Map(RECORDS.map((record) => [recordId(record.code, record.level), record]));
+const bm25 = new BM25(RECORDS.map((record) => record.text));
+const SCORE_RE = /[01](?:\.\d+)?/;
 
-function pick(metadata: Metadata, keys: string[]): string | undefined {
-  for (const key of keys) {
-    const value = metadata[key];
-    if (typeof value === "string" && value.trim()) return value.trim();
-    if (typeof value === "number") return String(value);
-  }
-  return undefined;
+function toHit(record: CorpusRecord, score: number): RetrievalHit | undefined {
+  const skill = resolveSkill(record.code);
+  if (!skill || !skill.levels.includes(record.level)) return undefined;
+
+  return {
+    code: skill.code,
+    skill: skill.name,
+    level: record.level,
+    text: record.text,
+    sourceUrl: record.sourceUrl,
+    score,
+  };
 }
 
-function fromKey(key: string): { code: string; level: number } | undefined {
-  const match = key.match(/([A-Z]{3,5})-(\d)\.(?:txt|md|json)$/i);
-  if (!match) return undefined;
-  return { code: match[1].toUpperCase(), level: Number(match[2]) };
+async function rerankScore(env: Env, query: string, candidate: string): Promise<number> {
+  const response = await env.AI.run(RERANKER_MODEL, {
+    messages: [{ role: "user", content: rerankPrompt(query, candidate) }],
+    temperature: 0,
+    max_tokens: 8,
+  });
+
+  const match = SCORE_RE.exec(String((response as { response?: unknown }).response ?? ""));
+  return match ? Number(match[0]) : 0;
+}
+
+async function semanticSearch(env: Env, query: string): Promise<RetrievalHit[]> {
+  const embedding = await env.AI.run(EMBEDDING_MODEL, { text: [query] });
+  const vector = (embedding as { data: number[][] }).data[0];
+  const { matches } = await env.VECTORIZE.query(vector, { topK: RETRIEVAL_K });
+
+  const candidates = matches
+    .map((match) => byId.get(match.id))
+    .filter((record): record is CorpusRecord => record !== undefined);
+  const scored = await Promise.all(
+    candidates.map(async (record) => ({ record, score: await rerankScore(env, query, record.text) })),
+  );
+
+  return scored
+    .filter(({ score }) => score >= RERANK_THRESHOLD)
+    .map(({ record, score }) => toHit(record, score))
+    .filter((hit): hit is RetrievalHit => hit !== undefined)
+    .sort((a, b) => b.score - a.score);
+}
+
+function keywordSearch(query: string): RetrievalHit[] {
+  const scores = bm25.scores(query);
+  const top = Math.max(...scores, 0);
+  if (top <= 0) return [];
+
+  return RECORDS.map((record, index) => {
+    const score = scores[index] / top;
+    return score >= KEYWORD_THRESHOLD ? toHit(record, score) : undefined;
+  })
+    .filter((hit): hit is RetrievalHit => hit !== undefined)
+    .sort((a, b) => b.score - a.score);
 }
 
 export async function searchSkills(
@@ -32,48 +90,6 @@ export async function searchSkills(
   query: string,
   retrievalType: "vector" | "keyword",
 ): Promise<RetrievalHit[]> {
-  const response = await env.AI_SEARCH.search({
-    query,
-    ai_search_options: {
-      retrieval: {
-        retrieval_type: retrievalType,
-        max_num_results: 12,
-        match_threshold: retrievalType === "vector" ? 0.35 : 0.05,
-        keyword_match_mode: "or",
-      },
-      reranking: { enabled: false },
-    },
-  });
-
-  const best = new Map<string, RetrievalHit>();
-
-  for (const chunk of response.chunks) {
-    const metadata = (chunk.item.metadata ?? {}) as Metadata;
-    const keyParts = fromKey(chunk.item.key);
-    const code = pick(metadata, ["code", "x-amz-meta-code"]) ?? keyParts?.code;
-    const level = Number(pick(metadata, ["level", "x-amz-meta-level"]) ?? keyParts?.level);
-    const skillName = pick(metadata, ["skill", "x-amz-meta-skill"]);
-    const sourceUrl = pick(metadata, ["source_url", "source-url", "x-amz-meta-source_url"]);
-
-    if (!code || !Number.isInteger(level) || level < 1 || level > 7) continue;
-
-    const skill = resolveSkill(code, skillName);
-    if (!skill) continue;
-    if (!skill.levels.includes(level)) continue;
-
-    const hit: RetrievalHit = {
-      code: skill.code,
-      skill: skill.name,
-      level,
-      text: chunk.text,
-      sourceUrl: sourceUrl ?? skill.sourceUrl,
-      score: chunk.score,
-    };
-
-    const dedupeKey = `${hit.code}:${hit.level}`;
-    const existing = best.get(dedupeKey);
-    if (!existing || existing.score < hit.score) best.set(dedupeKey, hit);
-  }
-
-  return [...best.values()].sort((a, b) => b.score - a.score).slice(0, 10);
+  const hits = retrievalType === "vector" ? await semanticSearch(env, query) : keywordSearch(query);
+  return hits.slice(0, TOOL_RESULT_LIMIT);
 }
