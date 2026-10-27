@@ -1,3 +1,10 @@
+export type CorpusRecord = {
+  code: string;
+  level: number;
+  text: string;
+  sourceUrl: string;
+};
+
 export type Skill = {
   code: string;
   name: string;
