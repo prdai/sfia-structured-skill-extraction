@@ -77,8 +77,8 @@ const rows = [
             loading="lazy"
           />
           <figcaption class="border-t px-4 py-3 text-xs text-muted-foreground">
-            Paper architecture. The demo keeps the loop and both retrieval tools
-            (semantic and keyword) but replaces Qdrant with AI Search.
+            Paper architecture. The demo keeps the loop, both retrieval tools
+            and the reranker, replacing Qdrant with Vectorize.
           </figcaption>
         </figure>
       </section>
@@ -146,9 +146,10 @@ const rows = [
         <p>
           The paper's implementation is Python and CrewAI, with local Qdrant and
           a 20-candidate LLM reranker. The public demo is a port that keeps the
-          prompt, the two retrieval tools and the structured output, but runs on
-          Cloudflare Workers with AI Search and Workers AI. The reranker is
-          dropped to keep latency and cost inside a free demo budget.
+          prompt, both retrieval tools, the reranker and the structured output,
+          but runs on Cloudflare Workers with Vectorize and Workers AI. One
+          vector per skill-level record, the same embedding model, the same BM25
+          scoring, and the same retrieval constants.
         </p>
         <p>
           That makes the deployed configuration a variant of the evaluated one.

@@ -5,15 +5,15 @@ get SFIA 9 skills and responsibility levels with short evidence excerpts.
 
 This is a port of the research implementation, not the Python/CrewAI artifact.
 It keeps the prompt, the two retrieval tools, and the structured output, and
-runs on Cloudflare Workers with AI Search and Workers AI. The Python matchers,
+runs on Cloudflare Workers with Vectorize and Workers AI. The Python matchers,
 corpus pipeline, and evaluation harness live in the repository root.
 
 ## Stack
 
 - Astro static pages + one React island (`@ai-sdk/react`)
 - Vercel AI SDK (`streamText`, `tool`, `DefaultChatTransport`) in a Worker
-- Cloudflare AI Search for retrieval: `retrieval_type: "vector"` for semantic
-  search and `retrieval_type: "keyword"` for BM25
+- Cloudflare Vectorize for semantic retrieval and in-worker BM25 for keyword
+  retrieval, mirroring the Python matchers' scoring
 - Workers AI `@cf/nvidia/nemotron-3-120b-a12b`
 - KV result cache, Durable Object budget counters, Turnstile, Analytics Engine
 
@@ -21,8 +21,8 @@ The agent has two tools, matching the paper's design:
 
 | Tool | Backend | Use |
 | --- | --- | --- |
-| `semantic_skill_search` | AI Search vector | meaning-based matches |
-| `keyword_skill_search` | AI Search BM25 | jargon, acronyms, exact terms |
+| `semantic_skill_search` | Vectorize + LLM rerank | meaning-based matches |
+| `keyword_skill_search` | in-worker BM25 | jargon, acronyms, exact terms |
 
 The model must call both before it can submit matches.
 
@@ -36,7 +36,7 @@ bun run dev      # http://localhost:4321
 
 `astro dev` serves the static pages but not the Worker API. To exercise the API,
 run `bun run dev:worker` in another terminal; `/api` is proxied to
-`http://localhost:8787`. AI Search and Workers AI are remote bindings, so use
+`http://localhost:8787`. Vectorize and Workers AI are remote bindings, so use
 `bunx wrangler dev --remote` when you need real retrieval.
 
 Turnstile is skipped when `PUBLIC_TURNSTILE_SITE_KEY` is unset. The API also
@@ -45,66 +45,50 @@ both for production; setting only the secret will reject every request.
 
 ## Cloudflare setup
 
-Requires a Workers Paid plan (AI Search paid models and Durable Objects).
+Requires a Workers Paid plan (Vectorize, paid Workers AI models, and Durable Objects).
 
-### 1. R2 corpus
+### 1. Vectorize index
+
+Retrieval mirrors the Python matchers: one vector per skill-level record,
+embedding `"<skill name>: <level description>"`, with no chunking, so a record
+is the atomic retrieval unit on both sides. The keyword tool runs the same
+BM25 scoring in the worker over the record bodies bundled at build time.
+
+Seeding needs the same Cloudflare credentials the Python matchers use:
 
 ```bash
-bunx wrangler r2 bucket create sfia-corpus
-```
-
-Create an R2 API token with object read/write access, then:
-
-```bash
-export R2_ACCOUNT_ID=...
-export R2_ACCESS_KEY_ID=...
-export R2_SECRET_ACCESS_KEY=...
-export R2_BUCKET=sfia-corpus
+export CF_ACCOUNT_ID=...
+export CF_API_EMAIL=...
+export CF_API_KEY=...
 bun run seed
 ```
 
-The seed script uploads one object per skill-level record
-(`records/CODE-LEVEL.txt`) with `code`, `skill`, `level`, and `source_url`
-metadata.
-The body is `Skill name: level description`, matching the Python embedding
-indexer. Each complete record is the indexing unit. The seed script checks
-that every body is at most 1,024 UTF-8 bytes before uploading, a conservative
-token bound for the 1,024-token chunk size below. Oversized records fail
-before any uploads; raise both limits together if the corpus grows.
-
-### 2. AI Search instance
-
-The keyword tool needs hybrid search enabled at the instance level:
+`bun run seed` embeds all 669 records through the AI Gateway and writes
+`vectors.ndjson`. It prints the index creation and upsert commands with the
+observed embedding dimension:
 
 ```bash
-bunx wrangler ai-search create sfia-corpus \
-  --type r2 \
-  --source sfia-corpus \
-  --hybrid-search \
-  --chunk-size 1024 \
-  --chunk-overlap 0 \
-  --max-num-results 10 \
-  --custom-metadata code:text \
-  --custom-metadata skill:text \
-  --custom-metadata level:number \
-  --custom-metadata source_url:text
-
-bunx wrangler ai-search jobs create sfia-corpus
+bunx wrangler vectorize create sfia-skill-level-records --dimensions=1024 --metric=cosine
+bunx wrangler vectorize upsert sfia-skill-level-records --file=vectors.ndjson
 ```
 
-The instance name must match `instance_name` in `wrangler.jsonc`.
+The index name must match `index_name` in `wrangler.jsonc`. Re-seeding is
+idempotent: vector ids are `CODE-LEVEL`, so an upsert replaces in place.
 
-For an existing instance, update its chunk settings, upload the new bodies,
-and trigger reindexing:
+### 2. Retrieval behaviour
 
-```bash
-bunx wrangler ai-search update sfia-corpus --chunk-size 1024 --chunk-overlap 0
-bun run seed
-bunx wrangler ai-search jobs create sfia-corpus
-```
+Shared constants live in `src/lib/retrieval-config.ts`, mirroring
+`embedding-matcher/src/embedding_matcher/__init__.py`:
 
-After indexing completes, verify that the index contains one chunk per
-skill-level record (669 for the current corpus).
+- semantic search retrieves `RETRIEVAL_K = 20`, reranks every candidate with
+  `@cf/meta/llama-3.3-70b-instruct-fp8-fast`, and keeps scores at or above
+  `RERANK_THRESHOLD = 0.6`
+- keyword search scores BM25 over the record bodies, normalises by the top
+  score, and keeps scores at or above `KEYWORD_THRESHOLD = 0.7`
+- both tools return at most `TOOL_RESULT_LIMIT = 10` records
+
+Reranking costs one LLM call per retrieved candidate, so a single semantic
+search is 20 calls. The agent's `SEARCH_LIMIT` caps a request at 6 searches.
 
 ### 3. KV cache and secrets
 
@@ -138,8 +122,8 @@ route if you deploy under a different host.
 - `MONTHLY_MATCH_BUDGET = 500` paid matches per month
 - KV cache keyed by normalized input, 30-day TTL
 - Query text is logged anonymously to Analytics Engine; no IP addresses are stored
-- Nemotron is roughly $0.009 per match; AI Search includes 1,000 semantic and
-  1,000 full-text queries per month, and the corpus is ~70k ingestion tokens
+- Nemotron is roughly $0.009 per match; reranking adds 20 llama-3.3-70b calls
+  per semantic search, and keyword search costs nothing beyond worker CPU
 
 Adjust the limits in `worker/index.ts` and `wrangler.jsonc`.
 
@@ -147,8 +131,8 @@ Adjust the limits in `worker/index.ts` and `wrangler.jsonc`.
 
 See `/method/` in the deployed app. The important ones:
 
-- The 20-candidate llama-3.3-70b reranker is removed.
-- Qdrant is replaced by AI Search.
+- Qdrant is replaced by Vectorize; the indexing unit, embedding model, BM25
+  scoring and retrieval constants match the Python matchers.
 - The model is the fastest sweep model, not the paper's final GLM run.
 - The agent loop is a TypeScript port, not CrewAI.
 
