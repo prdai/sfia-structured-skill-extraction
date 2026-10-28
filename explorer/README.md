@@ -66,13 +66,10 @@ bun run seed
 ```
 
 `bun run seed` embeds all 669 records through the AI Gateway and writes
-`vectors.ndjson`. It prints the index creation and upsert commands with the
-observed embedding dimension:
-
-```bash
-bunx wrangler vectorize create sfia-skill-level-records --dimensions=1024 --metric=cosine
-bunx wrangler vectorize upsert sfia-skill-level-records --file=vectors.ndjson
-```
+`vectors.ndjson`. It creates the Vectorize index if missing, using the observed
+embedding dimension and cosine distance, then upserts the vectors. An existing
+index must have matching dimensions and metric. Wrangler must be authenticated.
+The script also runs directly as `./scripts/seed-vectorize.ts` with Bun installed.
 
 The index name must match `index_name` in `wrangler.jsonc`. Re-seeding is
 idempotent: vector ids are `CODE-LEVEL`, so an upsert replaces in place.

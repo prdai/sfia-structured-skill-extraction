@@ -1,7 +1,3 @@
-import { readFileSync } from "node:fs";
-import { dirname, resolve } from "node:path";
-import { fileURLToPath } from "node:url";
-
 export type SkillLevelRecord = {
   code: string;
   level: number;
@@ -15,12 +11,12 @@ export type ChartSkill = {
   levels: number[];
 };
 
-const repoRoot = resolve(dirname(fileURLToPath(import.meta.url)), "../..");
+const repoRoot = `${import.meta.dir}/../..`;
 const RECORDS_PATH = "data/sfia-skill-level-records.json";
 const CHART_PATH = "data/sfia-9-summary-chart.json";
 
-function readJson<T>(relativePath: string): T {
-  return JSON.parse(readFileSync(resolve(repoRoot, relativePath), "utf8")) as T;
+async function readJson<T>(relativePath: string): Promise<T> {
+  return Bun.file(`${repoRoot}/${relativePath}`).json() as Promise<T>;
 }
 
 export type Corpus = {
@@ -30,9 +26,11 @@ export type Corpus = {
   nameOf: (code: string) => string;
 };
 
-export function loadCorpus(): Corpus {
-  const records = readJson<SkillLevelRecord[]>(RECORDS_PATH);
-  const { skills } = readJson<{ skills: ChartSkill[] }>(CHART_PATH);
+export async function loadCorpus(): Promise<Corpus> {
+  const [records, { skills }] = await Promise.all([
+    readJson<SkillLevelRecord[]>(RECORDS_PATH),
+    readJson<{ skills: ChartSkill[] }>(CHART_PATH),
+  ]);
   const names = new Map(skills.map((skill) => [skill.code, skill.name]));
   const recordsByCode = new Map<string, SkillLevelRecord[]>();
 

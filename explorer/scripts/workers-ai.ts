@@ -10,9 +10,9 @@ const BACKOFF_MIN_MS = 1_000;
 const BACKOFF_MAX_MS = 20_000;
 
 function credentials() {
-  const accountId = process.env.CF_ACCOUNT_ID;
-  const email = process.env.CF_API_EMAIL;
-  const key = process.env.CF_API_KEY;
+  const accountId = Bun.env.CF_ACCOUNT_ID;
+  const email = Bun.env.CF_API_EMAIL;
+  const key = Bun.env.CF_API_KEY;
 
   if (!accountId || !email || !key) {
     throw new Error(
@@ -21,7 +21,7 @@ function credentials() {
     );
   }
 
-  return { accountId, email, key, gateway: process.env.CF_GATEWAY_ID ?? DEFAULT_GATEWAY };
+  return { accountId, email, key, gateway: Bun.env.CF_GATEWAY_ID ?? DEFAULT_GATEWAY };
 }
 
 function retryable(status: number): boolean {

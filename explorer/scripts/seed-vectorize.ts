@@ -1,5 +1,5 @@
-import { dirname, resolve } from "node:path";
-import { fileURLToPath } from "node:url";
+#!/usr/bin/env bun
+import { $ } from "bun";
 import { recordId, VECTORIZE_INDEX } from "../src/lib/retrieval-config";
 import { indexedText, loadCorpus } from "./corpus";
 import { embed } from "./workers-ai";
@@ -8,9 +8,17 @@ import { embed } from "./workers-ai";
 // Mirrors embedding-matcher/src/embedding_matcher/ingest.py; no chunking, so a
 // record is the atomic retrieval unit on both sides.
 const BATCH_SIZE = 50;
-const OUT_FILE = resolve(dirname(fileURLToPath(import.meta.url)), "../vectors.ndjson");
+const PROJECT_DIR = `${import.meta.dir}/..`;
+const OUT_FILE = `${PROJECT_DIR}/vectors.ndjson`;
 
-const { records, nameOf } = loadCorpus();
+type VectorizeIndex = {
+  name: string;
+  config: { dimensions: number; metric: string };
+};
+
+const indexes: VectorizeIndex[] = await $`bunx wrangler vectorize list --json`.cwd(PROJECT_DIR).json();
+const existing = indexes.find((index) => index.name === VECTORIZE_INDEX);
+const { records, nameOf } = await loadCorpus();
 const texts = records.map((record) => indexedText(nameOf(record.code), record));
 
 const vectors: number[][] = [];
@@ -37,8 +45,14 @@ const lines = records.map((record, index) =>
 await Bun.write(OUT_FILE, `${lines.join("\n")}\n`);
 
 console.log(`\nWrote ${lines.length} vectors (${dimensions} dimensions) to ${OUT_FILE}`);
-console.log("Create the index once, then upsert:");
-console.log(
-  `  bunx wrangler vectorize create ${VECTORIZE_INDEX} --dimensions=${dimensions} --metric=cosine`,
-);
-console.log(`  bunx wrangler vectorize upsert ${VECTORIZE_INDEX} --file=${OUT_FILE}`);
+if (existing && (existing.config.dimensions !== dimensions || existing.config.metric !== "cosine")) {
+  throw new Error(
+    `${VECTORIZE_INDEX} must use ${dimensions} dimensions and cosine distance. Use a compatible index before seeding.`,
+  );
+}
+
+if (!existing) {
+  await $`bunx wrangler vectorize create ${VECTORIZE_INDEX} --dimensions=${dimensions} --metric=cosine`
+    .cwd(PROJECT_DIR);
+}
+await $`bunx wrangler vectorize upsert ${VECTORIZE_INDEX} --file=${OUT_FILE}`.cwd(PROJECT_DIR);
