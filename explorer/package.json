@@ -6,8 +6,7 @@
   "scripts": {
     "dev": "astro dev",
     "dev:worker": "wrangler dev",
-    "build": "bun run data && astro build",
-    "data": "bun scripts/build-skills.ts",
+    "build": "astro build",
     "check": "astro check && tsc --noEmit -p tsconfig.worker.json && tsc --noEmit -p tsconfig.scripts.json",
     "deploy": "bun run build && wrangler deploy",
     "seed": "bun scripts/seed-vectorize.ts"

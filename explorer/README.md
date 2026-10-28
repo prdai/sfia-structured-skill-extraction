@@ -30,9 +30,11 @@ The model must call both before it can submit matches.
 
 ```bash
 bun install
-bun run data     # regenerate src/data/skills.json from ../data
 bun run dev      # http://localhost:4321
 ```
+
+`src/data/skills.json` and `src/data/records.json` are checked-in snapshots of
+the SFIA catalogue and skill-level descriptions. Builds use these files directly.
 
 `astro dev` serves the static pages but not the Worker API. To exercise the API,
 run `bun run dev:worker` in another terminal; `/api` is proxied to
