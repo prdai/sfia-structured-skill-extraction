@@ -30,12 +30,6 @@
       "deleted_classes": ["Budget"]
     }
   ],
-  "analytics_engine_datasets": [
-    {
-      "binding": "QUERIES",
-      "dataset": "sfia_queries"
-    }
-  ],
   "routes": [
     {
       "pattern": "sfia.prdai.dev",

@@ -1,7 +1,6 @@
 import type { UIMessage } from "ai";
 
 import { runAgent } from "./agent";
-import { hashQuery, logQuery } from "./analytics";
 import type { Env } from "./env";
 import { verifyTurnstile } from "./turnstile";
 
@@ -55,7 +54,6 @@ export default {
     }
 
     const ip = request.headers.get("CF-Connecting-IP") ?? "unknown";
-    const queryHash = await hashQuery(text);
 
     if (!(await verifyTurnstile(env, body.turnstileToken, ip))) {
       return errorResponse(403, "turnstile_failed", "Verification failed. Reload the page and try again.");
@@ -74,43 +72,12 @@ export default {
 
     try {
       const result = await runAgent(env, agentMessages, startedAt, {
-        onFinal: async (final) => {
-          logQuery(env, {
-            queryHash,
-            text,
-            source: "live",
-            ok: true,
-            matches: final.matches.length,
-            elapsedMs: final.meta.elapsedMs,
-            model: final.meta.model,
-          });
-        },
-        onError: (error) => {
-          console.error("agent error", error);
-          logQuery(env, {
-            queryHash,
-            text,
-            source: "live",
-            ok: false,
-            matches: 0,
-            elapsedMs: Date.now() - startedAt,
-            model: env.MODEL,
-          });
-        },
+        onError: (error) => console.error("agent error", error),
       });
 
       return result.toUIMessageStreamResponse();
     } catch (error) {
       console.error("match failed", error);
-      logQuery(env, {
-        queryHash,
-        text,
-        source: "live",
-        ok: false,
-        matches: 0,
-        elapsedMs: Date.now() - startedAt,
-        model: env.MODEL,
-      });
       return errorResponse(500, "agent_failed", "The matcher failed. Try again in a moment.");
     }
   },

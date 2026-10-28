@@ -217,8 +217,7 @@ export function Analyzer({ siteKey }: { siteKey?: string }) {
           </InputGroup>
         </form>
         <p className="mt-2 text-center text-[11px] text-muted-foreground">
-          Free demo with a shared spending limit. Queries are logged
-          anonymously for research.{" "}
+          Free demo with a shared spending limit.{" "}
           <a className="underline underline-offset-4 hover:text-foreground" href="/method/">
             How it works
           </a>

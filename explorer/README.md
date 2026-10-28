@@ -15,7 +15,7 @@ corpus pipeline, and evaluation harness live in the repository root.
 - Cloudflare Vectorize for semantic retrieval and in-worker BM25 for keyword
   retrieval, mirroring the Python matchers' scoring
 - Workers AI `@cf/nvidia/nemotron-3-120b-a12b`
-- AI Gateway spending limits and response caching, Turnstile, Analytics Engine
+- AI Gateway spending limits and response caching, Turnstile
 
 The agent has two tools, matching the paper's design:
 
@@ -145,7 +145,6 @@ route if you deploy under a different host.
 - Shared $2.50 rolling 30-day model-spending limit configured in AI Gateway
 - Identical model requests can be served from the Gateway cache
 - No application result cache or per-IP daily counter
-- Query text is logged anonymously to Analytics Engine; no IP addresses are stored
 - Nemotron is roughly $0.009 per match; reranking adds 20 llama-3.3-70b calls
   per semantic search, and keyword search costs nothing beyond worker CPU
 
