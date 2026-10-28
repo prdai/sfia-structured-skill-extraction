@@ -1,17 +1,9 @@
-import {
-  createUIMessageStream,
-  createUIMessageStreamResponse,
-  type UIMessage,
-} from "ai";
+import type { UIMessage } from "ai";
 
-import type { MatchResult } from "../src/lib/types";
 import { runAgent } from "./agent";
-import { logQuery } from "./analytics";
-import { getCached, hashText, normalizeQuery, putCached } from "./cache";
+import { hashQuery, logQuery } from "./analytics";
 import type { Env } from "./env";
 import { verifyTurnstile } from "./turnstile";
-
-export { Budget } from "./budget";
 
 type MatchBody = {
   messages?: UIMessage[];
@@ -19,18 +11,11 @@ type MatchBody = {
   turnstileToken?: string;
 };
 
-type BudgetDecision = {
-  ok: boolean;
-  reason?: "budget_exhausted" | "ip_limited";
-  remaining?: { month: number; day: number };
-};
-
 const MAX_INPUT = 6000;
 const MIN_INPUT = 20;
-const PER_IP_DAILY = 3;
 
 export default {
-  async fetch(request: Request, env: Env, ctx: ExecutionContext): Promise<Response> {
+  async fetch(request: Request, env: Env): Promise<Response> {
     const url = new URL(request.url);
 
     if (url.pathname === "/api/health") {
@@ -70,41 +55,10 @@ export default {
     }
 
     const ip = request.headers.get("CF-Connecting-IP") ?? "unknown";
-    const ipHash = await hashText(ip);
-    const queryHash = await hashText(normalizeQuery(text));
+    const queryHash = await hashQuery(text);
 
     if (!(await verifyTurnstile(env, body.turnstileToken, ip))) {
       return errorResponse(403, "turnstile_failed", "Verification failed. Reload the page and try again.");
-    }
-
-    const cached = await getCached(env, queryHash);
-    if (cached) {
-      const result: MatchResult = { ...cached, meta: { ...cached.meta, cached: true } };
-      logQuery(env, {
-        queryHash,
-        text,
-        source: "cache",
-        ok: true,
-        matches: result.matches.length,
-        elapsedMs: 0,
-        model: result.meta.model,
-      });
-      return cachedResponse(result);
-    }
-
-    const budget = env.BUDGET.get(env.BUDGET.idFromName("global"));
-    const reservation = await reserve(budget, {
-      ipHash,
-      limitPerIp: PER_IP_DAILY,
-      globalLimit: Number(env.MONTHLY_MATCH_BUDGET) || 500,
-    });
-
-    if (!reservation.ok) {
-      const message =
-        reservation.reason === "budget_exhausted"
-          ? "This month's demo budget is exhausted. Try again next month."
-          : `Daily limit reached (${PER_IP_DAILY} analyses per person). Try again tomorrow.`;
-      return errorResponse(429, reservation.reason ?? "rate_limited", message);
     }
 
     const startedAt = Date.now();
@@ -121,7 +75,6 @@ export default {
     try {
       const result = await runAgent(env, agentMessages, startedAt, {
         onFinal: async (final) => {
-          await putCached(env, queryHash, final);
           logQuery(env, {
             queryHash,
             text,
@@ -134,7 +87,6 @@ export default {
         },
         onError: (error) => {
           console.error("agent error", error);
-          void refund(budget, ipHash);
           logQuery(env, {
             queryHash,
             text,
@@ -150,7 +102,6 @@ export default {
       return result.toUIMessageStreamResponse();
     } catch (error) {
       console.error("match failed", error);
-      await refund(budget, ipHash);
       logQuery(env, {
         queryHash,
         text,
@@ -188,46 +139,4 @@ function errorResponse(status: number, code: string, message: string): Response 
     statusText: message,
     headers: { "content-type": "application/json", "cache-control": "no-store" },
   });
-}
-
-async function reserve(
-  stub: DurableObjectStub,
-  payload: { ipHash: string; limitPerIp: number; globalLimit: number },
-): Promise<BudgetDecision> {
-  const response = await stub.fetch("https://budget/reserve", {
-    method: "POST",
-    body: JSON.stringify(payload),
-  });
-  return (await response.json()) as BudgetDecision;
-}
-
-async function refund(stub: DurableObjectStub, ipHash: string): Promise<void> {
-  try {
-    await stub.fetch("https://budget/refund", {
-      method: "POST",
-      body: JSON.stringify({ ipHash }),
-    });
-  } catch (error) {
-    console.error("refund failed", error);
-  }
-}
-
-function cachedResponse(result: MatchResult): Response {
-  const stream = createUIMessageStream({
-    execute({ writer }) {
-      const toolCallId = crypto.randomUUID();
-      writer.write({ type: "start" });
-      writer.write({ type: "start-step" });
-      writer.write({
-        type: "tool-input-available",
-        toolCallId,
-        toolName: "submit_matches",
-        input: { matches: result.matches },
-      });
-      writer.write({ type: "tool-output-available", toolCallId, output: result });
-      writer.write({ type: "finish-step" });
-      writer.write({ type: "finish" });
-    },
-  });
-  return createUIMessageStreamResponse({ stream });
 }

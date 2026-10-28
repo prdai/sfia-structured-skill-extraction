@@ -3,7 +3,7 @@ import type { Env } from "./env";
 type QueryEvent = {
   queryHash: string;
   text: string;
-  source: "live" | "cache";
+  source: "live";
   ok: boolean;
   matches: number;
   elapsedMs: number;
@@ -25,4 +25,10 @@ export function logQuery(env: Env, event: QueryEvent): void {
   } catch {
     // Analytics must never break a match request.
   }
+}
+
+export async function hashQuery(text: string): Promise<string> {
+  const normalized = text.trim().replace(/\s+/g, " ").toLowerCase();
+  const digest = await crypto.subtle.digest("SHA-256", new TextEncoder().encode(normalized));
+  return [...new Uint8Array(digest)].map((byte) => byte.toString(16).padStart(2, "0")).join("");
 }

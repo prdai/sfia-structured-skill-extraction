@@ -217,7 +217,7 @@ export function Analyzer({ siteKey }: { siteKey?: string }) {
           </InputGroup>
         </form>
         <p className="mt-2 text-center text-[11px] text-muted-foreground">
-          Free demo, limited to 3 analyses per person per day. Queries are logged
+          Free demo with a shared spending limit. Queries are logged
           anonymously for research.{" "}
           <a className="underline underline-offset-4 hover:text-foreground" href="/method/">
             How it works
@@ -333,7 +333,6 @@ function Results({ result, onReset }: { result: MatchResult; onReset: () => void
           </h2>
           <p className="text-sm text-muted-foreground">
             Levels {min}–{max} · {(result.meta.elapsedMs / 1000).toFixed(1)}s
-            {result.meta.cached ? " · cached" : ""}
           </p>
         </div>
         <Button variant="outline" size="sm" onClick={onReset}>

@@ -43,18 +43,26 @@ function toHit(record: CorpusRecord, score: number): RetrievalHit | undefined {
 }
 
 async function rerankScore(env: Env, query: string, candidate: string): Promise<number> {
-  const response = await env.AI.run(RERANKER_MODEL, {
-    messages: [{ role: "user", content: rerankPrompt(query, candidate) }],
-    temperature: 0,
-    max_tokens: 8,
-  });
+  const response = await env.AI.run(
+    RERANKER_MODEL,
+    {
+      messages: [{ role: "user", content: rerankPrompt(query, candidate) }],
+      temperature: 0,
+      max_tokens: 8,
+    },
+    { gateway: { id: env.AI_GATEWAY_ID } },
+  );
 
   const match = SCORE_RE.exec(String((response as { response?: unknown }).response ?? ""));
   return match ? Number(match[0]) : 0;
 }
 
 async function semanticSearch(env: Env, query: string): Promise<RetrievalHit[]> {
-  const embedding = await env.AI.run(EMBEDDING_MODEL, { text: [query] });
+  const embedding = await env.AI.run(
+    EMBEDDING_MODEL,
+    { text: [query] },
+    { gateway: { id: env.AI_GATEWAY_ID } },
+  );
   const vector = (embedding as { data: number[][] }).data[0];
   const { matches } = await env.VECTORIZE.query(vector, { topK: RETRIEVAL_K });
 

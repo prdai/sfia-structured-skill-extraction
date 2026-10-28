@@ -27,11 +27,10 @@ export type MatchResult = {
   meta: {
     model: string;
     elapsedMs: number;
-    cached: boolean;
   };
 };
 
 export type AnalyzerError = {
   error: string;
-  code: "rate_limited" | "budget_exhausted" | "turnstile_failed" | "invalid_input" | "agent_failed";
+  code: "turnstile_failed" | "invalid_input" | "agent_failed";
 };

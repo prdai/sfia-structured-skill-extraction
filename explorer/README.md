@@ -15,7 +15,7 @@ corpus pipeline, and evaluation harness live in the repository root.
 - Cloudflare Vectorize for semantic retrieval and in-worker BM25 for keyword
   retrieval, mirroring the Python matchers' scoring
 - Workers AI `@cf/nvidia/nemotron-3-120b-a12b`
-- KV result cache, Durable Object budget counters, Turnstile, Analytics Engine
+- AI Gateway spending limits and response caching, Turnstile, Analytics Engine
 
 The agent has two tools, matching the paper's design:
 
@@ -47,7 +47,7 @@ both for production; setting only the secret will reject every request.
 
 ## Cloudflare setup
 
-Requires a Workers Paid plan (Vectorize, paid Workers AI models, and Durable Objects).
+Requires a Workers Paid plan for Vectorize and paid Workers AI models.
 
 ### 1. Vectorize index
 
@@ -92,12 +92,34 @@ Shared constants live in `src/lib/retrieval-config.ts`, mirroring
 Reranking costs one LLM call per retrieved candidate, so a single semantic
 search is 20 calls. The agent's `SEARCH_LIMIT` caps a request at 6 searches.
 
-### 3. KV cache and secrets
+### 3. AI Gateway and secrets
+
+Create an AI Gateway named `sfia-explorer` in the same Cloudflare account.
+`ai-gateway.json` contains the creation payload. With a Cloudflare API token
+that has AI Gateway Edit permission available as `CLOUDFLARE_API_TOKEN`, run
+from `explorer/`:
 
 ```bash
-bunx wrangler kv namespace create MATCH_CACHE
-# put the returned id into wrangler.jsonc
+curl --fail-with-body \
+  "https://api.cloudflare.com/client/v4/accounts/6503f7d355399abee9e748d3100675d4/ai-gateway/gateways" \
+  --header "Authorization: Bearer $CLOUDFLARE_API_TOKEN" \
+  --header "Content-Type: application/json" \
+  --data-binary @ai-gateway.json
+```
 
+The payload configures:
+
+- Enable response caching with a 30-day TTL (2,592,000 seconds).
+- Add a shared $2.50 rolling 30-day spend limit, with no model or provider filters.
+- Keep Workers AI billing on postpaid.
+
+The agent, query embeddings, and reranker all route through this gateway.
+`AI_GATEWAY_ID` in `wrangler.jsonc` selects its name. Changing the JSON payload
+alone does not update an existing gateway; use its dashboard settings or API.
+Gateway caching reuses identical model requests; it does not provide semantic
+similarity caching. See the [caching documentation](https://developers.cloudflare.com/ai-gateway/features/caching/).
+
+```bash
 bunx wrangler secret put TURNSTILE_SECRET
 ```
 
@@ -120,14 +142,17 @@ route if you deploy under a different host.
 
 ## Limits and cost
 
-- `PER_IP_DAILY = 3` analyses per IP, per day
-- `MONTHLY_MATCH_BUDGET = 500` paid matches per month
-- KV cache keyed by normalized input, 30-day TTL
+- Shared $2.50 rolling 30-day model-spending limit configured in AI Gateway
+- Identical model requests can be served from the Gateway cache
+- No application result cache or per-IP daily counter
 - Query text is logged anonymously to Analytics Engine; no IP addresses are stored
 - Nemotron is roughly $0.009 per match; reranking adds 20 llama-3.3-70b calls
   per semantic search, and keyword search costs nothing beyond worker CPU
 
-Adjust the limits in `worker/index.ts` and `wrangler.jsonc`.
+Adjust spending limits and caching in the AI Gateway dashboard. Spend limits
+are eventually consistent, so concurrent requests can briefly exceed the cap.
+They cover routed model inference, not Vectorize or Worker charges. See
+[spend limits](https://developers.cloudflare.com/ai-gateway/features/spend-limits/).
 
 ## Differences from the paper
 

@@ -37,7 +37,10 @@ export async function runAgent(
   startedAt: number,
   hooks: AgentHooks = {},
 ) {
-  const workersai = createWorkersAI({ binding: env.AI });
+  const workersai = createWorkersAI({
+    binding: env.AI,
+    gateway: { id: env.AI_GATEWAY_ID },
+  });
   const model = workersai(env.MODEL, {
     chat_template_kwargs: { enable_thinking: false },
   });
@@ -116,7 +119,6 @@ export async function runAgent(
             meta: {
               model: env.MODEL,
               elapsedMs: Date.now() - startedAt,
-              cached: false,
             },
           };
           return final;
