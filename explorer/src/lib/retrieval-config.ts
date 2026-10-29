@@ -1,6 +1,4 @@
-// Mirrors the Python pipeline so the demo and the paper's numbers come from the
-// same retrieval behaviour; see embedding-matcher/src/embedding_matcher/__init__.py
-// and keyword-matcher/src/keyword_matcher/matcher.py.
+// Semantic retrieval settings match embedding-matcher/src/embedding_matcher/__init__.py.
 export const EMBEDDING_MODEL = "@cf/qwen/qwen3-embedding-0.6b";
 export const RERANKER_MODEL = "@cf/meta/llama-3.3-70b-instruct-fp8-fast";
 
@@ -15,10 +13,6 @@ export const RETRIEVAL_K = 20;
 export const RERANK_THRESHOLD = 0.6;
 export const KEYWORD_THRESHOLD = 0.7;
 export const TOOL_RESULT_LIMIT = 10;
-
-export const BM25_K1 = 1.5;
-export const BM25_B = 0.75;
-export const BM25_EPSILON = 0.25;
 
 const RERANK_PROMPT = `You are scoring how relevant an SFIA skill description is to a query.
 

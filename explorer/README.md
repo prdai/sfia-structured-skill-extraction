@@ -12,8 +12,7 @@ corpus pipeline, and evaluation harness live in the repository root.
 
 - Astro static pages + one React island (`@ai-sdk/react`)
 - Vercel AI SDK (`streamText`, `tool`, `DefaultChatTransport`) in a Worker
-- Cloudflare Vectorize for semantic retrieval and in-worker BM25 for keyword
-  retrieval, mirroring the Python matchers' scoring
+- Cloudflare Vectorize for semantic retrieval and Orama for in-worker keyword search
 - Workers AI `@cf/nvidia/nemotron-3-120b-a12b`
 - AI Gateway spending limits and response caching, Turnstile
 
@@ -22,7 +21,7 @@ The agent has two tools, matching the paper's design:
 | Tool | Backend | Use |
 | --- | --- | --- |
 | `semantic_skill_search` | Vectorize + LLM rerank | meaning-based matches |
-| `keyword_skill_search` | in-worker BM25 | jargon, acronyms, exact terms |
+| `keyword_skill_search` | Orama BM25 | jargon, acronyms, exact terms |
 
 The model must call both before it can submit matches.
 
@@ -51,10 +50,10 @@ Requires a Workers Paid plan for Vectorize and paid Workers AI models.
 
 ### 1. Vectorize index
 
-Retrieval mirrors the Python matchers: one vector per skill-level record,
+Semantic indexing mirrors the Python matcher: one vector per skill-level record,
 embedding `"<skill name>: <level description>"`, with no chunking, so a record
-is the atomic retrieval unit on both sides. The keyword tool runs the same
-BM25 scoring in the worker over the record bodies bundled at build time.
+is the atomic retrieval unit on both sides. The keyword tool uses Orama over
+the record bodies bundled at build time.
 
 Seeding needs the same Cloudflare credentials the Python matchers use:
 
@@ -76,14 +75,17 @@ idempotent: vector ids are `CODE-LEVEL`, so an upsert replaces in place.
 
 ### 2. Retrieval behaviour
 
-Shared constants live in `src/lib/retrieval-config.ts`, mirroring
-`embedding-matcher/src/embedding_matcher/__init__.py`:
+Retrieval settings live in `src/lib/retrieval-config.ts`. Semantic settings
+match `embedding-matcher/src/embedding_matcher/__init__.py`:
 
 - semantic search retrieves `RETRIEVAL_K = 20`, reranks every candidate with
   `@cf/meta/llama-3.3-70b-instruct-fp8-fast`, and keeps scores at or above
   `RERANK_THRESHOLD = 0.6`
-- keyword search scores BM25 over the record bodies, normalises by the top
-  score, and keeps scores at or above `KEYWORD_THRESHOLD = 0.7`
+- keyword search uses Orama BM25, its built-in tokenizer, and the official
+  English stopword list. Any query term can match, including prefixes. Scores
+  are normalised by the top result and filtered at `KEYWORD_THRESHOLD = 0.7`.
+  This cutoff is retained from the previous implementation, not calibrated
+  against the evaluation harness for Orama.
 - both tools return at most `TOOL_RESULT_LIMIT = 10` records
 
 Reranking costs one LLM call per retrieved candidate, so a single semantic
@@ -154,8 +156,10 @@ They cover routed model inference, not Vectorize or Worker charges. See
 
 See `/method/` in the deployed app. The important ones:
 
-- Qdrant is replaced by Vectorize; the indexing unit, embedding model, BM25
-  scoring and retrieval constants match the Python matchers.
+- Qdrant is replaced by Vectorize; the indexing unit, embedding model, and
+  semantic retrieval settings match the Python matcher.
+- Orama replaces the custom keyword scorer and tokenizer. Its scores,
+  tokenization, and prefix matching differ from Python `rank_bm25` and NLTK.
 - The model is the fastest sweep model, not the paper's final GLM run.
 - The agent loop is a TypeScript port, not CrewAI.
 

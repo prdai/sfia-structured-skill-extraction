@@ -1,3 +1,6 @@
+import { create, insertMultiple, search } from "@orama/orama";
+import { stopwords } from "@orama/stopwords/english";
+
 import rawRecords from "../src/data/records.json";
 import {
   EMBEDDING_MODEL,
@@ -10,7 +13,6 @@ import {
   TOOL_RESULT_LIMIT,
 } from "../src/lib/retrieval-config";
 import type { CorpusRecord } from "../src/lib/types";
-import { BM25 } from "./bm25";
 import type { Env } from "./env";
 import { resolveSkill } from "./skills";
 
@@ -25,7 +27,14 @@ export type RetrievalHit = {
 
 const RECORDS = rawRecords as CorpusRecord[];
 const byId = new Map(RECORDS.map((record) => [recordId(record.code, record.level), record]));
-const bm25 = new BM25(RECORDS.map((record) => record.text));
+const keywordIndex = create({
+  schema: { text: "string" },
+  components: { tokenizer: { stopWords: stopwords, allowDuplicates: true } },
+});
+insertMultiple(keywordIndex, RECORDS.map((record) => ({
+  id: recordId(record.code, record.level),
+  text: record.text,
+})));
 const SCORE_RE = /[01](?:\.\d+)?/;
 
 function toHit(record: CorpusRecord, score: number): RetrievalHit | undefined {
@@ -80,14 +89,19 @@ async function semanticSearch(env: Env, query: string): Promise<RetrievalHit[]> 
     .sort((a, b) => b.score - a.score);
 }
 
-function keywordSearch(query: string): RetrievalHit[] {
-  const scores = bm25.scores(query);
-  const top = Math.max(...scores, 0);
+async function keywordSearch(query: string): Promise<RetrievalHit[]> {
+  const { hits } = await search(keywordIndex, {
+    term: query,
+    threshold: 1,
+    limit: TOOL_RESULT_LIMIT,
+  });
+  const top = hits[0]?.score ?? 0;
   if (top <= 0) return [];
 
-  return RECORDS.map((record, index) => {
-    const score = scores[index] / top;
-    return score >= KEYWORD_THRESHOLD ? toHit(record, score) : undefined;
+  return hits.map((hit) => {
+    const record = byId.get(hit.id);
+    const score = hit.score / top;
+    return record && score >= KEYWORD_THRESHOLD ? toHit(record, score) : undefined;
   })
     .filter((hit): hit is RetrievalHit => hit !== undefined)
     .sort((a, b) => b.score - a.score);
@@ -98,6 +112,6 @@ export async function searchSkills(
   query: string,
   retrievalType: "vector" | "keyword",
 ): Promise<RetrievalHit[]> {
-  const hits = retrievalType === "vector" ? await semanticSearch(env, query) : keywordSearch(query);
+  const hits = retrievalType === "vector" ? await semanticSearch(env, query) : await keywordSearch(query);
   return hits.slice(0, TOOL_RESULT_LIMIT);
 }
