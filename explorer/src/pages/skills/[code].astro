@@ -1,0 +1,88 @@
+---
+import type { Skill } from "../../lib/types";
+import skills from "../../data/skills.json";
+import Base from "../../layouts/Base.astro";
+
+export function getStaticPaths() {
+  return (skills as Skill[]).map((skill) => ({
+    params: { code: skill.code.toLowerCase() },
+    props: { skill },
+  }));
+}
+
+interface Props {
+  skill: Skill;
+}
+
+const { skill } = Astro.props;
+const first = skill.levels[0];
+const last = skill.levels.at(-1);
+---
+
+<Base
+  title={`${skill.name} (${skill.code}) — SFIA Explorer`}
+  description={`SFIA 9 skill ${skill.name} (${skill.code}), defined at levels ${skill.levels.join(", ")}.`}
+>
+  <section class="mx-auto w-full max-w-3xl px-5 py-10">
+    <nav class="mb-8 flex items-center gap-2 text-xs text-muted-foreground">
+      <a class="hover:text-foreground" href="/skills/">Skills</a>
+      <span>/</span>
+      <span class="font-mono">{skill.code}</span>
+    </nav>
+
+    <div class="flex flex-col gap-2">
+      <div class="flex flex-wrap items-center gap-2">
+        <span class="rounded-full bg-muted px-2.5 py-1 font-mono text-[11px] tracking-wide text-muted-foreground">
+          {skill.code}
+        </span>
+        <span class="text-xs text-muted-foreground">
+          Levels {first}–{last}
+        </span>
+      </div>
+      <h1 class="text-3xl font-medium tracking-tight text-balance">{skill.name}</h1>
+    </div>
+
+    <div class="mt-6 flex items-center gap-1.5" aria-label={`Defined at levels ${skill.levels.join(", ")}`}>
+      {[1, 2, 3, 4, 5, 6, 7].map((level) => (
+        <span
+          class:list={[
+            "flex h-7 w-9 items-center justify-center rounded-lg border text-xs tabular-nums",
+            skill.levels.includes(level)
+              ? "border-foreground/20 bg-foreground text-background"
+              : "border-dashed text-muted-foreground/50",
+          ]}
+        >
+          {level}
+        </span>
+      ))}
+    </div>
+
+    <div class="mt-8 rounded-2xl border bg-card p-5">
+      <p class="mb-3 text-xs uppercase tracking-[0.16em] text-muted-foreground">
+        Short excerpt
+      </p>
+      <p class="text-sm leading-relaxed">{skill.excerpt}</p>
+      <p class="mt-4 text-xs text-muted-foreground">
+        Short excerpt from the public SFIA 9 documentation. The full definition,
+        including every level, is on the official page.
+      </p>
+    </div>
+
+    <div class="mt-6 flex flex-wrap gap-2">
+      <a
+        class="inline-flex h-9 items-center gap-1.5 rounded-2xl bg-foreground px-4 text-sm font-medium text-background transition-opacity hover:opacity-90"
+        href={skill.sourceUrl}
+        target="_blank"
+        rel="noreferrer"
+      >
+        Official SFIA page
+      </a>
+      <a
+        class="inline-flex h-9 items-center gap-1.5 rounded-2xl border px-4 text-sm font-medium transition-colors hover:bg-muted"
+        href="/"
+      >
+        Analyze a role
+      </a>
+    </div>
+  </section>
+</Base>

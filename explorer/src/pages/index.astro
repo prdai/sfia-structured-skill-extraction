@@ -1,0 +1,13 @@
+---
+import { Analyzer } from "../components/Analyzer";
+import Base from "../layouts/Base.astro";
+
+const siteKey = import.meta.env.PUBLIC_TURNSTILE_SITE_KEY;
+---
+
+<Base
+  title="SFIA Explorer — map roles to SFIA skills and levels"
+  description="Paste a job description or role profile. An agentic RAG matcher returns the SFIA skills and responsibility levels it can support, with evidence from the SFIA 9 corpus."
+>
+  <Analyzer client:load siteKey={siteKey} />
+</Base>

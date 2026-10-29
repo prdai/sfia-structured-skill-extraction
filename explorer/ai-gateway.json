@@ -1,0 +1,23 @@
+{
+  "id": "sfia-explorer",
+  "authentication": true,
+  "cache_invalidate_on_update": true,
+  "cache_ttl": 2592000,
+  "collect_logs": true,
+  "rate_limiting_interval": 0,
+  "rate_limiting_limit": 0,
+  "workers_ai_billing_mode": "postpaid",
+  "spend_limits": {
+    "enabled": true,
+    "rules": [
+      {
+        "id": "monthly-demo-budget",
+        "enabled": true,
+        "limitType": "cost",
+        "limit": 2.5,
+        "window": 2592000,
+        "technique": "sliding"
+      }
+    ]
+  }
+}

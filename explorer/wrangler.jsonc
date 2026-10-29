@@ -1,0 +1,48 @@
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "sfia-explorer",
+  "main": "worker/index.ts",
+  "compatibility_date": "2026-10-01",
+  "compatibility_flags": ["nodejs_compat"],
+  "account_id": "6503f7d355399abee9e748d3100675d4",
+  "assets": {
+    "directory": "./dist",
+    "binding": "ASSETS",
+    "not_found_handling": "404-page",
+    "run_worker_first": ["/api/*"]
+  },
+  "ai": {
+    "binding": "AI"
+  },
+  "vectorize": [
+    {
+      "binding": "VECTORIZE",
+      "index_name": "sfia-skill-level-records"
+    }
+  ],
+  "migrations": [
+    {
+      "tag": "v1",
+      "new_sqlite_classes": ["Budget"]
+    },
+    {
+      "tag": "v2",
+      "deleted_classes": ["Budget"]
+    }
+  ],
+  "routes": [
+    {
+      "pattern": "sfia.prdai.dev",
+      "custom_domain": true
+    }
+  ],
+  "vars": {
+    "APP_ORIGIN": "https://sfia.prdai.dev",
+    "MODEL": "@cf/nvidia/nemotron-3-120b-a12b",
+    "AI_GATEWAY_ID": "sfia-explorer"
+  },
+  "observability": {
+    "enabled": true,
+    "head_sampling_rate": 1
+  }
+}
