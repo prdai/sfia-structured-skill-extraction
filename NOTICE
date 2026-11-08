@@ -1,0 +1,15 @@
+sfia-structured-skill-extraction
+Copyright 2026 Ranuga Disansa, U. S. Samarasinghe, Lasith Gunawardena
+
+This software and the released SFIA corpus accompany the following paper:
+
+  From Lexical Baselines to Agentic Retrieval-Augmented Generation:
+  Structured Skill and Responsibility-Level Extraction with the SFIA Framework
+
+  Ranuga Disansa, U. S. Samarasinghe, and Lasith Gunawardena
+
+  arXiv:2609.35806, 2026
+  https://arxiv.org/abs/2609.35806
+
+If you use this software or its released corpus in academic work, please cite
+the paper above. Machine-readable citation metadata is in CITATION.cff.

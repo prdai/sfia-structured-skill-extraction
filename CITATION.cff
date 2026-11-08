@@ -1,0 +1,39 @@
+cff-version: 1.2.0
+message: "If you use this software or its released corpus, please cite the paper below."
+title: sfia-structured-skill-extraction
+type: software
+authors:
+  - family-names: Disansa
+    given-names: Ranuga
+    orcid: "https://orcid.org/0009-0005-7140-4584"
+  - family-names: Samarasinghe
+    given-names: U. S.
+    orcid: "https://orcid.org/0009-0007-4932-569X"
+  - family-names: Gunawardena
+    given-names: Lasith
+    orcid: "https://orcid.org/0000-0002-2495-4103"
+repository-code: "https://github.com/prdai/sfia-structured-skill-extraction"
+url: "https://sfia.prdai.dev"
+license: Apache-2.0
+keywords:
+  - skill extraction
+  - SFIA
+  - retrieval-augmented generation
+  - agentic AI
+  - large language models
+  - competency frameworks
+preferred-citation:
+  type: article
+  title: "From Lexical Baselines to Agentic Retrieval-Augmented Generation: Structured Skill and Responsibility-Level Extraction with the SFIA Framework"
+  authors:
+    - family-names: Disansa
+      given-names: Ranuga
+      orcid: "https://orcid.org/0009-0005-7140-4584"
+    - family-names: Samarasinghe
+      given-names: U. S.
+      orcid: "https://orcid.org/0009-0007-4932-569X"
+    - family-names: Gunawardena
+      given-names: Lasith
+      orcid: "https://orcid.org/0000-0002-2495-4103"
+  year: 2026
+  url: "https://arxiv.org/abs/2609.35806"
