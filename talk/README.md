@@ -34,5 +34,5 @@ and lives in `SWEEP`.
 ## Timing
 
 ICAC 2026 does not publish a per-paper slot. The deck targets a 15-minute slot:
-14 main slides (about 12 minutes) plus a four-slide appendix for questions.
+12 main slides (about 12 minutes) plus a six-slide appendix for questions.
 Trim the model-sweep slide first if the slot is shorter.

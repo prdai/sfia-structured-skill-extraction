@@ -209,6 +209,16 @@ def fig_tradeoff() -> Path:
     ax.set_ylim(0, 0.52)
     ax.set_xlabel("Skill recall", fontsize=14, color=SECONDARY)
     ax.set_ylabel("Skill precision", fontsize=14, color=SECONDARY)
+    ax.text(
+        0.295,
+        0.025,
+        "Recall ceiling 0.69: gold standard uses SFIA 7 vocabulary",
+        ha="right",
+        va="bottom",
+        fontsize=11,
+        color=SECONDARY,
+        style="italic",
+    )
     ax.grid(color=GRID, linewidth=1)
     ax.set_axisbelow(True)
     for side in ("top", "right"):
@@ -458,24 +468,10 @@ def slides(refresh: bool) -> list[Slide]:
             kind="figure",
         ),
         Slide(
-            "The trade-off is the result",
-            "No strategy wins on both axes. Which profile is preferable depends on the application: recall matters when a human reviewer sees the candidates, precision when the output feeds an automated pipeline.\n\n"
-            "One caveat: recall is capped at 0.69 for every strategy by the gold standard, which uses SFIA 7 vocabulary while the corpus is SFIA 9.",
-            image=fig_tradeoff(),
-            kind="figure",
-        ),
-        Slide(
             "More agents is not better",
             "The crew matches the single agent on skill F1, 0.212 versus 0.213, at double the latency: 327 versus 167 seconds per record, because three sequential agents each make their own model calls.\n\n"
-            "Level fidelity is markedly worse: MAE 1.16 versus 0.68. Passing evidence as conversation text appears to lose the descriptor grounding the single agent gets by reading tool output directly. The verifier raises precision slightly, 0.361 to 0.398, and recall, 0.172 to 0.218, but not enough to justify the cost.",
+            "Level fidelity is markedly worse: MAE 1.16 versus 0.68. Passing evidence as conversation text appears to lose the descriptor grounding the single agent gets from reading tool output directly. The verifier raises precision slightly, 0.361 to 0.398, and recall, 0.172 to 0.218, but not enough to justify the cost.",
             image=fig_cost(),
-            kind="figure",
-        ),
-        Slide(
-            "Model choice changes the answer",
-            "On the zero-shot sweep, skill F1 and level accuracy rank models differently. Llama-4-Scout is mid-pack on F1, 0.153, but posts the best level numbers: exact 0.694, MAE 0.36, on the subset it names correctly. Gemma leads F1 at 0.176.\n\n"
-            "Four of ten models intermittently spent their whole output budget on hidden reasoning under schema-constrained decoding and returned nothing. Robustness to constrained decoding proved as decisive as raw capability.",
-            image=fig_sweep(),
             kind="figure",
         ),
         Slide(
@@ -501,6 +497,20 @@ def slides(refresh: bool) -> list[Slide]:
             "Best swept configuration per strategy on the 30-role harness. F1 is the mean of per-role F1, not the harmonic mean of the P and R columns. Level metrics are computed on correctly named skills only. s/record is mean wall-clock seconds per record.\n\n"
             "The zero-shot timing comes from the sweep run; the final run repeated identical temperature-0 prompts and was largely served from the gateway cache.",
             image=fig_results_table(),
+            kind="figure",
+        ),
+        Slide(
+            "The trade-off is the result",
+            "No strategy wins on both axes. Which profile is preferable depends on the application: recall matters when a human reviewer sees the candidates, precision when the output feeds an automated pipeline.\n\n"
+            "Recall is capped at 0.69 for every strategy because the gold standard uses SFIA 7 vocabulary while the corpus is SFIA 9.",
+            image=fig_tradeoff(),
+            kind="figure",
+        ),
+        Slide(
+            "Model choice changes the answer",
+            "On the zero-shot sweep, skill F1 and level accuracy rank models differently. Llama-4-Scout is mid-pack on F1, 0.153, but posts the best level numbers: exact 0.694, MAE 0.36, on the subset it names correctly. Gemma leads F1 at 0.176.\n\n"
+            "Four of ten models intermittently spent their whole output budget on hidden reasoning under schema-constrained decoding and returned nothing. Robustness to constrained decoding proved as decisive as raw capability.",
+            image=fig_sweep(),
             kind="figure",
         ),
         Slide(
