@@ -13,7 +13,7 @@ corpus pipeline, and evaluation harness live in the repository root.
 - Astro static pages + one React island (`@ai-sdk/react`)
 - Vercel AI SDK (`streamText`, `tool`, `DefaultChatTransport`) in a Worker
 - Cloudflare Vectorize for semantic retrieval and Orama for in-worker keyword search
-- Workers AI `@cf/nvidia/nemotron-3-120b-a12b`
+- Workers AI `@cf/qwen/qwen3.8-27b`
 - AI Gateway spending limits and response caching, Turnstile
 
 The agent has two tools, matching the paper's design:
