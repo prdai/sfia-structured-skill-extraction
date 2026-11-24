@@ -1,31 +1,35 @@
 # ICAC 2026 talk
 
-Code-generated slide deck for the ICAC 2026 paper talk. The script reads
-`evals/results.json`, draws the figures with matplotlib, renders the QR links
-with qrcode, and writes an editable PPTX plus a PDF with speaker notes.
+Slides for the ICAC 2026 paper talk, built into the official conference
+template. `make_deck.py` draws the figures from `evals/results.json`;
+`build_template_deck.py` places them into
+`assets/icac-2026-template.pptx` and adds the title, copy, references, and
+QR code.
 
 ## Build
 
 ```bash
-uv run --with matplotlib --with python-pptx --with pillow --with "qrcode[pil]" python talk/make_deck.py
+uv run --with matplotlib --with python-pptx --with pillow --with "qrcode[pil]" python talk/build_template_deck.py
 ```
 
 Outputs:
 
-- `deck/sfia-icac-2026.pptx` — editable slides with speaker notes
+- `deck/sfia-icac-2026.pptx` — template deck, editable
 - `deck/sfia-icac-2026.pdf` — rendered deck
+
+The PDF is exported with LibreOffice when it is installed.
 
 ## Structure
 
-- `make_deck.py` — slide list, figure builders, PPTX/PDF assembly
-- `assets/figures/` — generated figures
+The talk follows the template sections: Title, Context (Problem) & Purpose,
+Novelty & Expected Contribution, Methodology, Results & Discussion, Results
+Contd., Conclusion, References.
+
+- `build_template_deck.py` — template assembly and text
+- `make_deck.py` — figure builders (corpus pipeline, skill F1, level accuracy)
+- `assets/icac-2026-template.pptx` — official ICAC 2026 template
+- `assets/figures/` — generated figures and QR codes
 - `deck/` — build output
 
-Slides are defined in `slides()` in `make_deck.py`. Main results come from
-`evals/results.json`.
-
-## Timing
-
-ICAC 2026 does not publish a per-paper slot. The deck targets a 10-minute slot:
-12 slides, with the agenda following the paper structure from background to
-results. Speaker notes carry the detail that is not on the slides.
+References are APA 7 and appear both as in-slide markers and on the final
+References slide.
