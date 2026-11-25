@@ -90,7 +90,7 @@ def build() -> Path:
         elif shape.name == "Coauthors":
             set_text(shape, ["Co-Authors\u2019 Names: U. S. Samarasinghe, Lasith Gunawardena"], 15, NAVY)
         elif shape.name == "Affiliation":
-            set_text(shape, ["Affiliation: Informatics Institute of Technology (IIT)"], 14, NAVY)
+            set_text(shape, ["Affiliation: Informatics Institute of Technology, Colombo, Sri Lanka", "Department of Information Technology, University of Sri Jayewardenepura, Colombo, Sri Lanka"], 14, NAVY, space=0)
 
     context = deck.slides[1]
     drop(next(s for s in context.shapes if s.name == "Content placeholder"))
