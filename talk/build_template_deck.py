@@ -17,7 +17,7 @@ from pptx.dml.color import RGBColor
 from pptx.enum.text import PP_ALIGN
 from pptx.util import Inches, Pt
 
-from make_deck import fig_corpus, fig_level, fig_skill_f1
+from make_deck import fig_level, fig_skill_f1
 
 HERE = Path(__file__).resolve().parent
 TEMPLATE = HERE / "assets" / "icac-2026-template.pptx"
@@ -139,7 +139,7 @@ def build() -> Path:
 
     methodology = deck.slides[3]
     drop(next(s for s in methodology.shapes if s.name == "Content placeholder"))
-    add_pic(methodology, fig_corpus(), 1.55, 1.55, 10.2)
+    add_pic(methodology, FIGURES / "corpus-pipeline-figma.png", 1.55, 1.55, 10.2)
     cite(methodology, "[4\u20138]")
 
     results = deck.slides[4]
