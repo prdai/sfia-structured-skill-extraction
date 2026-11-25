@@ -1,6 +1,6 @@
 # sfia-structured-skill-extraction
 
-**Demo:** <https://sfia.prdai.dev> · **Paper:** <https://arxiv.org/abs/2609.35806>
+**Demo:** <https://sfia.prdai.dev> · **Paper:** <https://arxiv.org/abs/2609.35806> · **Dataset:** <https://huggingface.co/datasets/Programmer-RD-AI/sfia-structured-skill-extraction>
 
 Maps free-text job, course, and skill descriptions to SFIA skills and
 responsibility levels (1-7). Multiple matching strategies live side by side so
@@ -18,7 +18,8 @@ This repo is organized so someone can either:
 ## Layout
 
 - `data/` — crawled SFIA pages, the SFIA 9 summary chart, and the extracted
-  skill-level corpus used by the matchers.
+  skill-level corpus used by the matchers. Mirrored on Hugging Face:
+  <https://huggingface.co/datasets/Programmer-RD-AI/sfia-structured-skill-extraction>.
 - `crawler/` — Cloudflare Worker that crawls sfia-online.org (Browser
   Rendering `/crawl` REST endpoint) and stores the raw dataset in R2.
 - `structured-extraction/` — extracts and verifies the skill-level corpus
