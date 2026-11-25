@@ -145,12 +145,10 @@ def build() -> Path:
     results = deck.slides[4]
     drop(next(s for s in results.shapes if s.name == "Content placeholder"))
     add_pic(results, fig_skill_f1(), 1.55, 1.55, 10.2)
-    cite(results, "[9]")
 
     results_cont = deck.slides[5]
     drop(next(s for s in results_cont.shapes if s.name == "Content placeholder"))
     add_pic(results_cont, fig_level(), 1.3, 1.6, 10.8)
-    cite(results_cont, "[9]")
 
     conclusion = deck.slides[6]
     set_text(
@@ -165,7 +163,7 @@ def build() -> Path:
         20,
         space=10,
     )
-    cite(conclusion, "[1, 2, 9]")
+    cite(conclusion, "[1, 2]")
     qr_path = FIGURES / "qr-slides.png"
     qrcode.make(SLIDES_URL).convert("RGB").save(qr_path)
     add_pic(conclusion, qr_path, 9.95, 1.85, 2.0)
@@ -192,7 +190,6 @@ def build() -> Path:
             "[6] Qwen Team. (2025). Qwen3 Embedding: Advancing text embedding and reranking through foundation models (arXiv:2506.05176). arXiv. https://arxiv.org/abs/2506.05176",
             "[7] Grattafiori, A., et al. (2024). The Llama 3 herd of models (arXiv:2407.21783). arXiv. https://arxiv.org/abs/2407.21783",
             "[8] CrewAI. (2025). CrewAI documentation. https://docs.crewai.com",
-            "[9] Disansa, R., Samarasinghe, U. S., & Gunawardena, L. (2026). Mapping free text to SFIA skills and responsibility levels (arXiv:2609.35806). arXiv. https://arxiv.org/abs/2609.35806",
         ],
         12.5,
         space=4,
