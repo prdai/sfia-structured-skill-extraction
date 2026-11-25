@@ -23,7 +23,8 @@ HERE = Path(__file__).resolve().parent
 TEMPLATE = HERE / "assets" / "icac-2026-template.pptx"
 FIGURES = HERE / "assets" / "figures"
 OUT = HERE / "deck"
-DECK = OUT / "sfia-icac-2026.pptx"
+PAPER_ID = "564"
+DECK = OUT / f"ICAC2026_{PAPER_ID}.pptx"
 SLIDES_URL = "https://docs.google.com/presentation/d/1EErMH2DsKhsI3zMNKF3BJ2bAJUZO4ub7GpU4gU0oq1E"
 
 NAVY = RGBColor(0x15, 0x2E, 0x50)

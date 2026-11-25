@@ -20,10 +20,10 @@ uv run --with matplotlib --with python-pptx --with pillow --with "qrcode[pil]" p
 
 Outputs:
 
-- `deck/sfia-icac-2026.pptx` — template deck, editable
-- `deck/sfia-icac-2026.pdf` — rendered deck
+- `deck/ICAC2026_564.pptx` — template deck, editable
+- `deck/ICAC2026_564.pdf` — rendered deck
 
-Rename the PPTX to `ICAC2026_<PaperID>.pptx` before uploading.
+The file already follows the required `ICAC2026_<PaperID>.pptx` format.
 
 The PDF is exported with LibreOffice when it is installed.
 
