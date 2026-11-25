@@ -78,14 +78,22 @@ def build() -> Path:
     title = deck.slides[0]
     for shape in title.shapes:
         if shape.name == "Presentation title":
+            shape.width = Inches(11.5)
             shape.text_frame.clear()
-            paragraph = shape.text_frame.paragraphs[0]
-            paragraph.text = "Mapping Free Text to SFIA Skills and Responsibility Levels"
-            for run in paragraph.runs:
-                run.font.size = Pt(30)
-                run.font.name = "Times New Roman"
-                run.font.bold = True
-                run.font.color.rgb = NAVY
+            for index, line in enumerate(
+                (
+                    "From Lexical Baselines to Agentic Retrieval-Augmented Generation:",
+                    "Structured Skill and Responsibility-Level Extraction",
+                    "with the SFIA Framework",
+                )
+            ):
+                paragraph = shape.text_frame.paragraphs[0] if index == 0 else shape.text_frame.add_paragraph()
+                paragraph.text = line
+                for run in paragraph.runs:
+                    run.font.size = Pt(24)
+                    run.font.name = "Times New Roman"
+                    run.font.bold = True
+                    run.font.color.rgb = NAVY
         elif shape.name == "Presenter name":
             set_text(shape, ["Presenter Name: Ranuga Disansa"], 16, NAVY)
         elif shape.name == "Coauthors":
