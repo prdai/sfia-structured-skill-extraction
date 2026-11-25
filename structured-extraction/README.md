@@ -6,6 +6,10 @@ level-aware corpus for `keyword-matcher` and other matchers. Output groups
 identical text with `mappings: [{"code": ..., "level": ...}]`; skill names
 resolve through `data/sfia-9-summary-chart.json`.
 
+The extracted corpus, raw crawl, summary chart, and extraction metrics are
+published together at
+<https://huggingface.co/datasets/Programmer-RD-AI/sfia-structured-skill-extraction>.
+
 Each SFIA skill page has `### <Skill>: Level N` sections for the levels
 that skill is defined at. Not every skill spans levels 1-7 (most don't:
 16 skills define level 1, only some reach 7), and the pipeline does not
