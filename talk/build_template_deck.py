@@ -103,16 +103,24 @@ def build() -> Path:
 
     context = deck.slides[1]
     drop(next(s for s in context.shapes if s.name == "Content placeholder"))
-    box = context.shapes.add_textbox(Inches(0.85), Inches(1.25), Inches(11.5), Inches(0.5))
+    box = context.shapes.add_textbox(Inches(0.85), Inches(1.55), Inches(6.0), Inches(4.0))
     box.text_frame.word_wrap = True
     frame = box.text_frame
-    paragraph = frame.paragraphs[0]
-    paragraph.text = "Tools flatten skills but drop the level."
-    for run in paragraph.runs:
-        run.font.size = Pt(22)
-        run.font.name = "Times New Roman"
-        run.font.color.rgb = BODY
-    add_pic(context, FIGURES / "flat-tags.png", 1.77, 1.85, 9.8)
+    for index, line in enumerate(
+        (
+            "Hiring tools tag skills as flat labels, without the responsibility level.",
+            "SFIA defines 147 skills at seven levels, from autonomy to influence.",
+            "Purpose: map free text to SFIA skills and levels, then compare five matchers on 30 expert-mapped roles.",
+        )
+    ):
+        paragraph = frame.paragraphs[0] if index == 0 else frame.add_paragraph()
+        paragraph.text = line
+        paragraph.space_after = Pt(14)
+        for run in paragraph.runs:
+            run.font.size = Pt(19)
+            run.font.name = "Times New Roman"
+            run.font.color.rgb = BODY
+    add_pic(context, FIGURES / "flat-tags.png", 6.9, 2.05, 5.9)
     cite(context, "[1]")
 
     novelty = deck.slides[2]
