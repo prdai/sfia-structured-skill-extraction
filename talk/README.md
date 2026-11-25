@@ -6,6 +6,12 @@ template. `make_deck.py` draws the figures from `evals/results.json`;
 `assets/icac-2026-template.pptx` and adds the title, copy, references, and
 QR code.
 
+## Talk format
+
+ICAC 2026 allows 12 minutes per presentation: 10 minutes of talk and 2
+minutes of Q&A. Submit the slides as `ICAC2026_<PaperID>.pptx` by midnight on
+2 December 2026.
+
 ## Build
 
 ```bash
@@ -16,6 +22,8 @@ Outputs:
 
 - `deck/sfia-icac-2026.pptx` — template deck, editable
 - `deck/sfia-icac-2026.pdf` — rendered deck
+
+Rename the PPTX to `ICAC2026_<PaperID>.pptx` before uploading.
 
 The PDF is exported with LibreOffice when it is installed.
 

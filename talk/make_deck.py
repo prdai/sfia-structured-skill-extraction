@@ -215,7 +215,7 @@ def slides() -> list[Slide]:
     return [
         Slide(
             TITLE,
-            "ICAC 2026, 10-minute slot: eight to nine minutes of content, the rest for questions. "
+            "ICAC 2026, 12-minute slot: ten minutes of content and two minutes of questions. "
             "Everything shown is released: corpus, five matchers, evaluation harness, and the live explorer. "
             "The paper is on arXiv, 2609.35806.",
             lines=(
