@@ -195,6 +195,31 @@ def build() -> Path:
         space=4,
     )
 
+    architecture = deck.slides.add_slide(deck.slide_layouts[5])
+    architecture.shapes.add_picture(
+        str(FIGURES / "architecture-slide.png"),
+        0,
+        0,
+        width=deck.slide_width,
+        height=deck.slide_height,
+    )
+    slide_ids = deck.slides._sldIdLst
+    architecture_id = list(slide_ids)[-1]
+    slide_ids.remove(architecture_id)
+    slide_ids.insert(4, architecture_id)
+    for index in range(5, 9):
+        for shape in deck.slides[index].shapes:
+            if shape.name == "Slide number":
+                frame = shape.text_frame
+                frame.clear()
+                paragraph = frame.paragraphs[0]
+                paragraph.text = str(index + 1)
+                paragraph.alignment = PP_ALIGN.CENTER
+                for run in paragraph.runs:
+                    run.font.size = Pt(15)
+                    run.font.name = "Times New Roman"
+                    run.font.color.rgb = RGBColor(0x94, 0x6F, 0x2E)
+
     deck.save(DECK)
     return DECK
 
