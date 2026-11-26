@@ -103,7 +103,7 @@ def build() -> Path:
 
     context = deck.slides[1]
     drop(next(s for s in context.shapes if s.name == "Content placeholder"))
-    box = context.shapes.add_textbox(Inches(0.85), Inches(1.55), Inches(6.0), Inches(4.0))
+    box = context.shapes.add_textbox(Inches(0.85), Inches(1.55), Inches(5.2), Inches(4.0))
     box.text_frame.word_wrap = True
     frame = box.text_frame
     for index, line in enumerate(
@@ -120,7 +120,7 @@ def build() -> Path:
             run.font.size = Pt(19)
             run.font.name = "Times New Roman"
             run.font.color.rgb = BODY
-    add_pic(context, FIGURES / "flat-tags.png", 6.9, 2.05, 5.9)
+    add_pic(context, FIGURES / "flat-tags.png", 6.25, 2.0, 6.65)
     cite(context, "[1]")
 
     novelty = deck.slides[2]
