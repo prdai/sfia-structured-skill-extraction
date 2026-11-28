@@ -127,10 +127,12 @@ def build() -> Path:
     set_text(
         next(s for s in novelty.shapes if s.name == "Content placeholder"),
         [
-            "ESCO and O*NET are regional skill frameworks.",
-            "Prior matchers predict skills but not levels.",
-            "No reported LLM extraction targets SFIA.",
-            "No multi-agent evaluation on a closed taxonomy.",
+            "Gap: ESCO and O*NET are regional frameworks.",
+            "Gap: prior matchers predict skills but not levels.",
+            "Gap: no LLM extraction targets SFIA.",
+            "Gap: no multi-agent work on a closed taxonomy.",
+            "Contribution: a validated SFIA 9 corpus of 669 records.",
+            "Contribution: five matchers and a released harness.",
         ],
         22,
         space=14,
