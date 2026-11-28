@@ -25,7 +25,7 @@ FIGURES = HERE / "assets" / "figures"
 OUT = HERE / "deck"
 PAPER_ID = "564"
 DECK = OUT / f"ICAC2026_{PAPER_ID}.pptx"
-SLIDES_URL = "https://docs.google.com/presentation/d/1EErMH2DsKhsI3zMNKF3BJ2bAJUZO4ub7GpU4gU0oq1E"
+GITHUB_URL = "https://github.com/prdai/sfia-structured-skill-extraction"
 
 NAVY = RGBColor(0x15, 0x2E, 0x50)
 BODY = RGBColor(0x58, 0x67, 0x7A)
@@ -164,13 +164,13 @@ def build() -> Path:
         space=10,
     )
     cite(conclusion, "[1, 2]")
-    qr_path = FIGURES / "qr-slides.png"
-    qrcode.make(SLIDES_URL).convert("RGB").save(qr_path)
+    qr_path = FIGURES / "qr-github.png"
+    qrcode.make(GITHUB_URL).convert("RGB").save(qr_path)
     add_pic(conclusion, qr_path, 9.95, 1.85, 2.0)
     caption = conclusion.shapes.add_textbox(Inches(9.75), Inches(3.95), Inches(2.4), Inches(0.3))
     caption.text_frame.clear()
     paragraph = caption.text_frame.paragraphs[0]
-    paragraph.text = "Slides"
+    paragraph.text = "GitHub"
     paragraph.alignment = PP_ALIGN.CENTER
     for run in paragraph.runs:
         run.font.size = Pt(14)
