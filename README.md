@@ -31,6 +31,8 @@ This repo is organized so someone can either:
 - `multi-agent-rag-matcher/` — retriever, matcher, and verifier RAG crew.
 - `explorer/` — public Astro + Cloudflare Worker demo (AI Search retrieval,
   Workers AI, Turnstile, KV cache) behind <https://sfia.prdai.dev>.
+- `talk/` — code-generated ICAC 2026 slide deck (matplotlib + python-pptx).
+  See [`talk/README.md`](talk/README.md).
 
 ## Usage
 
