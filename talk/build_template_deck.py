@@ -108,7 +108,7 @@ def build() -> Path:
     frame = box.text_frame
     for index, line in enumerate(
         (
-            "Hiring tools tag skills as flat labels, without the responsibility level.",
+            "Tools emit inconsistent tags and drop the level.",
             "SFIA defines 147 skills at seven levels, from autonomy to influence.",
             "Purpose: map free text to SFIA skills and levels, then compare five matchers on 30 expert-mapped roles.",
         )
@@ -127,10 +127,10 @@ def build() -> Path:
     set_text(
         next(s for s in novelty.shapes if s.name == "Content placeholder"),
         [
-            "Gap: no open corpus or benchmark links SFIA skills to their levels.",
-            "Novelty: a validated SFIA 9 corpus of 669 records covering all 147 skills.",
-            "Contribution: five matching strategies, an evaluation harness, and a live explorer.",
-            "All artifacts are released so the results can be reproduced.",
+            "ESCO and O*NET are regional skill frameworks.",
+            "Prior matchers predict skills but not levels.",
+            "No reported LLM extraction targets SFIA.",
+            "No multi-agent evaluation on a closed taxonomy.",
         ],
         22,
         space=14,
@@ -157,7 +157,7 @@ def build() -> Path:
             "Make the level a direct prediction, not a by-product of similarity.",
             "Dense retrieval wins skill F1 but is the worst level predictor.",
             "More agents add cost without accuracy.",
-            "Recall is capped by the SFIA 7 gold standard.",
+            "SFIA 7 gold standard caps recall near 0.69.",
             "Corpus, code and explorer are released.",
         ],
         20,
