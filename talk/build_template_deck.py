@@ -108,9 +108,10 @@ def build() -> Path:
     frame = box.text_frame
     for index, line in enumerate(
         (
-            "Tools emit inconsistent tags and drop the level.",
+            "Tools emit inconsistent tags, often with no level.",
             "SFIA defines 147 skills at seven levels, from autonomy to influence.",
-            "Purpose: map free text to SFIA skills and levels, then compare five matchers on 30 expert-mapped roles.",
+            "Purpose: a consistent skill and level matcher for ATS.",
+            "We compare five matchers on 30 expert-mapped roles.",
         )
     ):
         paragraph = frame.paragraphs[0] if index == 0 else frame.add_paragraph()
@@ -130,7 +131,7 @@ def build() -> Path:
             "Gap: ESCO and O*NET are regional frameworks.",
             "Gap: prior matchers predict skills but not levels.",
             "Gap: no LLM extraction targets SFIA.",
-            "Gap: no multi-agent work on a closed taxonomy.",
+            "Gap: multi-agent designs untested on fixed skill lists.",
             "Contribution: a validated SFIA 9 corpus of 669 records.",
             "Contribution: five matchers and a released harness.",
         ],
@@ -159,7 +160,7 @@ def build() -> Path:
             "Make the level a direct prediction, not a by-product of similarity.",
             "Dense retrieval wins skill F1 but is the worst level predictor.",
             "More agents add cost without accuracy.",
-            "SFIA 7 gold standard caps recall near 0.69.",
+            "SFIA 7 gold labels cap measured recall at 0.69.",
             "Corpus, code and explorer are released.",
         ],
         20,
